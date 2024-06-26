@@ -1,3 +1,12 @@
+#a revoir
+```html
+  {/* revoir avec l'équipe */}
+        {/* <li>rpg</li>
+        <li>horror</li>
+        <li>daniel</li> */}
+```
+
+
 # nodas
 
 This project uses Harmonia. Harmonia is a framework meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.

@@ -2,12 +2,11 @@ import Gamespages from "./components/Gamespages";
 
 function App() {
   return (
-    
-    <Gamespages />
-    
-  )
-  
-  
+    <>
+      <nav>blalbalba</nav>
+      <Gamespages />
+    </>
+  );
 }
 
 export default App;
