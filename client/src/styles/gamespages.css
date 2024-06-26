@@ -55,7 +55,7 @@ nav {
   gap: 1rem;
   padding-left: 1rem;
   margin-bottom: 2rem;
-  overflow-x: scroll;
+  flex-wrap: wrap;
 }
 
 .types_of_game > li {
@@ -80,4 +80,35 @@ h3 {
 
 h3 > span {
   color: green;
+}
+
+.platform_game {
+  padding: 1.5rem 1rem 8px 1rem;
+}
+
+.types_of_platform {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.xbox {
+  background-color: #0e7a0d;
+  padding: 5px 1rem;
+  border-radius: 16px;
+}
+
+.playstation {
+  background-color: #003087;
+  padding: 5px 1rem;
+  border-radius: 16px;
+}
+
+.nintendo {
+  background-color: #e60012;
+  padding: 5px 1rem;
+  border-radius: 16px;
+  min-width: 17ch;
 }

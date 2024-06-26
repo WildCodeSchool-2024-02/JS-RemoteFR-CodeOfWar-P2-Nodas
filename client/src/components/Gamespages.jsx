@@ -34,9 +34,9 @@ export default function Gamespages() {
           Plateformes<span>:</span>
         </h3>
         <ul className="types_of_platform">
-          <li>Xbox</li>
-          <li>Playstation</li>
-          <li>Nintendo Switch</li>
+          <li className="platform xbox">Xbox</li>
+          <li className="platform playstation">Playstation</li>
+          <li className="platform nintendo">Nintendo Switch</li>
         </ul>
       </section>
       <section>
