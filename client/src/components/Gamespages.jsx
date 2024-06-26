@@ -19,22 +19,26 @@ export default function Gamespages() {
         <li>Action</li>
         <li>Adventure</li>
       </ul>
-      <h3>
-        Description<span>:</span>
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-        molestias voluptatibus? Ut ullam ratione, quasi quibusdam aliquam iusto
-        minus magnam sed excepturi quod et voluptatem?
-      </p>
-      <h3>
-        Plateformes<span>:</span>
-      </h3>
-      <ul className="types_of_platform">
-        <li>Xbox</li>
-        <li>Playstation</li>
-        <li>Nintendo Switch</li>
-      </ul>
+      <section className="description_game">
+        <h3>
+          Description<span>:</span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+          molestias voluptatibus? Ut ullam ratione, quasi quibusdam aliquam
+          iusto minus magnam sed excepturi quod et voluptatem?
+        </p>
+      </section>
+      <section className="platform_game">
+        <h3>
+          Plateformes<span>:</span>
+        </h3>
+        <ul className="types_of_platform">
+          <li>Xbox</li>
+          <li>Playstation</li>
+          <li>Nintendo Switch</li>
+        </ul>
+      </section>
       <section>
         <div className="developers_publishers">
           <h3>
