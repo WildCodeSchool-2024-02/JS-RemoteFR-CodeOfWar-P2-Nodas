@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import CategorieList from "./components/CategorieList";
 
 function App() {
   const [infosjeu, setInfosjeu] = useState([]);
@@ -13,9 +14,9 @@ function App() {
   };
   return (
     <>
-      <h1>{infosjeu.name}</h1>
+      <CategorieList List={infosjeu} />
       <button type="button" onClick={fetchData}>
-        Fetch
+        Cliquer
       </button>
     </>
   );
