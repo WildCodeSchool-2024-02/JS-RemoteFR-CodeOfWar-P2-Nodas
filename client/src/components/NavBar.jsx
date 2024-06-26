@@ -1,5 +1,6 @@
 import logong from "../assets/images/logong.svg";
 import menuburger from "../assets/images/menuburger.svg";
+import paniericon from "../assets/images/paniericon.svg";
 
 export default function NavBar() {
   return (
@@ -9,7 +10,7 @@ export default function NavBar() {
       </a>
       <img src={logong} alt="Logo" />
       <a href="/cart">
-        <img src="#" alt="Logo panier" />
+        <img src={paniericon} alt="Logo panier" />
       </a>
     </nav>
   );
