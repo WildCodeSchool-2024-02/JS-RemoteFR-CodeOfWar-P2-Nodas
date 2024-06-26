@@ -1,5 +1,13 @@
+import Gamespages from "./components/Gamespages";
+
 function App() {
-  return <h1>TITRE</h1>;
+  return (
+    
+    <Gamespages />
+    
+  )
+  
+  
 }
 
 export default App;
