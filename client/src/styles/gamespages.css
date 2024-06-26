@@ -112,3 +112,20 @@ h3 > span {
   border-radius: 16px;
   min-width: 17ch;
 }
+
+.developers_publishers {
+  background-color: #252525;
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+.developers > p {
+  color: #ababab;
+  font-size: 12px;
+}
+
+.publishers > p {
+  color: #ababab;
+  font-size: 12px;
+}

@@ -39,18 +39,18 @@ export default function Gamespages() {
           <li className="platform nintendo">Nintendo Switch</li>
         </ul>
       </section>
-      <section>
-        <div className="developers_publishers">
+      <section className="developers_publishers">
+        <div className="developers">
           <h3>
             Publishers<span>:</span>
           </h3>
-          <p>Cd Project red</p>
+          <p>CD PROJECT RED</p>
         </div>
-        <div className="developers_publishers">
+        <div className="publishers">
           <h3>
             Developers<span>:</span>
           </h3>
-          <p>Cd Project red</p>
+          <p>CD PROJECT RED</p>
         </div>
       </section>
       <div>
