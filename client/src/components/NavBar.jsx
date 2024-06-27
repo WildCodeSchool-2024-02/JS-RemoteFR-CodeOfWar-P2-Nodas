@@ -5,8 +5,9 @@ import searchicon from "../assets/images/searchicon.svg";
 
 export default function NavBar() {
   return (
-    <nav>
+    <nav className="Navbar">
       <img src={logong} alt="Logo" />
+      <div className="iconsGroup">
       <a href="/search">
         <img src={searchicon} alt="Logo recherche" />
       </a>
@@ -16,6 +17,7 @@ export default function NavBar() {
       <a href="/burger" className="menu-burger" aria-label="Menu burger">
         <img src={menuburger} alt="Menu burger" />
       </a>
+      </div>
     </nav>
   );
 }
