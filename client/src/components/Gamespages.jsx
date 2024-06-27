@@ -53,12 +53,15 @@ export default function Gamespages() {
           <p>CD PROJECT RED</p>
         </div>
       </section>
-      <div>
-        <img src="#" alt="logo favori" />
-        <button type="button">
-          <img src="#" alt="logo panier" /> Ajouter au panier
+      <section className="like_added">
+        <button className="like_button" type="button">
+          <img src="./src/assets/images/like.png" alt="like" />
         </button>
-      </div>
+        <button className="added_button" type="button">
+          <img src="./src/assets/images/loggoCaddie.png" alt="caddie" />
+          <p>Ajouter au panier</p>
+        </button>
+      </section>
     </body>
   );
 }
