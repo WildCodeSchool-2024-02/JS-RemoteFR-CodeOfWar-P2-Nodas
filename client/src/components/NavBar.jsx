@@ -5,6 +5,7 @@ import searchicon from "../assets/images/searchicon.svg";
 
 export default function NavBar() {
   return (
+    <>
     <nav className="Navbar">
       <img src={logong} alt="Logo" />
       <div className="iconsGroup">
@@ -19,5 +20,7 @@ export default function NavBar() {
       </a>
       </div>
     </nav>
+    <div className="animated-border" />
+    </>
   );
 }
