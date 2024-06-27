@@ -1,5 +1,7 @@
+import Accueil from "./pages/Accueil";
+
 function App() {
-  return <h1>TITRE</h1>;
+  return <Accueil />;
 }
 
 export default App;
