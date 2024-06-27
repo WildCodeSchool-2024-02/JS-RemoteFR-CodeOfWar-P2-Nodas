@@ -11,7 +11,7 @@ export default function Gamespages() {
           <h2>CyberPunk 2077</h2>
           <hr />
         </div>
-        <div className="metascore">
+        <div className="metacritique">
           <p>4.3</p>
         </div>
       </section>
