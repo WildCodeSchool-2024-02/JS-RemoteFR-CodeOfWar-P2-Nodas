@@ -1,18 +1,17 @@
-export default function Gamespages() {
+import PropTypes from "prop-types";
+
+export default function Gamespages({ gameInfo }) {
   return (
     <body>
-      <img
-        className="image_game"
-        src="https://fastly.picsum.photos/id/74/4288/2848.jpg?hmac=q02MzzHG23nkhJYRXR-_RgKTr6fpfwRgcXgE0EKvNB8"
-        alt="nom du jeu"
-      />
+      <img className="image_game" src="" alt="nom du jeu" />
       <section className="title_metascore">
         <div className="title_game">
-          <h2>CyberPunk 2077</h2>
+          ""
+          <h2>{gameInfo.name}</h2>
           <hr />
         </div>
         <div className="metacritique">
-          <p>4.3</p>
+          <p>{gameInfo.metacritic}</p>
         </div>
       </section>
       <ul className="types_of_game">
@@ -23,11 +22,7 @@ export default function Gamespages() {
         <h3>
           Description<span>:</span>
         </h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-          molestias voluptatibus? Ut ullam ratione, quasi quibusdam aliquam
-          iusto minus magnam sed excepturi quod et voluptatem?
-        </p>
+        <p>{gameInfo.description_raw}</p>
       </section>
       <section className="platform_game">
         <h3>
@@ -50,7 +45,7 @@ export default function Gamespages() {
           <h3>
             Developers<span>:</span>
           </h3>
-          <p>CD PROJECT RED</p>
+          <p>bonjour</p>
         </div>
       </section>
       <section className="like_added">
@@ -65,3 +60,11 @@ export default function Gamespages() {
     </body>
   );
 }
+
+Gamespages.propTypes = {
+  gameInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    metacritic: PropTypes.number,
+    description_raw: PropTypes.string,
+  }).isRequired,
+};
