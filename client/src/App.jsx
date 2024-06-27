@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Gamespages from "./components/Gamespages";
 
 function App() {
-  const [gameInfo, setGameInfo] = useState(null);
+  const [gameInfo, setGameInfo] = useState([]);
+
   const fetchGameInfo = () => {
     axios
       .get(
@@ -11,12 +12,27 @@ function App() {
       )
       .then((response) => {
         setGameInfo(response.data);
+
+        console.info(response.data.genres);
       });
   };
+
+  useEffect(() => {
+    fetchGameInfo();
+  }, []);
+
+  const data = {
+    background_image: gameInfo.background_image,
+    name: gameInfo.name,
+    metacritic: gameInfo.metacritic,
+    description_raw: gameInfo.description_raw,
+    genres: gameInfo.genres,
+  };
+
   return (
     <>
       <nav>blalbalba</nav>
-      <Gamespages gameInfo={gameInfo} />
+      {gameInfo && <Gamespages gameInfo={data} />}
       <button type="button" onClick={fetchGameInfo}>
         api
       </button>

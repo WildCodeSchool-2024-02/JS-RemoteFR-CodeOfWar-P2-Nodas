@@ -1,12 +1,16 @@
 import PropTypes from "prop-types";
 
 export default function Gamespages({ gameInfo }) {
+  console.info(typeof gameInfo.metacritic);
   return (
-    <body>
-      <img className="image_game" src="" alt="nom du jeu" />
+    <div>
+      <img
+        className="image_game"
+        src={gameInfo.background_image}
+        alt="nom du jeu"
+      />
       <section className="title_metascore">
         <div className="title_game">
-          ""
           <h2>{gameInfo.name}</h2>
           <hr />
         </div>
@@ -15,7 +19,7 @@ export default function Gamespages({ gameInfo }) {
         </div>
       </section>
       <ul className="types_of_game">
-        <li>Action</li>
+        <li>{gameInfo.genres[0].name}</li>
         <li>Adventure</li>
       </ul>
       <section className="description_game">
@@ -57,14 +61,16 @@ export default function Gamespages({ gameInfo }) {
           <p>Ajouter au panier</p>
         </button>
       </section>
-    </body>
+    </div>
   );
 }
 
 Gamespages.propTypes = {
   gameInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    background_image: PropTypes.string,
+    name: PropTypes.string,
     metacritic: PropTypes.number,
     description_raw: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.shape),
   }).isRequired,
 };
