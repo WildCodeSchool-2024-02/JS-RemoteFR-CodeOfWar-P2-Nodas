@@ -1,4 +1,5 @@
 import AllGenres from "./AllGenres";
+import AllPlatforms from "./AllPlatforms";
 
 export default function SearchEngine() {
     return (
@@ -16,27 +17,8 @@ export default function SearchEngine() {
             <input type="text" className="prix-min" />
             <input type="text" className="prix-max" />
             </div>
-            <div>
-            <h3>Genres</h3>
             <AllGenres />
-            </div>
-            <div>
-                <h3>Platforms</h3>
-            <input type="checkbox" name="Platforme" id="1" />
-            <input type="checkbox" name="Platforme" id="2" />
-            <input type="checkbox" name="Platforme" id="3" />
-            <input type="checkbox" name="Platforme" id="4" />
-            <input type="checkbox" name="Platforme" id="5" />
-            <input type="checkbox" name="Platforme" id="6" />
-            <input type="checkbox" name="Platforme" id="7" />
-            <input type="checkbox" name="Platforme" id="8" />
-            <input type="checkbox" name="Platforme" id="9" />
-            <input type="checkbox" name="Platforme" id="10" />
-            <input type="checkbox" name="Platforme" id="11" />
-            <input type="checkbox" name="Platforme" id="12" />
-            <input type="checkbox" name="Platforme" id="13" />
-            <input type="checkbox" name="Platforme" id="14" />
-            </div>
+            <AllPlatforms />
             <div>
                 <h3>Stores</h3>
             <input type="checkbox" name="Store" id="1" />
