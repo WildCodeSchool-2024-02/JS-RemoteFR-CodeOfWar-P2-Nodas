@@ -9,7 +9,7 @@ export default function CategorieItem({ gamesImage, gamesName }) {
           <li>
             <b>{gamesName}</b>
           </li>
-          <li>price €€€</li>
+          <li className="Prix">59,99€</li>
         </ul>
       </div>
     )
