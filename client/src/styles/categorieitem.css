@@ -1,0 +1,9 @@
+img {
+  width: 40vh;
+}
+
+ul > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import CategorieList from "./components/CategorieList";
 
+const genre = "Action";
+
 function App() {
   const [infosjeu, setInfosjeu] = useState([]);
   const fetchData = () => {
@@ -13,7 +15,7 @@ function App() {
 
   return (
     <>
-      <CategorieList List={infosjeu} />
+      <CategorieList List={infosjeu} genre={genre} />
       <button type="button" onClick={fetchData}>
         Cliquer
       </button>

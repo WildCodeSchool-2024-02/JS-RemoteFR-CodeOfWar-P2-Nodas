@@ -6,7 +6,9 @@ export default function CategorieItem({ gamesImage, gamesName }) {
       <div className="CategorieItem">
         <img src={gamesImage} alt={gamesName} />
         <ul>
-          <li>{gamesName}</li>
+          <li>
+            <b>{gamesName}</b>
+          </li>
           <li>price €€€</li>
         </ul>
       </div>
