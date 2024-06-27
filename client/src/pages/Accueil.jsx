@@ -1,3 +1,5 @@
+import SearchEngine from "../components/SearchEngine"
+
 export default function Accueil() {
  return (
     <>
@@ -26,26 +28,8 @@ export default function Accueil() {
         <img src="https://picsum.photos/350/200" alt="" />
     </div>
     <div>
-        <h2>Search engine</h2>
-        <p>Main search and filter engine with results in pages</p>
-        <div>
-            <img src="https://picsum.photos/200/130" alt="" />
-            <h3>Game name</h3>
-            <p>Game details</p>
-            <img src="https://picsum.photos/200/130" alt="" />
-            <h3>Game name</h3>
-            <p>Game details</p>
-            <img src="https://picsum.photos/200/130" alt="" />
-            <h3>Game name</h3>
-            <p>Game details</p>
-            <img src="https://picsum.photos/200/130" alt="" />
-            <h3>Game name</h3>
-            <p>Game details</p>
-            <img src="https://picsum.photos/200/130" alt="" />
-            <h3>Game name</h3>
-            <p>Game details</p>
+        <SearchEngine />
         </div>
-    </div>
     
     </>
 
