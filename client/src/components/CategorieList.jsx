@@ -4,9 +4,9 @@ import CategorieItem from "./CategorieItem";
 function CategorieList({ List }) {
   return (
     <>
-      {List.map((InfoGames) => (
+      {List.map((InfoGames, index) => (
         <CategorieItem
-          key={InfoGames.id}
+          key={[index]}
           gamesImage={InfoGames.background_image}
           gamesName={InfoGames.name}
         />
