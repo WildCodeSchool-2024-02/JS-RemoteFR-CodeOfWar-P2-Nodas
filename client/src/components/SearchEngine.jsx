@@ -1,5 +1,6 @@
 import AllGenres from "./AllGenres";
 import AllPlatforms from "./AllPlatforms";
+import AllStores from "./AllStores";
 
 export default function SearchEngine() {
     return (
@@ -19,19 +20,7 @@ export default function SearchEngine() {
             </div>
             <AllGenres />
             <AllPlatforms />
-            <div>
-                <h3>Stores</h3>
-            <input type="checkbox" name="Store" id="1" />
-            <input type="checkbox" name="Store" id="2" />
-            <input type="checkbox" name="Store" id="3" />
-            <input type="checkbox" name="Store" id="4" />
-            <input type="checkbox" name="Store" id="5" />
-            <input type="checkbox" name="Store" id="6" />
-            <input type="checkbox" name="Store" id="7" />
-            <input type="checkbox" name="Store" id="8" />
-            <input type="checkbox" name="Store" id="9" />
-            <input type="checkbox" name="Store" id="10" />
-            </div>
+            <AllStores />
         </div>
         <div className="results-container">
             Résultats
