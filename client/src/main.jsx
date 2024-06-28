@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./styles/app.css";
 import "./styles/gamespages.css";
+import "./styles/navbar.css";
 
 const router = createBrowserRouter([
   {
