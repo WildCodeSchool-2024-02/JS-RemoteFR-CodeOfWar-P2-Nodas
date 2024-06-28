@@ -19,10 +19,9 @@ export default function Gamespages({ gameInfo }) {
         </div>
       </section>
       <ul className="types_of_game">
-        <li>{gameInfo.genres[0].name}</li>
-        <li>Adventure</li>
+        <li>Action</li>
       </ul>
-      <section className="description_game">
+      <section className="description_game complet">
         <h3>
           Description<span>:</span>
         </h3>
@@ -49,7 +48,7 @@ export default function Gamespages({ gameInfo }) {
           <h3>
             Developers<span>:</span>
           </h3>
-          <p>bonjour</p>
+          <p>CD PROJECT RED</p>
         </div>
       </section>
       <section className="like_added">

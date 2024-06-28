@@ -66,6 +66,12 @@ nav {
 
 .description_game {
   padding: 0rem 1rem;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .description_game > p {
