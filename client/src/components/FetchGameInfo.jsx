@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Gamespages from "./Gamespages";
@@ -6,20 +7,22 @@ export default function FetchGameInfo() {
   const [gameInfo, setGameInfo] = useState([]);
 
   const fetchGameInfo = () => {
+
     axios
       .get(
-        "https://api.rawg.io/api/games/50?key=b3e3b377b29145d293a41aee8c4c64f1"
+        `https://api.rawg.io/api/games/50?key=${import.meta.env.VITE_API_KEY}`
       )
       .then((response) => {
         setGameInfo(response.data);
-
-        console.info(response.data);
       });
   };
+
 
   useEffect(() => {
     fetchGameInfo();
   }, []);
+
+
 
   const data = {
     background_image: gameInfo.background_image,

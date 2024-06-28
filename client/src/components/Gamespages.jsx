@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 export default function Gamespages({ gameInfo }) {
-  console.info(typeof gameInfo.metacritic);
   return (
     <div>
       <img
