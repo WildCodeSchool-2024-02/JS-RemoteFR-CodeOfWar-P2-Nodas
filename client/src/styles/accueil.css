@@ -3,3 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #232736;
+  --primary-font-color: #dadada;
+}
+
+.landing-page {
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+}
+
+header {
+  padding: 1rem 0 0 1rem;
+}
+
+main {
+  padding: 1rem;
+}

@@ -1,8 +1,8 @@
 .carousel {
   position: relative;
-  width: 330px;
-
+  width: 100%;
   overflow: hidden;
+  padding: 1rem 0;
 }
 
 .carousel-slides {
@@ -13,6 +13,7 @@
 .carousel img {
   width: 100%;
   display: none;
+  border-radius: 8px;
 }
 
 .carousel img.active {
@@ -24,11 +25,13 @@
   top: 50%;
   transform: translateY(-50%);
   background-color: black;
+  opacity: 65%;
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 2;
+  border-radius: 8px;
 }
 
 .carousel-button.prev {
