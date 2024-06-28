@@ -5,9 +5,7 @@ function CategorieList({ Games, genre }) {
   return (
     <>
       <section>
-        <h1>
-          <li>{genre}</li>
-        </h1>
+        <h1>{genre}</h1>
         <h2>Nouvelles sorties</h2>
         {Games.slice(0, 3).map((InfoGames, index) => (
           <CategorieItem
