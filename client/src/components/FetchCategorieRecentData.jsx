@@ -11,7 +11,7 @@ function FetchCategorieRecentData() {
     const fetchData = () => {
       axios
         .get(
-          `https://api.rawg.io/api/games?dates=${oldMonthFormattedDate},${formattedDate}&key=528f2e0850a34934a043d35c3ece72a9`
+          `https://api.rawg.io/api/games?dates=${oldMonthFormattedDate},${formattedDate}&key=${import.meta.env.VITE_API_KEY}`
         )
         .then((response) => {
           setInfosjeu(response.data.results);
