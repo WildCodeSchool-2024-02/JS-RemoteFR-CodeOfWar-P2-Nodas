@@ -4,18 +4,35 @@ import Gamespages from "./Gamespages";
 
 export default function FetchGameInfo() {
   const [gameInfo, setGameInfo] = useState({});
+  const [paragraphLong, setParagraphLong] = useState(false);
   const fetchGameInfo = () => {
     axios
       .get(
-        `https://api.rawg.io/api/games/2000?key=${import.meta.env.VITE_API_KEY}`
+        `https://api.rawg.io/api/games/5?key=${import.meta.env.VITE_API_KEY}`
       )
       .then((response) => {
         setGameInfo(response.data);
       });
   };
+
+  const handleMouseOver = () => {
+    setParagraphLong(true);
+  };
+
+  const handleMouseOut = () => {
+    setParagraphLong(false);
+  };
   return (
     <>
-      <Gamespages gameInfo={gameInfo} />
+      {gameInfo && (
+        <Gamespages
+          gameInfo={gameInfo}
+          paragraphLong={paragraphLong}
+          handleMouseOut={handleMouseOut}
+          handleMouseOver={handleMouseOver}
+        />
+      )}
+
       <button onClick={fetchGameInfo}>Api</button>
     </>
   );
