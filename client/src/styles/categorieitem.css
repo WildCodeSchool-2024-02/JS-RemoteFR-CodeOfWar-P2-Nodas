@@ -2,7 +2,7 @@ body {
   background-color: black;
 }
 
-img {
+.CategorieItem > img {
   width: 21rem;
   margin: 0 1.2rem;
   border-radius: 0.6rem;
