@@ -1,5 +1,4 @@
 import CarrouselStd from "../components/CarrouselStd";
-import GameCardAccueil from "../components/GameCardAccueil"
 
 export default function Accueil() {
   const featuredImages = [
@@ -27,29 +26,34 @@ export default function Accueil() {
       <main>
       <section className="featured-games">
         <h2>Featured games</h2>
+        <div className="decobar" />
         <p>
-          Featured games, criteria = high sales, high rating, less than 3 month
+          Featured games, high sales, high rating
         </p>
         <CarrouselStd images={featuredImages} />
       </section>
       <section className="featured-categorie">
-        <h2>Categorie</h2>
-        <p>Random categorie with some cards</p>
+        <h2>Category</h2>
+        <div className="decobar" />
+        <p>Random category with some cards</p>
         <CarrouselStd images={categorieImages} />
       </section>
       <section className="featured-sales">
         <h2>Sales of the moment</h2>
+        <div className="decobar" />
         <p>Featured sales with some game cards and reduced prices</p>
         <CarrouselStd images={salesImages} />
       </section>
+      <h2>Still hungry for more ?</h2>
       <section className="search-engine">
-        <h2>Search engine</h2>
-        <p>Main search and filter engine with results in pages</p>
-        <div>
-          <GameCardAccueil />
-        </div>
+        <h2>Explore all possibilities in our endless catalog</h2>
+        <p>All the games you ever wanted to play are here, all platforms, all genres. Take a look and choose your next adventure !</p>
+        <button type="button" id="catalog-button">See all games</button>
       </section>
       </main>
+      <footer className="footer">
+        <h2>FOOTER</h2>
+      </footer>
     </div>
   );
 }
