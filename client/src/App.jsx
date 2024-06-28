@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import CategorieList from "./components/CategorieList";
+import NavBar from "./components/NavBar";
 
 const genre = "Action";
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <CategorieList Games={infosjeu} genre={genre} />
       <button type="button" onClick={fetchCategorieRecentData}>
         Cliquer
