@@ -1,23 +1,32 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 export default function Gamespages({
   gameInfo,
   paragraphLong,
   handleMouseOut,
   handleMouseOver,
 }) {
+  const displayshortText = gameInfo.description_raw
+    ? !paragraphLong
+      ? `${gameInfo.description_raw.slice(0, 100)}...`
+      : gameInfo.description_raw
+    : "Description Non disponible";
+
   return (
-    <p
-      className={paragraphLong ? "long" : "short"}
+    <div
+      className="short"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      {gameInfo.description_raw}
-    </p>
+      <p>{displayshortText}</p>
+    </div>
   );
 }
 
 Gamespages.propTypes = {
   gameInfo: PropTypes.shape({
-    description_raw: PropTypes.string,
+    description_raw: PropTypes.string.isRequired,
   }).isRequired,
   paragraphLong: PropTypes.bool.isRequired,
   handleMouseOut: PropTypes.func.isRequired,
