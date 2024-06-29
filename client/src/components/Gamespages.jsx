@@ -14,3 +14,12 @@ export default function Gamespages({
     </p>
   );
 }
+
+Gamespages.propTypes = {
+  gameInfo: PropTypes.shape({
+    description_raw: PropTypes.string,
+  }).isRequired,
+  paragraphLong: PropTypes.bool.isRequired,
+  handleMouseOut: PropTypes.func.isRequired,
+  handleMouseOver: PropTypes.func.isRequired,
+};
