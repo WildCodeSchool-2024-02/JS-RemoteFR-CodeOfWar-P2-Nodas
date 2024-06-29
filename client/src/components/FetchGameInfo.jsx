@@ -27,6 +27,14 @@ export default function FetchGameInfo() {
     setParagraphLong(false);
   };
 
+  const handleFocus = () => {
+    setParagraphLong(true);
+  };
+
+  const handleBlur = () => {
+    setParagraphLong(false);
+  };
+
   return (
     <>
       {gameInfo && (
@@ -35,10 +43,10 @@ export default function FetchGameInfo() {
           paragraphLong={paragraphLong}
           handleMouseOut={handleMouseOut}
           handleMouseOver={handleMouseOver}
+          handleFocus={handleFocus}
+          handleBlur={handleBlur}
         />
       )}
-
-      <button onClick={fetchGameInfo}>Api</button>
     </>
   );
 }

@@ -6,6 +6,8 @@ export default function Gamespages({
   paragraphLong,
   handleMouseOut,
   handleMouseOver,
+  handleFocus,
+  handleBlur,
 }) {
   const displayshortText = gameInfo.description_raw
     ? !paragraphLong
@@ -18,6 +20,9 @@ export default function Gamespages({
       className="short"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      tabIndex="0"
     >
       <p>{displayshortText}</p>
     </div>
@@ -31,4 +36,6 @@ Gamespages.propTypes = {
   paragraphLong: PropTypes.bool.isRequired,
   handleMouseOut: PropTypes.func.isRequired,
   handleMouseOver: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func.isRequired,
+  handleFocus: PropTypes.func.isRequired,
 };
