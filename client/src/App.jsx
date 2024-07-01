@@ -1,10 +1,20 @@
+import CategorieList from "./components/CategorieList";
 import NavBar from "./components/NavBar";
+import FetchCategorieRecentData from "./components/FetchCategorieRecentData";
+
+const genre = "Action";
 
 function App() {
+  const { infosjeu, loading } = FetchCategorieRecentData();
+
   return (
     <>
       <NavBar />
-      <h1>TITRE</h1>
+      {loading ? (
+        <p>Chargement...</p>
+      ) : (
+        <CategorieList Games={infosjeu} genre={genre} />
+      )}
     </>
   );
 }
