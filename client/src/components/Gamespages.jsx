@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 export default function Gamespages({
@@ -9,11 +8,15 @@ export default function Gamespages({
   handleFocus,
   handleBlur,
 }) {
-  const displayshortText = gameInfo.description_raw
-    ? !paragraphLong
+  let displayshortText;
+
+  if (gameInfo.description_raw) {
+    displayshortText = !paragraphLong
       ? `${gameInfo.description_raw.slice(0, 100)}...`
-      : gameInfo.description_raw
-    : "Description Non disponible";
+      : gameInfo.description_raw;
+  } else {
+    displayshortText = "Description Non disponible";
+  }
 
   return (
     <div
@@ -22,7 +25,7 @@ export default function Gamespages({
       onMouseOut={handleMouseOut}
       onFocus={handleFocus}
       onBlur={handleBlur}
-      tabIndex="0"
+      tabIndex={0}
     >
       <p>{displayshortText}</p>
     </div>
