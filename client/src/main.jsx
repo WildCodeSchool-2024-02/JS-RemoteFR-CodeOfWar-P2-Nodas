@@ -7,6 +7,7 @@ import App from "./App";
 import "./styles/app.css";
 import "./styles/gamespages.css";
 import "./styles/navbar.css";
+import "./styles/categorieitem.css";
 
 const router = createBrowserRouter([
   {
