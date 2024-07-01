@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Gamespages({ gameInfo }) {
+export default function Gamespages({ gameInfo, gamePlatforms }) {
   return (
     <div>
       <img
@@ -31,9 +31,11 @@ export default function Gamespages({ gameInfo }) {
           Plateformes<span>:</span>
         </h3>
         <ul className="types_of_platform">
-          <li className="platform xbox">Xbox</li>
-          <li className="platform playstation">Playstation</li>
-          <li className="platform nintendo">Nintendo Switch</li>
+        {gamePlatforms.length > 0 ? (
+          gamePlatforms.map((platform) => <li key={platform}>{platform}</li>)
+        ) : (
+          <li>Platforme non renseignée</li>
+        )}
         </ul>
       </section>
       <section className="developers_publishers">
@@ -69,6 +71,11 @@ Gamespages.propTypes = {
     name: PropTypes.string,
     metacritic: PropTypes.number,
     description_raw: PropTypes.string,
-    genres: PropTypes.arrayOf(PropTypes.shape),
+    platforms: PropTypes.arrayOf(PropTypes.shape),
   }).isRequired,
+  gamePlatforms: PropTypes.arrayOf(PropTypes.string),
+};
+
+Gamespages.defaultProps = {
+  gamePlatforms: [],
 };
