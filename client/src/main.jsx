@@ -9,10 +9,42 @@ import "./styles/gamespages.css";
 import "./styles/navbar.css";
 import "./styles/categorieitem.css";
 
+import Accueil from "./pages/Accueil";
+import Catalogue from "./pages/Catalogue";
+import Categories from "./pages/Categories";
+import Favoris from "./pages/Favoris";
+import Basket from "./pages/Basket";
+import About from "./pages/About";
+
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Accueil />,
+      },
+      {
+        path: "/catalog",
+        element: <Catalogue />,
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
+      },
+      {
+        path: "/favoris",
+        element: <Favoris />,
+      },
+      {
+        path: "/basket",
+        element: <Basket />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 
