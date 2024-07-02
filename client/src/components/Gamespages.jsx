@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Gamespages({ gameInfo }) {
+export default function Gamespages({ gameInfo, gameGenres }) {
   return (
     <div>
       <img
@@ -18,7 +18,11 @@ export default function Gamespages({ gameInfo }) {
         </div>
       </section>
       <ul className="types_of_game">
-        <li>Action</li>
+        {gameGenres.length > 0 ? (
+          gameGenres.map((genre) => <li key={genre}>{genre}</li>)
+        ) : (
+          <li>Jeu sans Catégorie</li>
+        )}
       </ul>
       <section className="description_game complet">
         <h3>
@@ -69,6 +73,9 @@ Gamespages.propTypes = {
     name: PropTypes.string,
     metacritic: PropTypes.number,
     description_raw: PropTypes.string,
-    genres: PropTypes.arrayOf(PropTypes.shape),
   }).isRequired,
+  gameGenres: PropTypes.arrayOf(PropTypes.string),
+};
+Gamespages.defaultProps = {
+  gameGenres: [],
 };
