@@ -18,8 +18,12 @@ export function fetchData() {
     .catch((error) => console.error(error));
 }
 
-export function fetchPlatformByIdGame(id){
+export function fetchGameById(id) {
   return axios
-.get(`https://api.rawg.io/api/games/${id}?key=${import.meta.env.VITE_API_KEY}`)
-.then((response) => response.data.platforms);
+    .get(
+      `https://api.rawg.io/api/games/${id}?key=${import.meta.env.VITE_API_KEY}`
+    )
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
 }
+

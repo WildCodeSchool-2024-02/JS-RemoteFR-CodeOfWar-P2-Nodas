@@ -39,7 +39,7 @@ export default function GamePage() {
               <li key={platform.id}>{platform.platform.name}</li>
             ))
           ) : (
-            <li>Platforme inconnue</li>
+            <li>Divers Plateforme</li>
           )}
         </ul>
       </section>
