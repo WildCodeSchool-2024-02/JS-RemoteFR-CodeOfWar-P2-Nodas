@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+nav {
+  height: 3.5rem;
+}
+
+.image_game {
+  width: 100%;
+  height: 14rem;
+}
+
+.title_metascore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.title_game > h2 {
+  padding-bottom: 0.25rem;
+}
+
+.title_game > hr {
+  background-color: green;
+  height: 4px;
+  border: none;
+  max-width: 8rem;
+}
+
+.metacritique {
+  border: none;
+  border-radius: 50%;
+  background-color: green;
+  padding: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.types_of_game {
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.types_of_game > li {
+  padding: 4px 16px;
+  border: 2px solid #352e4d;
+  text-align: center;
+}
+
+.description_game {
+  padding: 0rem 1rem;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.description_game > p {
+  font-size: 12px;
+  color: #ababab;
+}
+
+h3 {
+  padding-bottom: 8px;
+  font-size: 16px;
+}
+
+h3 > span {
+  color: green;
+}
+
+.platform_game {
+  padding: 1.5rem 1rem 8px 1rem;
+}
+
+.types_of_platform {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.xbox {
+  background-color: #0e7a0d;
+  padding: 5px 1rem;
+  border-radius: 16px;
+}
+
+.playstation {
+  background-color: #003087;
+  padding: 5px 1rem;
+  border-radius: 16px;
+}
+
+.nintendo {
+  background-color: #e60012;
+  padding: 5px 1rem;
+  border-radius: 16px;
+  min-width: 17ch;
+}
+
+.developers_publishers {
+  background-color: #252525;
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+.developers > p {
+  color: #ababab;
+  font-size: 12px;
+}
+
+.publishers > p {
+  color: #ababab;
+  font-size: 12px;
+}
+
+.like_added {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 1rem 2rem 1rem;
+}
+
+.like_button {
+  width: 3rem;
+  height: 3rem;
+  background-color: #232736;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+
+.added_button {
+  width: 100%;
+  height: 3rem;
+  background-color: #6446af;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
