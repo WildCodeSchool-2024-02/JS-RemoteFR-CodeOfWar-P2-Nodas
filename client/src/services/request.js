@@ -26,3 +26,13 @@ export function fetchGameById(id) {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 }
+
+export function fetchGenresByGameId(id)
+{
+  return axios
+    .get(
+      `https://api.rawg.io/api/games/${id}?key=${import.meta.env.VITE_API_KEY}`
+    )
+    .then((response) => response.data.genres)
+    .catch((error) => console.error(error));
+}
