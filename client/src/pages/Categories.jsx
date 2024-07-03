@@ -1,7 +1,10 @@
-import PropTypes from "prop-types";
-import CategorieItem from "./CategorieItem";
+import { useLoaderData } from "react-router-dom";
+import CategorieItem from "../components/CategorieItem";
 
-function CategorieList({ Games, genre }) {
+function Categories() {
+  const Games = useLoaderData();
+  const genre = "action";
+
   return (
     <>
       <section>
@@ -39,12 +42,4 @@ function CategorieList({ Games, genre }) {
   );
 }
 
-CategorieList.propTypes = {
-  Games: PropTypes.shape({
-    map: PropTypes.string,
-    slice: PropTypes.string,
-  }).isRequired,
-  genre: PropTypes.string.isRequired,
-};
-
-export default CategorieList;
+export default Categories;
