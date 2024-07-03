@@ -1,6 +1,8 @@
-import PropTypes from "prop-types";
+import { useLoaderData } from "react-router-dom";
 
-export default function Gamespages({ gameInfo, gameGenres }) {
+export default function GamePage() {
+  const gameInfo = useLoaderData();
+
   return (
     <div>
       <img
@@ -18,11 +20,7 @@ export default function Gamespages({ gameInfo, gameGenres }) {
         </div>
       </section>
       <ul className="types_of_game">
-        {gameGenres.length > 0 ? (
-          gameGenres.map((genre) => <li key={genre}>{genre}</li>)
-        ) : (
-          <li>Jeu sans Catégorie</li>
-        )}
+        <li>Action</li>
       </ul>
       <section className="description_game complet">
         <h3>
@@ -66,16 +64,3 @@ export default function Gamespages({ gameInfo, gameGenres }) {
     </div>
   );
 }
-
-Gamespages.propTypes = {
-  gameInfo: PropTypes.shape({
-    background_image: PropTypes.string,
-    name: PropTypes.string,
-    metacritic: PropTypes.number,
-    description_raw: PropTypes.string,
-  }).isRequired,
-  gameGenres: PropTypes.arrayOf(PropTypes.string),
-};
-Gamespages.defaultProps = {
-  gameGenres: [],
-};

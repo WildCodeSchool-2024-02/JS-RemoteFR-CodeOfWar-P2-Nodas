@@ -1,22 +1,15 @@
-import CategorieList from "./components/CategorieList";
+import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import FetchGameInfo from "./components/FetchGameInfo";
-import FetchCategorieRecentData from "./components/FetchCategorieRecentData";
+import Footer from "./components/Footer";
 
 function App() {
-  const { infosjeu, loading } = FetchCategorieRecentData();
-  
-  const genre = "Action";
-
   return (
     <>
       <NavBar />
-      <FetchGameInfo />
-      {loading ? (
-        <p>Chargement...</p>
-      ) : (
-        <CategorieList Games={infosjeu} genre={genre} />
-      )}
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }
