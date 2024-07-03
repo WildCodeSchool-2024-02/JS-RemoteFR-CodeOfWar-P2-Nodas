@@ -5,8 +5,6 @@ function Categories() {
   const Games = useLoaderData();
   const genre = "action";
 
-  console.info(Games);
-
   return (
     <>
       <section>
