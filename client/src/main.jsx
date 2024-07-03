@@ -10,7 +10,11 @@ import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
 
-import { fetchData, fetchGameInfo } from "./services/request";
+import {
+  fetchData,
+  fetchGameInfo,
+  fetchPlatformByIdGame,
+} from "./services/request";
 
 import "./styles/app.css";
 import "./styles/gamespages.css";
@@ -50,6 +54,8 @@ const router = createBrowserRouter([
         path: "/gamepage/:id",
         element: <GamePage />,
         loader: () => fetchGameInfo().then((data) => data),
+        loaderPlatforms: ({ params }) =>
+          fetchPlatformByIdGame(params.id).then((data) => data),
       },
     ],
   },

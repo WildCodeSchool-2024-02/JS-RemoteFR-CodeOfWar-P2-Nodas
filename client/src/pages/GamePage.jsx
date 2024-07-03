@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
+  const gamePlatforms = gameInfo.platforms;
 
   return (
     <div>
@@ -33,9 +34,13 @@ export default function GamePage() {
           Plateformes<span>:</span>
         </h3>
         <ul className="types_of_platform">
-          <li className="platform xbox">Xbox</li>
-          <li className="platform playstation">Playstation</li>
-          <li className="platform nintendo">Nintendo Switch</li>
+          {gamePlatforms.length > 0 ? (
+            gamePlatforms.map((platform) => (
+              <li key={platform.id}>{platform.platform.name}</li>
+            ))
+          ) : (
+            <li>Platforme inconnue</li>
+          )}
         </ul>
       </section>
       <section className="developers_publishers">
