@@ -6,17 +6,17 @@ export default function Categories() {
   return (
     <section className="categories">
       <h2>
-        The different type of game<span>:</span>
+        Categories<span>:</span>
       </h2>
-      <ul>
+      <ul className="container_list">
         {genres.length > 0 ? (
           genres.map((genre) => (
-            <li className="genres_list" key={genre.id}>
+            <li className={`genres_list ${genre.name}`} key={genre.id}>
               {genre.name}
             </li>
           ))
         ) : (
-          <li>""</li>
+          <li>Divers</li>
         )}
       </ul>
     </section>

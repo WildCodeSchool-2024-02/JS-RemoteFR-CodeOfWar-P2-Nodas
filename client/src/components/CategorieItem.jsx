@@ -5,7 +5,7 @@ export default function CategorieItem({ gamesImage, gamesName }) {
     gamesName && (
       <div className="CategorieItem">
         <img src={gamesImage} alt={gamesName} />
-        <ul>
+        <ul className="gamename_prix">
           <li>
             <b>{gamesName}</b>
           </li>

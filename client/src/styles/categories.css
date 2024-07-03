@@ -1,12 +1,121 @@
-.categories ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.categories h2 {
+  margin-top: 2rem;
+  margin-left: 1rem;
 }
 
-.categories .genres_list > li {
-  color: red;
+.container_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 1rem;
+}
+
+.genres_list {
   font-weight: bold;
-  border-radius: 2px solid blue;
-  padding: 0.5rem 2rem;
+  border: 2px solid #352e4d;
+  width: 10rem;
+  border-radius: 64px;
+  height: 5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Action {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Indie {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Adventure {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.RPG {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Strategy {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+
+.Shooter {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Casual {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Simulation {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Puzzle {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Platformer {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Racing {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Arcade {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Massively {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Sports {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Fighting {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Family {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Board {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Educational {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
+}
+.Card {
+  background-image: url("https://cdn.discordapp.com/attachments/1252644899082207355/1258079862577561650/catalogbuttonbackground.webp?ex=6686bdad&is=66856c2d&hm=0b4aaa91bd1a95da55c7185f62b590f302a55ac238ce06d91f2bf16614f69925&");
+  background-size: cover;
+  background-position: center;
 }
