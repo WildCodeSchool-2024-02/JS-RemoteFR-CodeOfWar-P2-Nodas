@@ -1,0 +1,12 @@
+.categories ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.categories .genres_list > li {
+  color: red;
+  font-weight: bold;
+  border-radius: 2px solid blue;
+  padding: 0.5rem 2rem;
+}

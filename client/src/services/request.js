@@ -17,3 +17,12 @@ export function fetchData() {
     .then((response) => response.data.results)
     .catch((error) => console.error(error));
 }
+
+export function fetchCategories() {
+  return axios
+    .get(
+      `https://api.rawg.io/api/genres?dates=2020-01-01,2021-01-01&key=${import.meta.env.VITE_API_KEY}`
+    )
+    .then((response) => response.data.results)
+    .catch((error) => console.error(error));
+}

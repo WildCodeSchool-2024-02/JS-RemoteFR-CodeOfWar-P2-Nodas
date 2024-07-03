@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <h2>en cours de fabrication</h2>;
+  return <h2>Work in progress</h2>;
 }

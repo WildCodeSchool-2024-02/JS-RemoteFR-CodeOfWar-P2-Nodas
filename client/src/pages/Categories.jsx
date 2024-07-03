@@ -1,45 +1,24 @@
 import { useLoaderData } from "react-router-dom";
-import CategorieItem from "../components/CategorieItem";
 
-function Categories() {
-  const Games = useLoaderData();
-  const genre = "action";
+export default function Categories() {
+  const genres = useLoaderData();
 
   return (
-    <>
-      <section>
-        <h1>{genre}</h1>
-        <h2>Nouvelles sorties</h2>
-        {Games.slice(0, 3).map((InfoGames, index) => (
-          <CategorieItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-          />
-        ))}
-      </section>
-      <section>
-        <h2>Les plus populaires</h2>
-        {Games.slice(0, 3).map((InfoGames, index) => (
-          <CategorieItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-          />
-        ))}
-      </section>
-      <section>
-        <h2>Tous les jeux {genre}</h2>
-        {Games.map((InfoGames, index) => (
-          <CategorieItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-          />
-        ))}
-      </section>
-    </>
+    <section className="categories">
+      <h2>
+        The different type of game<span>:</span>
+      </h2>
+      <ul>
+        {genres.length > 0 ? (
+          genres.map((genre) => (
+            <li className="genres_list" key={genre.id}>
+              {genre.name}
+            </li>
+          ))
+        ) : (
+          <li>""</li>
+        )}
+      </ul>
+    </section>
   );
 }
-
-export default Categories;
