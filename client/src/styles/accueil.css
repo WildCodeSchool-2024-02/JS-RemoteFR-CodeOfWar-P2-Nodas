@@ -17,19 +17,23 @@
 .landing-page {
   background-color: var(--primary-color);
   color: var(--primary-font-color);
+  padding: 1rem;
+}
+
+.landing-page-title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--primary-font-color);
+  background-image: url("../assets/images/catalogbuttonbackground.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
 header {
   padding: 1rem 0 0 1rem;
-}
-
-main {
-  padding: 1rem;
-}
-
-main > h2 {
-  padding: 1rem 0 2rem 0;
-  text-align: center;
 }
 
 .decobar {

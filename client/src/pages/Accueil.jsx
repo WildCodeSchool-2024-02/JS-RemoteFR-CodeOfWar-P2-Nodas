@@ -6,11 +6,6 @@ export default function Accueil() {
     { id: 2, url: "https://picsum.photos/400/250?random=2"},
     { id: 3, url: "https://picsum.photos/400/250?random=3"},
   ];
-  const categorieImages = [
-    { id: 4, url: "https://picsum.photos/400/250?random=4"},
-    { id: 5, url: "https://picsum.photos/400/250?random=5"},
-    { id: 6, url: "https://picsum.photos/400/250?random=6"},
-  ];
   const salesImages = [
     { id: 7, url: "https://picsum.photos/400/250?random=7"},
     { id: 8, url: "https://picsum.photos/400/250?random=8"},
@@ -18,12 +13,7 @@ export default function Accueil() {
   ];
   return (
     <div className="landing-page">
-    <header>
-      <div>
-        <h1>BANNER</h1>
-      </div>
-      </header>
-      <main>
+      <h1 className="landing-page-title">Welcome to Noda Games</h1>
       <section className="featured-games">
         <h2>Featured games</h2>
         <div className="decobar" />
@@ -31,12 +21,6 @@ export default function Accueil() {
           Featured games, high sales, high rating
         </p>
         <CarrouselStd images={featuredImages} />
-      </section>
-      <section className="featured-categorie">
-        <h2>Category</h2>
-        <div className="decobar" />
-        <p>Random category with some cards</p>
-        <CarrouselStd images={categorieImages} />
       </section>
       <section className="featured-sales">
         <h2>Sales of the moment</h2>
@@ -50,10 +34,6 @@ export default function Accueil() {
         <p>All the games you ever wanted to play are here, all platforms, all genres. Take a look and choose your next adventure !</p>
         <button type="button" id="catalog-button">See all games</button>
       </section>
-      </main>
-      <footer className="footer">
-        <h2>FOOTER</h2>
-      </footer>
     </div>
   );
 }
