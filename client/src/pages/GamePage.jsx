@@ -24,7 +24,7 @@ export default function GamePage() {
         {gameGenres.length > 0 ? (
           gameGenres.map((genre) => <li key={genre.id}>{genre.name}</li>)
         ) : (
-          <li>Jeu sans Catégorie</li>
+          <li>Divers</li>
         )}
       </ul>
 
