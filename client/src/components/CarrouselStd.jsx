@@ -15,27 +15,44 @@ export default function CarrouselStd({ images }) {
 
   return (
     <div className="carousel">
-      <button type="button" onClick={prevSlide} className="carousel-button prev">Previous</button>
+      <button
+        type="button"
+        onClick={prevSlide}
+        className="carousel-button prev"
+      >
+        Previous
+      </button>
       <div className="carousel-slides">
         {images.map((image, index) => (
-          <img
-            key={image.id}
-            src={image.url}
-            alt={`Slide ${image.id}`}
-            className={index === currentIndex ? "active" : "inactive"}
-          />
+          <div key={image.id} className="carousel-slide">
+            <h3 className={index === currentIndex ? "active" : "inactive"}>
+              {image.name}
+            </h3>
+            <img
+              src={image.url}
+              alt={`Slide ${image.id}`}
+              className={index === currentIndex ? "active" : "inactive"}
+            />
+          </div>
         ))}
       </div>
-      <button type="button" onClick={nextSlide} className="carousel-button next">Next</button>
+      <button
+        type="button"
+        onClick={nextSlide}
+        className="carousel-button next"
+      >
+        Next
+      </button>
     </div>
   );
 }
 
 CarrouselStd.propTypes = {
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        url: PropTypes.string.isRequired,
-      }).isRequired
-    ).isRequired,
-  };
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      url: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+};
