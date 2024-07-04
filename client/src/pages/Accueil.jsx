@@ -1,26 +1,27 @@
 import { useLoaderData } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
-import { getRandomGamesFeatured } from "../services/request";
+import {
+  getRandomGamesFeatured,
+  getRandomDiscountedGames,
+} from "../services/request";
 
 export default function Accueil() {
   const gamesData = useLoaderData();
-  const numberOfFeaturedGames = 5;
-  const featuredGames = getRandomGamesFeatured(
-    gamesData,
-    numberOfFeaturedGames
-  );
+  const numberOfGames = 5;
+  const featuredGames = getRandomGamesFeatured(gamesData, numberOfGames);
+  const salesGames = getRandomDiscountedGames(gamesData, numberOfGames);
 
   const featuredImages = featuredGames.map((game) => ({
     id: game.id,
     name: game.name,
     url: game.background_image,
   }));
-  const salesImages = [
-    { id: 7, url: "https://picsum.photos/400/250?random=7" },
-    { id: 8, url: "https://picsum.photos/400/250?random=8" },
-    { id: 9, url: "https://picsum.photos/400/250?random=9" },
-  ];
-  console.info(featuredImages);
+  const salesImages = salesGames.map((game) => ({
+    id: game.id,
+    name: game.name,
+    url: game.background_image,
+  }));
+  console.info(salesImages);
   return (
     <div className="landing-page">
       <h1 className="landing-page-title">Welcome to Noda Games</h1>

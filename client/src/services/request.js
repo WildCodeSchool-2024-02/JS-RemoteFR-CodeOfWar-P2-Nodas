@@ -22,3 +22,8 @@ export function getRandomGamesFeatured(games, num) {
   const mix = games.sort(() => 0.5 - Math.random());
   return mix.slice(0, num);
 }
+
+export function getRandomDiscountedGames(games, num) {
+  const mix = games.sort(() => 0.5 - Math.random());
+  return mix.slice(0, num);
+}
