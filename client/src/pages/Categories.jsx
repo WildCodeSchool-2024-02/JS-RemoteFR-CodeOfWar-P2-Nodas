@@ -12,7 +12,7 @@ export default function Categories() {
         {genres.length > 0 ? (
           genres.map((genre) => (
             <li className={`genres_list ${genre.name}`} key={genre.id}>
-              {genre.name}
+              <h3 id="category_name">{genre.name}</h3>
             </li>
           ))
         ) : (
