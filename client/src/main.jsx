@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Accueil />,
+        loader: () => fetchData().then((data) => data),
       },
       {
         path: "/catalog",
