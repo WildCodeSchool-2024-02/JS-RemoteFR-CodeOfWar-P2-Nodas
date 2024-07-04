@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export default function Categories() {
   const genres = useLoaderData();
@@ -12,7 +12,12 @@ export default function Categories() {
         {genres.length > 0 ? (
           genres.map((genre) => (
             <li className={`genres_list ${genre.name}`} key={genre.id}>
-              <h3 id="category_name">{genre.name}</h3>
+              <Link
+                style={{ backgroundImage: `url(${genre.image_background})` }}
+                to="/category"
+              >
+                {genre.name}
+              </Link>
             </li>
           ))
         ) : (

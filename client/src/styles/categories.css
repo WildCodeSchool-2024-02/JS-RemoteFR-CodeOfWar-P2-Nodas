@@ -12,130 +12,17 @@
 }
 
 .genres_list {
-  text-align: center;
-  border: 2px solid #352e4d;
-  width: 10rem;
-  border-radius: 64px;
-  height: 5rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-size: cover;
-  background-position: center;
+  flex-wrap: wrap;
+}
+
+.background_link_image {
+  width: 8rem;
+}
+
+.genres_list > a {
   color: white;
-}
-
-.genres_list::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-li > #category_name {
-  position: relative;
-  z-index: 2;
-}
-
-.Action {
-  background-image: url("https://image.jeuxvideo.com/medias-md/151309/1513093762-9608-card.jpg");
-  background-size: cover;
+  padding: 1rem 2rem;
   background-position: center;
-}
-
-.Indie {
-  background-image: url("https://cdn-www.konbini.com/files/2023/12/iNDIEgAMESfEAT.jpg?width=3840&quality=75&format=webp");
   background-size: cover;
-  background-position: center;
-}
-.Adventure {
-  background-image: url("https://cdn.futura-sciences.com/cdn-cgi/image/width=1024,quality=50,format=auto/sources/images/Clic2Load/aventure_Front.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.RPG {
-  background-image: url("https://popcorngame.fr/wp-content/uploads/2024/01/upcoming-rpgs-dragon-s-dogma-dragon-age-final-fantasy-rebirth.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Strategy {
-  background-image: url("https://metatrone.fr/wp-content/uploads/2024/03/mixcollage-19-feb-2024-05-31-pm-1674.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.Shooter {
-  background-image: url("https://i0.wp.com/www.gohanblog.fr/www/wp-content/uploads/2017/02/Shooter-Games.jpg?resize=750%2C425&ssl=1");
-  background-size: cover;
-  background-position: center;
-}
-.Casual {
-  background-image: url("https://larevuedesmedias.ina.fr/sites/default/files/illustration1.png");
-  background-size: cover;
-  background-position: center;
-}
-.Simulation {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScFc8gNtPCYStG0-PW3VaCeNlFVxQgI3zawQ&s");
-  background-size: cover;
-  background-position: center;
-}
-.Puzzle {
-  background-image: url("https://play-lh.googleusercontent.com/c5tqyz-709Q9IN5ozFek3Ry3kmYhEnsE4wfx_fyOhFzhXs-7-tYWRE2Rhe9V_k8WyA=w526-h296-rw");
-  background-size: cover;
-  background-position: center;
-}
-.Platformer {
-  background-image: url("https://c8.alamy.com/compfr/2m1k88k/2d-jeux-d-arcade-de-niveau-nuit-carte-interface-plate-forme-escaliers-pieces-de-monnaie-bonus-et-icones-en-bois-arriere-plan-d-arcade-retro-ecran-vectoriel-de-jeu-video-d-ordinateur-8bit-couches-d-application-de-jeu-avec-plates-formes-de-saut-2m1k88k.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Racing {
-  background-image: url("https://lemagsportauto.ouest-france.fr/wp-content/uploads/2017/12/Jeux-video-notre-top-10-des-jeux-de-racing-de-2017-Guide-Noel.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Arcade {
-  background-image: url("https://www.idboox.com/wp-content/uploads/2014/11/900-jeux-video-arcade-en-ligne.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Massively {
-  background-image: url("https://www.radiofrance.fr/s3/cruiser-production/2019/02/196833f5-df15-490a-b506-a96f0788fcba/1200x680_final-fantasy-xi-online-screenshot-dragon-knight.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Sports {
-  background-image: url("https://blog.bestbuy.ca/wp-content/uploads/2023/09/Major-league-sports-games.png");
-  background-size: cover;
-  background-position: center;
-}
-.Fighting {
-  background-image: url("https://iunctis.fr/uploads/jv/combat.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Family {
-  background-image: url("https://facteurgeekadmin.files.wordpress.com/2018/02/test-fg-jeux-vidc3a9o-mario-party-the-top-100-2.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Board {
-  background-image: url("https://gpstatic.com/acache/47/72/1/fr/s2-bd02672db833aadbe285f0a3305f823e.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.Educational {
-  background-image: url("https://media.ouest-france.fr/v1/pictures/MjAyMTA5NzZiOTUxNDgzYjdmNjI4MGQxNzFkZmUwZDNkNGJjYjk?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=b399abbe4e028b68c2653e08b901dcc48d6f7f0813b57c3774bbda978c0649ab");
-  background-size: cover;
-  background-position: center;
-}
-.Card {
-  background-image: url("https://cdn0.vox-cdn.com/uploads/chorus_asset/file/9198817/MTG_Arena_03.jpg");
-  background-size: cover;
-  background-position: center;
 }
