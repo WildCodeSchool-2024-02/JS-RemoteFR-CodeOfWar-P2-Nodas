@@ -15,6 +15,7 @@ import { fetchData, fetchGameInfo } from "./services/request";
 import "./styles/app.css";
 import "./styles/gamespages.css";
 import "./styles/navbar.css";
+import "./styles/footer.css";
 import "./styles/categorieitem.css";
 
 const router = createBrowserRouter([
