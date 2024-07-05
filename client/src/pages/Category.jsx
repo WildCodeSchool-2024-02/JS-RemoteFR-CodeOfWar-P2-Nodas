@@ -1,14 +1,14 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import CategorieItem from "../components/CategorieItem";
 
 function Categories() {
   const Games = useLoaderData();
-  const genre = "action";
+  const { genres } = useParams();
 
   return (
     <>
       <section>
-        <h1>{genre}</h1>
+        <h1>{genres}</h1>
         <h2>Nouvelles sorties</h2>
         {Games.slice(0, 3).map((InfoGames, index) => (
           <CategorieItem
@@ -29,7 +29,7 @@ function Categories() {
         ))}
       </section>
       <section>
-        <h2>Tous les jeux {genre}</h2>
+        <h2>Tous les jeux {genres}</h2>
         {Games.map((InfoGames, index) => (
           <CategorieItem
             key={[index]}

@@ -11,7 +11,11 @@ import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
 
-import { fetchData, fetchGameInfo, fetchCategories } from "./services/request";
+import {
+  fetchGameInfo,
+  fetchCategories,
+  fetchSelectedGenre,
+} from "./services/request";
 
 import "./styles/app.css";
 import "./styles/gamespages.css";
@@ -37,9 +41,9 @@ const router = createBrowserRouter([
         loader: fetchCategories,
       },
       {
-        path: "/category",
+        path: "/categories/:genres",
         element: <Category />,
-        loader: fetchData,
+        loader: ({ params }) => fetchSelectedGenre(params.genres),
       },
       {
         path: "/favoris",

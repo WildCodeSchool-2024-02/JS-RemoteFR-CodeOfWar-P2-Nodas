@@ -5,9 +5,7 @@ export default function Categories() {
 
   return (
     <section className="categories">
-      <h2>
-        Categories<span>:</span>
-      </h2>
+      <h2>Categories</h2>
       <ul className="container_list">
         {genres.length > 0 ? (
           genres.map((genre) => (
@@ -17,7 +15,7 @@ export default function Categories() {
                   backgroundImage: `url(${genre.image_background})`,
                   zIndex: 1,
                 }}
-                to="/category"
+                to={`/categories/${genre.name}`}
               >
                 {genre.name}
               </Link>
