@@ -15,6 +15,7 @@ import { fetchData, fetchGameById } from "./services/request";
 import "./styles/app.css";
 import "./styles/gamespages.css";
 import "./styles/navbar.css";
+import "./styles/accueil.css";
 import "./styles/categorieitem.css";
 
 const router = createBrowserRouter([
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Accueil />,
+        loader: fetchData,
       },
       {
         path: "/catalog",
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/categories",
         element: <Categories />,
-        loader: () => fetchData().then((data) => data),
+        loader: fetchData,
       },
       {
         path: "/favoris",

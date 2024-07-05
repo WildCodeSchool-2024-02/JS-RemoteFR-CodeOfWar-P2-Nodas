@@ -6,6 +6,12 @@
 
 :root {
   --primary-color: #232736;
+  --secondary-color: #352e4d;
+  --third-color: #6446af;
+  --fourth-color: #d44dd7;
+  --fifth-color: #f392fc;
+  --sixth-color: #01d4e0;
+  --primary-font-color: #dadada;
 }
 
 .Navbar {
@@ -25,12 +31,12 @@
   height: 5px;
   background: linear-gradient(
     90deg,
-    #d44dd7,
-    #01d4e0,
+    var(--fourth-color),
+    var(--sixth-color),
     #ff6b00,
-    #01d4e0,
-    #d44dd7,
-    #01d4e0
+    var(--sixth-color),
+    var(--fourth-color),
+    var(--sixth-color)
   );
   background-size: 400%;
   animation: animate 10s linear infinite;
