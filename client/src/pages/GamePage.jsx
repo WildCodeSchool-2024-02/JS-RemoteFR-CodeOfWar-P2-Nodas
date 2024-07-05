@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
+  const gameGenres = gameInfo.genres;
 
   return (
     <div>
@@ -20,8 +21,13 @@ export default function GamePage() {
         </div>
       </section>
       <ul className="types_of_game">
-        <li>Action</li>
+        {gameGenres.length > 0 ? (
+          gameGenres.map((genre) => <li key={genre.id}>{genre.name}</li>)
+        ) : (
+          <li>Divers</li>
+        )}
       </ul>
+
       <section className="description_game complet">
         <h3 className="title_gamepage">
           Description<span>:</span>
