@@ -13,7 +13,10 @@ export default function Categories() {
           genres.map((genre) => (
             <li className={`genres_list ${genre.name}`} key={genre.id}>
               <Link
-                style={{ backgroundImage: `url(${genre.image_background})` }}
+                style={{
+                  backgroundImage: `url(${genre.image_background})`,
+                  zIndex: 1,
+                }}
                 to="/category"
               >
                 {genre.name}
