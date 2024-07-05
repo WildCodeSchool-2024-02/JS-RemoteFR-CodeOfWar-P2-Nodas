@@ -16,6 +16,7 @@ import "./styles/app.css";
 import "./styles/gamespages.css";
 import "./styles/navbar.css";
 import "./styles/categorieitem.css";
+import "./styles/favoris.css";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: "/favoris",
         element: <Favoris />,
+        loader: () => fetchData().then((data) => data),
       },
       {
         path: "/basket",
