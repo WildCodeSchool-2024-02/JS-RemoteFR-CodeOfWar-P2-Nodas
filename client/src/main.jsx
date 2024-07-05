@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Accueil />,
-        loader: () => fetchData().then((data) => data),
+        loader: fetchData,
       },
       {
         path: "/catalog",
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/categories",
         element: <Categories />,
-        loader: () => fetchData().then((data) => data),
+        loader: fetchData,
       },
       {
         path: "/favoris",
