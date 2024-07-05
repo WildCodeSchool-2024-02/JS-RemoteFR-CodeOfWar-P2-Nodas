@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+}
+
+:root {
+  --primary-color: #232736;
+  --secondary-color: #352e4d;
+  --third-color: #6446af;
+  --fourth-color: #d44dd7;
+  --fifth-color: #f392fc;
+  --sixth-color: #01d4e0;
+  --primary-font-color: #dadada;
+}
+
+h2 {
+  margin: 1rem;
+}
+
+.FavorisItem > img {
+  width: 21rem;
+  margin: 0 1.2rem;
+  border-radius: 0.6rem;
+  height: 10rem;
+}
+
+ul {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding: 0.2rem;
+}
+
+.paniericon {
+  width: 1.3rem;
+}
+
+.Coeur-Prix {
+  display: flex;
+  gap: 1rem;
+}
