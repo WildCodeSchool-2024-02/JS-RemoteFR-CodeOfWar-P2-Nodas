@@ -10,13 +10,31 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel img {
+.carousel .carousel-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel .carousel-slide img {
   width: 100%;
   display: none;
   border-radius: 8px;
 }
 
-.carousel img.active {
+.carousel .carousel-slide h3 {
+  color: white;
+  text-align: center;
+  margin: 1rem 0;
+  display: none;
+  border: 2px solid grey;
+  background-color: grey;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 25%;
+}
+.carousel .carousel-slide .active {
   display: block;
 }
 
