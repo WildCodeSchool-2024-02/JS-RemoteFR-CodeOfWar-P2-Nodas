@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
 import getRandomGames from "../services/utils";
 
@@ -34,6 +34,7 @@ export default function Accueil() {
         <CarrouselStd images={salesImages} />
       </section>
       <h2>Still hungry for more ?</h2>
+      <div className="decobar" />
       <section className="search-engine">
         <h2>Explore all possibilities in our endless catalog</h2>
         <p>
@@ -41,7 +42,7 @@ export default function Accueil() {
           genres. Take a look and choose your next adventure !
         </p>
         <button type="button" id="catalog-button">
-          See all games
+          <Link to="/catalog">See all games</Link>
         </button>
       </section>
     </div>
