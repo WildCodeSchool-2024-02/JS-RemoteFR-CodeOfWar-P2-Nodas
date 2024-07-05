@@ -23,7 +23,11 @@ export function getRandomGamesFeatured(games, num) {
   return mix.slice(0, num);
 }
 
-export function getRandomDiscountedGames(games, num) {
-  const mix = games.sort(() => 0.5 - Math.random());
-  return mix.slice(0, num);
+export function fetchGameById(id) {
+  return axios
+    .get(
+      `https://api.rawg.io/api/games/${id}?key=${import.meta.env.VITE_API_KEY}`
+    )
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
 }
