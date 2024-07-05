@@ -10,11 +10,12 @@ import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
 
-import { fetchData, fetchGameInfo } from "./services/request";
+import { fetchData, fetchGameById } from "./services/request";
 
 import "./styles/app.css";
 import "./styles/gamespages.css";
 import "./styles/navbar.css";
+import "./styles/accueil.css";
 import "./styles/categorieitem.css";
 import "./styles/favoris.css";
 
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Accueil />,
+        loader: fetchData,
       },
       {
         path: "/catalog",
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/categories",
         element: <Categories />,
-        loader: () => fetchData().then((data) => data),
+        loader: fetchData,
       },
       {
         path: "/favoris",
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: "/gamepage/:id",
         element: <GamePage />,
-        loader: () => fetchGameInfo().then((data) => data),
+        loader: ({ params }) => fetchGameById(params.id).then((data) => data),
       },
     ],
   },

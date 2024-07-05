@@ -12,6 +12,10 @@ body {
   --primary-font-color: #dadada;
 }
 
+h2 {
+  margin: 1rem;
+}
+
 .FavorisItem > img {
   width: 21rem;
   margin: 0 1.2rem;
