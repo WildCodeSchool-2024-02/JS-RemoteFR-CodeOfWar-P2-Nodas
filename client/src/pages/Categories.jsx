@@ -1,45 +1,30 @@
-import { useLoaderData } from "react-router-dom";
-import CategorieItem from "../components/CategorieItem";
+import { Link, useLoaderData } from "react-router-dom";
 
-function Categories() {
-  const Games = useLoaderData();
-  const genre = "action";
+export default function Categories() {
+  const genres = useLoaderData();
 
   return (
-    <>
-      <section>
-        <h1>{genre}</h1>
-        <h2>Nouvelles sorties</h2>
-        {Games.slice(0, 3).map((InfoGames, index) => (
-          <CategorieItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-          />
-        ))}
-      </section>
-      <section>
-        <h2>Les plus populaires</h2>
-        {Games.slice(0, 3).map((InfoGames, index) => (
-          <CategorieItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-          />
-        ))}
-      </section>
-      <section>
-        <h2>Tous les jeux {genre}</h2>
-        {Games.map((InfoGames, index) => (
-          <CategorieItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-          />
-        ))}
-      </section>
-    </>
+    <section className="categories">
+      <h2>Categories</h2>
+      <ul className="container_list">
+        {genres.length > 0 ? (
+          genres.map((genre) => (
+            <li className={`genres_list ${genre.name}`} key={genre.id}>
+              <Link
+                style={{
+                  backgroundImage: `url(${genre.image_background})`,
+                  zIndex: 1,
+                }}
+                to={`/categories/${genre.name}`}
+              >
+                {genre.name}
+              </Link>
+            </li>
+          ))
+        ) : (
+          <li>Divers</li>
+        )}
+      </ul>
+    </section>
   );
 }
-
-export default Categories;

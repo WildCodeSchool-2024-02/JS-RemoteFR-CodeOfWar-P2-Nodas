@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
+  const gameGenres = gameInfo.genres;
   const gamePlatforms = gameInfo.platforms;
 
   return (
@@ -21,16 +22,21 @@ export default function GamePage() {
         </div>
       </section>
       <ul className="types_of_game">
-        <li>Action</li>
+        {gameGenres.length > 0 ? (
+          gameGenres.map((genre) => <li key={genre.id}>{genre.name}</li>)
+        ) : (
+          <li>Divers</li>
+        )}
       </ul>
+
       <section className="description_game complet">
-        <h3>
+        <h3 className="title_gamepage">
           Description<span>:</span>
         </h3>
         <p>{gameInfo.description_raw}</p>
       </section>
       <section className="platform_game">
-        <h3>
+        <h3 className="title_gamepage">
           Plateformes<span>:</span>
         </h3>
         <ul className="types_of_platform">
@@ -45,13 +51,13 @@ export default function GamePage() {
       </section>
       <section className="developers_publishers">
         <div className="developers">
-          <h3>
+          <h3 className="title_gamepage">
             Publishers<span>:</span>
           </h3>
           <p>CD PROJECT RED</p>
         </div>
         <div className="publishers">
-          <h3>
+          <h3 className="title_gamepage">
             Developers<span>:</span>
           </h3>
           <p>CD PROJECT RED</p>
