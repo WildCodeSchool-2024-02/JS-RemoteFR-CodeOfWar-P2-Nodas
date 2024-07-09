@@ -15,7 +15,7 @@ body {
   height: 10rem;
 }
 
-ul {
+.gamename_prix {
   display: flex;
   justify-content: center;
   color: white;
