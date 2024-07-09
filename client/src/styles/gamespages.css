@@ -79,12 +79,12 @@ nav {
   color: #ababab;
 }
 
-h3 {
+.title_gamepage {
   padding-bottom: 8px;
   font-size: 16px;
 }
 
-h3 > span {
+.title_gamepage > span {
   color: green;
 }
 

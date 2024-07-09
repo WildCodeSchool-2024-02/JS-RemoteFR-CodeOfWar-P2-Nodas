@@ -1,44 +1,40 @@
-import { useLoaderData } from "react-router-dom";
-import FavorisItem from "../components/FavorisItem";
-import redlike from "../assets/images/redlike.svg";
-import paniericon from "../assets/images/paniericon.svg";
+import { useLoaderData, useParams } from "react-router-dom";
+import CategorieItem from "../components/CategorieItem";
 
-function Favoris() {
+function Categories() {
   const Games = useLoaderData();
-  console.info(Games);
+  const { genres } = useParams();
+
   return (
     <>
       <section>
-        <h2>Favoris</h2>
+        <h1>{genres}</h1>
+        <h2>Nouvelles sorties</h2>
         {Games.slice(0, 3).map((InfoGames, index) => (
-          <FavorisItem
+          <CategorieItem
             key={[index]}
             gamesImage={InfoGames.background_image}
             gamesName={InfoGames.name}
-            redlike={redlike}
-            paniericon={paniericon}
           />
         ))}
       </section>
       <section>
+        <h2>Les plus populaires</h2>
         {Games.slice(0, 3).map((InfoGames, index) => (
-          <FavorisItem
+          <CategorieItem
             key={[index]}
             gamesImage={InfoGames.background_image}
             gamesName={InfoGames.name}
-            redlike={redlike}
-            paniericon={paniericon}
           />
         ))}
       </section>
       <section>
+        <h2>Tous les jeux {genres}</h2>
         {Games.map((InfoGames, index) => (
-          <FavorisItem
+          <CategorieItem
             key={[index]}
             gamesImage={InfoGames.background_image}
             gamesName={InfoGames.name}
-            redlike={redlike}
-            paniericon={paniericon}
           />
         ))}
       </section>
@@ -46,4 +42,4 @@ function Favoris() {
   );
 }
 
-export default Favoris;
+export default Categories;
