@@ -1,13 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
-import { getRandomGamesFeatured } from "../services/request";
+import getRandomGames from "../services/utils";
 import like from "../assets/images/like.png";
 
 export default function Accueil() {
-  const gamesData = useLoaderData();
-  const numberOfGames = 5;
-  const featuredGames = getRandomGamesFeatured(gamesData, numberOfGames);
-  const salesGames = getRandomGamesFeatured(gamesData, numberOfGames);
+  const gamesDetails = useLoaderData();
+  const numberOfRandomGames = 5;
+  const featuredGames = getRandomGames(gamesDetails, numberOfRandomGames);
+  const salesGames = getRandomGames(gamesDetails, numberOfRandomGames);
 
   const featuredImages = featuredGames.map((game) => ({
     id: game.id,
@@ -19,7 +19,7 @@ export default function Accueil() {
     name: game.name,
     url: game.background_image,
   }));
-  console.info(salesImages);
+
   return (
     <div className="landing-page">
       <h1 className="landing-page-title">Welcome to Noda Games</h1>
@@ -38,6 +38,7 @@ export default function Accueil() {
         <img src={like} alt="like" />
       </section>
       <h2>Still hungry for more ?</h2>
+      <div className="decobar" />
       <section className="search-engine">
         <h2>Explore all possibilities in our endless catalog</h2>
         <p>
@@ -45,7 +46,7 @@ export default function Accueil() {
           genres. Take a look and choose your next adventure !
         </p>
         <button type="button" id="catalog-button">
-          See all games
+          <Link to="/catalog">See all games</Link>
         </button>
       </section>
     </div>

@@ -51,8 +51,8 @@ CarrouselStd.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      url: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
 };
