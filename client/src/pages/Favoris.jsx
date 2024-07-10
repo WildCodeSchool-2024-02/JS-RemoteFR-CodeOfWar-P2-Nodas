@@ -8,31 +8,10 @@ function Favoris() {
   console.info(Games);
   return (
     <>
+    <h2>coucou</h2>
       <section>
         <h2>Favoris</h2>
         {Games.slice(0, 3).map((InfoGames, index) => (
-          <FavorisItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-            redlike={redlike}
-            paniericon={paniericon}
-          />
-        ))}
-      </section>
-      <section>
-        {Games.slice(0, 3).map((InfoGames, index) => (
-          <FavorisItem
-            key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-            redlike={redlike}
-            paniericon={paniericon}
-          />
-        ))}
-      </section>
-      <section>
-        {Games.map((InfoGames, index) => (
           <FavorisItem
             key={[index]}
             gamesImage={InfoGames.background_image}
