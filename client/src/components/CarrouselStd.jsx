@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../styles/carrouselstd.css";
 
@@ -25,9 +26,12 @@ export default function CarrouselStd({ images }) {
       <div className="carousel-slides">
         {images.map((image, index) => (
           <div key={image.id} className="carousel-slide">
-            <h3 className={index === currentIndex ? "active" : "inactive"}>
-              {image.name}
-            </h3>
+            <Link 
+            className={index === currentIndex ? "active" : "inactive"}
+            style={{
+              zIndex: 1,
+            }}
+            to={`/gamepage/${image.id}`}>{image.name}</Link>
             <img
               src={image.url}
               alt={`Slide ${image.id}`}
