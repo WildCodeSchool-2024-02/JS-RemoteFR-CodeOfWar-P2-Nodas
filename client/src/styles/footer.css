@@ -24,13 +24,6 @@ section > a > img {
   width: 2.6rem;
 }
 
-/* .iconHome > a > img {
-  width: 2.4rem;
-  position: absolute;
-  margin: -1rem -2.8rem;
-  opacity: 0.8;
+.iconsFoot > div > button > img {
+  width: 2.6rem;
 }
-
-.iconHome > a:hover {
-  opacity: 0.4;
-} */
