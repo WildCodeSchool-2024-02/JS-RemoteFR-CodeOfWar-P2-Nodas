@@ -1,0 +1,9 @@
+.container_catalogue {
+  display: flex;
+  justify-content: space-around;
+}
+
+.label_search {
+  display: flex;
+  flex-direction: column;
+}
