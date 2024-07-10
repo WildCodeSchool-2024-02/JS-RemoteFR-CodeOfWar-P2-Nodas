@@ -1,7 +1,6 @@
 import { useLoaderData, Link } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
 import getRandomGames from "../services/utils";
-import like from "../assets/images/like.svg";
 
 export default function Accueil() {
   const gamesDetails = useLoaderData();
@@ -28,14 +27,12 @@ export default function Accueil() {
         <div className="decobar" />
         <p>Featured games, high sales, high rating</p>
         <CarrouselStd images={featuredImages} />
-        <img src={like} alt="like" />
       </section>
       <section className="featured-sales">
         <h2>Sales of the moment</h2>
         <div className="decobar" />
         <p>Featured sales with some game cards and reduced prices</p>
         <CarrouselStd images={salesImages} />
-        <img src={like} alt="like" />
       </section>
       <h2>Still hungry for more ?</h2>
       <div className="decobar" />

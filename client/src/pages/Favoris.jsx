@@ -1,27 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+import { useContext } from "react";
 import FavorisItem from "../components/FavorisItem";
-import redlike from "../assets/images/redlike.svg";
-import paniericon from "../assets/images/paniericon.svg";
+import FavoriteContext from "../contexts/FavoriteContext";
 
 function Favoris() {
-  const Games = useLoaderData();
-  console.info(Games);
+  const {favoris} = useContext(FavoriteContext)
+  
   return (
-    <>
-    <h2>coucou</h2>
+
       <section>
         <h2>Favoris</h2>
-        {Games.slice(0, 3).map((InfoGames, index) => (
+        {favoris.map((id, index) => (
           <FavorisItem
             key={[index]}
-            gamesImage={InfoGames.background_image}
-            gamesName={InfoGames.name}
-            redlike={redlike}
-            paniericon={paniericon}
+            id={id}
           />
         ))}
       </section>
-    </>
   );
 }
 
