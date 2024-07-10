@@ -46,3 +46,25 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
+
+@media (min-width: 992px) {
+  .categories h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .container_list {
+    gap: 1rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .genres_list > a {
+    width: 16rem;
+    height: 8rem;
+    font-weight: bolder;
+    font-size: larger;
+  }
+}
