@@ -1,7 +1,29 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import FavoriteContext from "../contexts/FavoriteContext";
+
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
+  const gameGenres = gameInfo.genres;
+  const gamePlatforms = gameInfo.platforms;
+
+  const {favoris, setFavoris} = useContext(FavoriteContext)
+
+  const addFavorite = () => {
+    setFavoris((prevFavorites) => {
+      const newFavorites = [...prevFavorites];
+      if (newFavorites.includes(gameInfo.id)) {
+        const index = newFavorites.indexOf(gameInfo.id);
+        if (index > -1) {
+          newFavorites.splice(index, 1);
+        }
+      } else {
+        newFavorites.push(gameInfo.id);
+      }
+      return newFavorites;
+    });
+  };
 
   return (
     <div>
@@ -20,44 +42,53 @@ export default function GamePage() {
         </div>
       </section>
       <ul className="types_of_game">
-        <li>Action</li>
+        {gameGenres.length > 0 ? (
+          gameGenres.map((genre) => <li key={genre.id}>{genre.name}</li>)
+        ) : (
+          <li>Divers</li>
+        )}
       </ul>
+
       <section className="description_game complet">
-        <h3>
+        <h3 className="title_gamepage">
           Description<span>:</span>
         </h3>
         <p>{gameInfo.description_raw}</p>
       </section>
       <section className="platform_game">
-        <h3>
+        <h3 className="title_gamepage">
           Plateformes<span>:</span>
         </h3>
         <ul className="types_of_platform">
-          <li className="platform xbox">Xbox</li>
-          <li className="platform playstation">Playstation</li>
-          <li className="platform nintendo">Nintendo Switch</li>
+          {gamePlatforms.length > 0 ? (
+            gamePlatforms.map((platform) => (
+              <li key={platform.id}>{platform.platform.name}</li>
+            ))
+          ) : (
+            <li>Divers Plateforme</li>
+          )}
         </ul>
       </section>
       <section className="developers_publishers">
         <div className="developers">
-          <h3>
+          <h3 className="title_gamepage">
             Publishers<span>:</span>
           </h3>
           <p>CD PROJECT RED</p>
         </div>
         <div className="publishers">
-          <h3>
+          <h3 className="title_gamepage">
             Developers<span>:</span>
           </h3>
           <p>CD PROJECT RED</p>
         </div>
       </section>
       <section className="like_added">
-        <button className="like_button" type="button">
-          <img src="./src/assets/images/like.png" alt="like" />
+        <button className="like_button" type="button" onClick={addFavorite}>
+          <img src={favoris.includes(gameInfo.id) ? "../src/assets/images/like-filled.svg" : "../src/assets/images/like.svg"} alt="like" />
         </button>
         <button className="added_button" type="button">
-          <img src="./src/assets/images/loggoCaddie.png" alt="caddie" />
+          <img src="../src/assets/images/loggoCaddie.png" alt="caddie" />
           <p>Ajouter au panier</p>
         </button>
       </section>
