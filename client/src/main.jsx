@@ -10,6 +10,7 @@ import Favoris from "./pages/Favoris";
 import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
+import { FavoriteProvider } from "./contexts/FavoriteContext";
 
 import {
   fetchData,
@@ -75,6 +76,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
+    <FavoriteProvider>
     <RouterProvider router={router} />
+    </FavoriteProvider>
   </React.StrictMode>
 );

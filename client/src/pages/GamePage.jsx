@@ -1,9 +1,29 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import FavoriteContext from "../contexts/FavoriteContext";
+
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
   const gameGenres = gameInfo.genres;
   const gamePlatforms = gameInfo.platforms;
+
+  const {favoris, setFavoris} = useContext(FavoriteContext)
+
+  const addFavorite = () => {
+    setFavoris((prevFavorites) => {
+      const newFavorites = [...prevFavorites];
+      if (newFavorites.includes(gameInfo.id)) {
+        const index = newFavorites.indexOf(gameInfo.id);
+        if (index > -1) {
+          newFavorites.splice(index, 1);
+        }
+      } else {
+        newFavorites.push(gameInfo.id);
+      }
+      return newFavorites;
+    });
+  };
 
   return (
     <div>
@@ -64,11 +84,11 @@ export default function GamePage() {
         </div>
       </section>
       <section className="like_added">
-        <button className="like_button" type="button">
-          <img src="./src/assets/images/like.png" alt="like" />
+        <button className="like_button" type="button" onClick={addFavorite}>
+          <img src={favoris.includes(gameInfo.id) ? "../src/assets/images/like-filled.svg" : "../src/assets/images/like.svg"} alt="like" />
         </button>
         <button className="added_button" type="button">
-          <img src="./src/assets/images/loggoCaddie.png" alt="caddie" />
+          <img src="../src/assets/images/loggoCaddie.png" alt="caddie" />
           <p>Ajouter au panier</p>
         </button>
       </section>
