@@ -1,7 +1,7 @@
 import { useLoaderData, Link } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
 import getRandomGames from "../services/utils";
-import like from "../assets/images/like.png";
+import like from "../assets/images/like.svg";
 
 export default function Accueil() {
   const gamesDetails = useLoaderData();

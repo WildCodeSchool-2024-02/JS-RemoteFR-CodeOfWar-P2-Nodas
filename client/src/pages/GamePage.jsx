@@ -86,7 +86,7 @@ export default function GamePage() {
       </section>
       <section className="like_added">
         <button className="like_button" type="button" onClick={addFavorite}>
-          <img src="../src/assets/images/like.png" alt="like" />
+          <img src={favoris.includes(gameInfo.id) ? "../src/assets/images/like-filled.svg" : "../src/assets/images/like.svg"} alt="like" />
         </button>
         <button className="added_button" type="button">
           <img src="../src/assets/images/loggoCaddie.png" alt="caddie" />
