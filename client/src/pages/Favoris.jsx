@@ -4,6 +4,7 @@ import FavoriteContext from "../contexts/FavoriteContext";
 
 function Favoris() {
   const {favoris} = useContext(FavoriteContext)
+  
   return (
 
       <section>

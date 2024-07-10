@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  color: var(--primary-font-color);
 }
 
 :root {
@@ -16,28 +17,20 @@ h2 {
   margin: 1rem;
 }
 
-.FavorisItem > img {
-  width: 21rem;
-  margin: 0 1.2rem;
-  border-radius: 0.6rem;
-  height: 10rem;
+.FavorisItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 
-ul {
+.under-image-fav {
   display: flex;
-  color: white;
   justify-content: space-between;
-  margin-left: 1.2rem;
-  margin-right: 1.2rem;
-  margin-bottom: 1.5rem;
-  padding: 0.2rem;
+  align-items: center;
 }
 
-.paniericon {
-  width: 1.3rem;
-}
-
-.Coeur-Prix {
-  display: flex;
-  gap: 1rem;
+.FavorisItem > img {
+  border-radius: 8px;
+  width: 100%;
 }

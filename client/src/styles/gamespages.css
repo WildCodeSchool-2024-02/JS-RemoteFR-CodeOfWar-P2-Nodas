@@ -152,6 +152,11 @@ nav {
   color: white;
 }
 
+.like_button:hover {
+  cursor: pointer;
+  background-color: var(--fifth-color);
+}
+
 .like_button > img {
   width: 100%;
 }
