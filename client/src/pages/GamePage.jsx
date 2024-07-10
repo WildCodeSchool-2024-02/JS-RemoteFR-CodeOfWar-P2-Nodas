@@ -9,7 +9,6 @@ export default function GamePage() {
   const gamePlatforms = gameInfo.platforms;
 
   const {favoris, setFavoris} = useContext(FavoriteContext)
-  console.info(favoris)
 
   const addFavorite = () => {
     setFavoris((prevFavorites) => {

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function FavorisItem({ id }) {
-  console.info(id);
   const [gameInfo, setGameInfo] = useState("");
   useEffect(() => {
       axios
@@ -14,7 +13,6 @@ export default function FavorisItem({ id }) {
         .catch((error) => console.error(error));
   }, [id]);
 
-  console.info(gameInfo);
   return (
     <div className="FavorisItem">
       <img src={gameInfo.background_image} alt={gameInfo.name} />
