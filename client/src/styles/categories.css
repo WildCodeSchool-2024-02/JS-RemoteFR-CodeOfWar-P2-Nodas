@@ -46,3 +46,9 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
+
+@media (min-width: 992px) {
+  .categories h2 {
+    text-align: center;
+  }
+}
