@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         loader: fetchData,
       },
       {
-        path: "/catalog",
+        path: "/catalogue",
         element: <Catalogue />,
       },
       {
