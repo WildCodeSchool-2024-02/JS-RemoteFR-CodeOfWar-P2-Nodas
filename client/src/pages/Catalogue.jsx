@@ -3,7 +3,7 @@ export default function Catalogue() {
     <div className="container_catalogue">
       <section className="filter_catalogue">
         <h2>Filtrer les jeux par :</h2>
-        <button type="button">Réinitiliser les filtres</button>
+        <button className="reinitialisation"type="button">Réinitiliser les filtres</button>
         <p>CHERCHER UN JEU</p>
         <input type="text" name="Nom du jeu" />
         <div className="label_search">
