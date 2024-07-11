@@ -1,4 +1,8 @@
+import { useLoaderData } from "react-router-dom";
+
 export default function Catalogue() {
+  const platforms = useLoaderData();
+  console.info(platforms)
   return (
     <div className="container_catalogue">
       <section className="filter_catalogue">
@@ -19,6 +23,8 @@ export default function Catalogue() {
           </label>
           <select name="platform">
             <option value="">--choisir une platforme</option>
+            {platforms.map((platform) => 
+            <option key={platform.id}>{platform.name}</option> )}
           </select>
 
           <label className="liste_label" htmlFor="select-developpers">

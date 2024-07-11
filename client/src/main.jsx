@@ -16,6 +16,7 @@ import {
   fetchGameById,
   fetchSelectedGenre,
   fetchCategories,
+  fetchPlaforms,
 } from "./services/request";
 
 import "./styles/app.css";
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       {
         path: "/catalogue",
         element: <Catalogue />,
+        loader: fetchPlaforms,
       },
       {
         path: "/categories",
