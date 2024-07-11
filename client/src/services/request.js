@@ -43,10 +43,17 @@ export function fetchGameById(id) {
     .catch((error) => console.error(error));
 }
 
-export function fetchPlaforms() {
-  return axios 
-  .get(`https://api.rawg.io/api/platforms/lists/parents?key=${import.meta.env.VITE_API_KEY}`)
-  .then((response) => response.data.results)
-  .catch((error) => console.error(error));
-
+export function fetchSearchFilters() {
+  const promise1 = axios.get(
+    `https://api.rawg.io/api/platforms/lists/parents?key=${import.meta.env.VITE_API_KEY}`
+  );
+  const promise2 = axios.get(
+    `https://api.rawg.io/api/genres?key=${import.meta.env.VITE_API_KEY}`
+  );
+  const promise3 = axios.get(
+    `https://api.rawg.io/api/stores?key=${import.meta.env.VITE_API_KEY}`
+  );
+  return Promise.all([promise1, promise2, promise3])
+    .then((response) => response.map((respons) => respons.data.results))
+    .catch((error) => console.error(error));
 }

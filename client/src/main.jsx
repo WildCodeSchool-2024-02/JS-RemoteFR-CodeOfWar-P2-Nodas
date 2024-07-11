@@ -16,7 +16,7 @@ import {
   fetchGameById,
   fetchSelectedGenre,
   fetchCategories,
-  fetchPlaforms,
+  fetchSearchFilters,
 } from "./services/request";
 
 import "./styles/app.css";
@@ -26,7 +26,7 @@ import "./styles/accueil.css";
 import "./styles/categorieitem.css";
 import "./styles/categories.css";
 import "./styles/favoris.css";
-import "./styles/catalogue.css"
+import "./styles/catalogue.css";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: "/catalogue",
         element: <Catalogue />,
-        loader: fetchPlaforms,
+        loader: fetchSearchFilters,
       },
       {
         path: "/categories",

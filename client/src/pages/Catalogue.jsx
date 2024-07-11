@@ -1,37 +1,46 @@
 import { useLoaderData } from "react-router-dom";
 
 export default function Catalogue() {
-  const platforms = useLoaderData();
-  console.info(platforms)
+  const filtersData = useLoaderData();
+
   return (
     <div className="container_catalogue">
       <section className="filter_catalogue">
         <h2>Filtrer les jeux par :</h2>
-        <button className="reinitialisation"type="button">Réinitiliser les filtres</button>
+        <button className="reinitialisation" type="button">
+          Réinitiliser les filtres
+        </button>
         <p>CHERCHER UN JEU</p>
         <input type="text" name="Nom du jeu" />
         <div className="label_search">
           <label className="liste_label" htmlFor="select-genre">
-            GENRE
+            GENRES
           </label>
           <select name="genre">
             <option value="">--choisir un genre</option>
+            {filtersData[1].map((genre) => (
+              <option key={genre.id}>{genre.name}</option>
+            ))}
           </select>
 
           <label className="liste_label" htmlFor="select-platfome">
-            PLATFORME
+            PLATEFORMES
           </label>
           <select name="platform">
             <option value="">--choisir une platforme</option>
-            {platforms.map((platform) => 
-            <option key={platform.id}>{platform.name}</option> )}
+            {filtersData[0].map((platform) => (
+              <option key={platform.id}>{platform.name}</option>
+            ))}
           </select>
 
-          <label className="liste_label" htmlFor="select-developpers">
-            DEVELOPPERS
+          <label className="liste_label" htmlFor="select-store">
+            STORES
           </label>
-          <select name="developpers">
-            <option value="">--choisir un developper</option>
+          <select name="stores">
+            <option value="">--choisir un store</option>
+            {filtersData[2].map((store) => (
+              <option key={store.id}>{store.name}</option>
+            ))}
           </select>
         </div>
       </section>
