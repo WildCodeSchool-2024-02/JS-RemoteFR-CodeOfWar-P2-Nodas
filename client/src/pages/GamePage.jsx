@@ -7,6 +7,8 @@ export default function GamePage() {
   const gameInfo = useLoaderData();
   const gameGenres = gameInfo.genres;
   const gamePlatforms = gameInfo.platforms;
+ const gamePublishers = gameInfo.publishers;
+  console.info(gamePublishers);
 
   const {favoris, setFavoris} = useContext(FavoriteContext)
 
@@ -74,7 +76,7 @@ export default function GamePage() {
           <h3 className="title_gamepage">
             Publishers<span>:</span>
           </h3>
-          <p>CD PROJECT RED</p>
+          {gamePublishers.length > 0 ? (gamePublishers.map((publisher) => (<p key={publisher.id} className="publisher">{publisher.name}</p>))) : (<p>Inconnu</p>)}
         </div>
         <div className="publishers">
           <h3 className="title_gamepage">
