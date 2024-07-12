@@ -2,15 +2,13 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteContext from "../contexts/FavoriteContext";
 
-
 export default function GamePage() {
   const gameInfo = useLoaderData();
   const gameGenres = gameInfo.genres;
   const gamePlatforms = gameInfo.platforms;
- const gamePublishers = gameInfo.publishers;
-  console.info(gamePublishers);
+  const gamePublishers = gameInfo.publishers;
 
-  const {favoris, setFavoris} = useContext(FavoriteContext)
+  const { favoris, setFavoris } = useContext(FavoriteContext);
 
   const addFavorite = () => {
     setFavoris((prevFavorites) => {
@@ -76,7 +74,15 @@ export default function GamePage() {
           <h3 className="title_gamepage">
             Publishers<span>:</span>
           </h3>
-          {gamePublishers.length > 0 ? (gamePublishers.map((publisher) => (<p key={publisher.id} className="publisher">{publisher.name}</p>))) : (<p>Inconnu</p>)}
+          {gamePublishers.length > 0 ? (
+            gamePublishers.map((publisher) => (
+              <p key={publisher.id} className="publisher">
+                {publisher.name}
+              </p>
+            ))
+          ) : (
+            <p>Inconnu</p>
+          )}
         </div>
         <div className="publishers">
           <h3 className="title_gamepage">
@@ -87,7 +93,14 @@ export default function GamePage() {
       </section>
       <section className="like_added">
         <button className="like_button" type="button" onClick={addFavorite}>
-          <img src={favoris.includes(gameInfo.id) ? "../src/assets/images/like-filled.svg" : "../src/assets/images/like.svg"} alt="like" />
+          <img
+            src={
+              favoris.includes(gameInfo.id)
+                ? "../src/assets/images/like-filled.svg"
+                : "../src/assets/images/like.svg"
+            }
+            alt="like"
+          />
         </button>
         <button className="added_button" type="button">
           <img src="../src/assets/images/loggoCaddie.png" alt="caddie" />
