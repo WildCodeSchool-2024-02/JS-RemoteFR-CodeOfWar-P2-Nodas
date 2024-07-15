@@ -28,7 +28,7 @@ export function fetchCategories() {
 export function fetchSelectedGenre(genres) {
   const genreReader = (genre) => {
     const genreName = {
-      RPG: "role-playing-games-rpg",
+      "RPG": "role-playing-games-rpg",
       "Massively Multiplayer": "massively-multiplayer",
       "Board Games": "board-games",
     };
