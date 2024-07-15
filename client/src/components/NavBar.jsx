@@ -15,14 +15,16 @@ export default function NavBar() {
   return (
     <>
       <nav className="Navbar">
-        <img src={logong} alt="Logo" />
+        <Link to="/">
+          <img src={logong} alt="Logo" />
+        </Link>
         <div className="iconsGroup">
-          <a href="/search">
+          <Link to="/catalog">
             <img src={searchicon} alt="Logo recherche" />
-          </a>
-          <a href="/cart">
+          </Link>
+          <Link to="/cart">
             <img src={paniericon} alt="Logo panier" />
-          </a>
+          </Link>
           <button
             type="button"
             onClick={toggleMenu}
