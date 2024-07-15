@@ -60,13 +60,30 @@ export default function GamePage() {
           Plateformes<span>:</span>
         </h3>
         <ul className="types_of_platform">
-          {gamePlatforms.length > 0 ? (
-            gamePlatforms.map((platform) => (
-              <li key={platform.id}>{platform.platform.name}</li>
-            ))
-          ) : (
-            <li>Divers Plateforme</li>
-          )}
+          {gamePlatforms.length > 0 &&
+            gamePlatforms.map((platform) => {
+              let platformClass = "divers";
+
+              if (
+                platform.platform.name.toLowerCase().includes("playstation")
+              ) {
+                platformClass = "playstation";
+              } else if (
+                platform.platform.name.toLowerCase().includes("xbox")
+              ) {
+                platformClass = "xbox";
+              } else if (
+                platform.platform.name.toLowerCase().includes("nintendo")
+              ) {
+                platformClass = "nintendo";
+              }
+
+              return (
+                <li key={platform.platform.id} className={platformClass}>
+                  {platform.platform.name}
+                </li>
+              );
+            })}
         </ul>
       </section>
       <section className="developers_publishers">

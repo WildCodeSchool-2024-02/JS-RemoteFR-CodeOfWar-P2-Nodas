@@ -119,6 +119,13 @@ nav {
   min-width: 17ch;
 }
 
+.divers {
+  background-color: grey;
+  padding: 5px 1rem;
+  border-radius: 16px;
+  min-width: 17ch;
+}
+
 .developers_publishers {
   background-color: #252525;
   margin: 2rem 1rem;
