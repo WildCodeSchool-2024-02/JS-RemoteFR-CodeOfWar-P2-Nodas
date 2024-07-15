@@ -7,6 +7,7 @@ export default function GamePage() {
   const gameGenres = gameInfo.genres;
   const gamePlatforms = gameInfo.platforms;
   const gamePublishers = gameInfo.publishers;
+  const gameDevelopers = gameInfo.developers;
 
   const { favoris, setFavoris } = useContext(FavoriteContext);
 
@@ -88,7 +89,17 @@ export default function GamePage() {
           <h3 className="title_gamepage">
             Developers<span>:</span>
           </h3>
-          <p>CD PROJECT RED</p>
+          <ul>
+            {gameDevelopers.length > 0 ? (
+              gameDevelopers.map((developer) => (
+                <li key={developer.id} className="developers">
+                  {developer.name}
+                </li>
+              ))
+            ) : (
+              <li>Inconnu</li>
+            )}
+          </ul>
         </div>
       </section>
       <section className="like_added">
