@@ -36,3 +36,13 @@ h2 {
   height: 30vh;
   object-fit: scale-down;
 }
+
+.no-fav-msg {
+  padding: 1rem;
+}
+
+.wishlist > a {
+  text-decoration: none;
+  padding: 1rem;
+  color: var(--primary-font-color);
+}
