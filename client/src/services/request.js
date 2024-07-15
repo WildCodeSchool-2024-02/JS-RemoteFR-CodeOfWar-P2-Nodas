@@ -12,7 +12,7 @@ export function fetchGameInfo() {
 export function fetchData() {
   return axios
     .get(
-      `https://api.rawg.io/api/games?dates=2020-01-01,2024-12-01&key=${import.meta.env.VITE_API_KEY}`
+      `https://api.rawg.io/api/games?dates=2018-01-01,2024-12-01&key=${import.meta.env.VITE_API_KEY}`
     )
     .then((response) => response.data.results)
     .catch((error) => console.error(error));
