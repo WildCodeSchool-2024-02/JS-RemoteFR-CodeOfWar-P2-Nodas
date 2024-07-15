@@ -10,16 +10,10 @@ export default function About() {
       <div className="descriptionName">
         <ul>
           <li>
-            <b>N</b>ew : Introduction
+            <b>N</b>ew <b>O</b>bjectif <b>D</b>éveloppement <b>A</b>venture
           </li>
           <li>
-            <b>O</b>bjectif : Missions
-          </li>
-          <li>
-            <b>D</b>éveloppement : .
-          </li>
-          <li>
-            <b>A</b>venture : Exploration
+            Explore, discover, play: NODA revolutionizes your gaming experience!
           </li>
         </ul>
       </div>
@@ -27,11 +21,17 @@ export default function About() {
         <img src={gamer} alt="img" className="gif" />
       </div>
       <h2 id="about2">Our story</h2>
-      <p>Equipe de DEV monstrueuse ! </p>
+      <p>
+        A team of gamers enthusiasts has created a games site. Together, they
+        combined their skills to design and implement an exceptional user
+        experience. Together, they are redefining video game discovery!
+      </p>
       <section className="avatar">
         {team.map((user) => (
-          <div key={user.id}>
-            <img src={user.avatar} alt={`Avatar ${user.name}`} />
+          <div key={user.id} className="cardContainer">
+            <div>
+              <img src={user.avatar} alt={`Avatar ${user.name}`} />
+            </div>
             <div className="userDetails">
               <h3 id="about3">{user.name}</h3>
               <ul className="listUser">
@@ -50,7 +50,6 @@ export default function About() {
       </section>
       <h2 id="about2">Follow us</h2>
       <SocialNetwork />
-
       <p className="copyright">
         Noda Gaming © 2024 -{" "}
         <a

@@ -14,8 +14,8 @@ const team = [
     age: 18,
     description: "blabla",
     avatar: "../src/assets/images/ewan.jpg",
-    favoriteGame: "  Halo",
-    pageUrl: "http://localhost:3000/gamepage/3498",
+    favoriteGame: "Cyberpunk 2077",
+    pageUrl: "http://localhost:3000/gamepage/41494",
   },
   {
     id: 3,
@@ -23,8 +23,8 @@ const team = [
     age: 18,
     description: "blabla",
     avatar: "../src/assets/images/daniel.jpg",
-    favoriteGame: "",
-    pageUrl: "http://localhost:3000/gamepage/3498",
+    favoriteGame: "Hitman 2",
+    pageUrl: "http://localhost:3000/gamepage/58654",
   },
   {
     id: 4,
@@ -32,8 +32,8 @@ const team = [
     age: 18,
     description: "Je suis chaud !",
     avatar: "../src/assets/images/geoffrey.jpg",
-    favoriteGame: "jeu pref :",
-    pageUrl: "http://localhost:3000/gamepage/3498",
+    favoriteGame: "Elden Ring",
+    pageUrl: "http://localhost:3000/gamepage/326243",
   },
   {
     id: 5,
@@ -41,8 +41,8 @@ const team = [
     age: 1033,
     description: "blabla",
     avatar: "../src/assets/images/christian.jpg",
-    favoriteGame: "jeu pref :",
-    pageUrl: "http://localhost:3000/gamepage/3498",
+    favoriteGame: "It Takes Two",
+    pageUrl: "http://localhost:3000/gamepage/455597",
   },
 ];
 

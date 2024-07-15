@@ -39,21 +39,33 @@ p {
   margin: 0 2rem;
 }
 
-.avatar {
+.cardContainer {
+  background-color: var(--secondary-color);
+  margin: 10px auto;
   display: flex;
-  flex-direction: column;
+  width: 90%;
+  border-radius: 1rem;
 }
 
-.avatar img {
-  width: 100px;
-  height: 100px;
+.cardContainer img {
+  width: 7.5rem;
+  height: 7.5rem;
   border-radius: 50%;
+  display: flex;
+}
+
+.avatar > .cardContainer > div > img {
+  margin: 0.625rem 1rem;
+}
+
+.avatar > .cardContainer > div {
+  margin: 1rem 1rem;
 }
 
 .userDetails {
   display: flex;
-  align-items: baseline;
-  margin-top: 2.5rem;
+  flex-direction: column;
+  margin: 0.625rem 1rem;
   gap: 20px;
 }
 
@@ -61,6 +73,14 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+
+.listUser a {
+  color: white;
+}
+
+.listUser a:hover {
+  color: var(--primary-font-color);
 }
 
 .iconsSocials img {
@@ -79,7 +99,12 @@ p {
 }
 
 .copyright > a {
-  color: rgb(207, 130, 223);
+  color: white;
+  font-size: 1.25rem;
+}
+
+.copyright > a:hover {
+  color: var(--primary-font-color);
 }
 
 .avatar > div {
@@ -91,7 +116,7 @@ p {
 }
 
 .avatar > div > div > #about3 {
-  color: aqua;
+  color: rgb(64, 116, 214);
 }
 
 .avatar > div > div > p {
