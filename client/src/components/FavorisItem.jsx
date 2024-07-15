@@ -1,37 +1,55 @@
 import PropTypes from "prop-types";
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import FavoriteContext from "../contexts/FavoriteContext";
 
-export default function FavorisItem({
-  gamesImage,
-  gamesName,
-  redlike,
-  paniericon,
-}) {
+export default function FavorisItem({ id }) {
+  const [gameInfo, setGameInfo] = useState("");
+  const { favoris, setFavoris } = useContext(FavoriteContext);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.rawg.io/api/games/${id}?key=${import.meta.env.VITE_API_KEY}`
+      )
+      .then((response) => setGameInfo(response.data))
+      .catch((error) => console.error(error));
+  }, [id]);
+  const addFavorite = () => {
+    setFavoris((prevFavorites) => {
+      const newFavorites = [...prevFavorites];
+      if (newFavorites.includes(gameInfo.id)) {
+        const index = newFavorites.indexOf(gameInfo.id);
+        if (index > -1) {
+          newFavorites.splice(index, 1);
+        }
+      } else {
+        newFavorites.push(gameInfo.id);
+      }
+      return newFavorites;
+    });
+  };
+
   return (
-    gamesName && (
-      <div className="FavorisItem">
-        <img src={gamesImage} alt={gamesName} />
-        <ul>
-          <li>
-            <b>{gamesName}</b>
-          </li>
-          <div className="Coeur-Prix">
-            <li>
-              <img src={redlike} alt="heart" />
-            </li>
-            <li>
-              <img src={paniericon} alt="Logo panier" className="paniericon" />
-            </li>
-            <li className="Prix">59,99€</li>
-          </div>
-        </ul>
+    <div className="FavorisItem">
+      <img src={gameInfo.background_image} alt={gameInfo.name} />
+      <div className="under-image-fav">
+      <h3>{gameInfo.name}</h3>
+      <button className="like_button" type="button" onClick={addFavorite}>
+        <img
+          src={
+            favoris.includes(gameInfo.id)
+              ? "../src/assets/images/like-filled.svg"
+              : "../src/assets/images/like.svg"
+          }
+          alt="like"
+        />
+      </button>
       </div>
-    )
+    </div>
   );
 }
 
 FavorisItem.propTypes = {
-  gamesImage: PropTypes.string.isRequired,
-  gamesName: PropTypes.string.isRequired,
-  paniericon: PropTypes.string.isRequired,
-  redlike: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };

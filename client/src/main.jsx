@@ -10,6 +10,7 @@ import Favoris from "./pages/Favoris";
 import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
+import { FavoriteProvider } from "./contexts/FavoriteContext";
 
 import {
   fetchData,
@@ -18,10 +19,10 @@ import {
   fetchCategories,
   fetchSearchFilters,
 } from "./services/request";
-
 import "./styles/app.css";
 import "./styles/gamespages.css";
 import "./styles/navbar.css";
+import "./styles/footer.css";
 import "./styles/accueil.css";
 import "./styles/categorieitem.css";
 import "./styles/categories.css";
@@ -78,6 +79,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <FavoriteProvider>
+      <RouterProvider router={router} />
+    </FavoriteProvider>
   </React.StrictMode>
 );

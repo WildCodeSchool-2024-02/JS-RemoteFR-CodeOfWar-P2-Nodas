@@ -146,10 +146,19 @@ nav {
 .like_button {
   width: 3rem;
   height: 3rem;
-  background-color: #232736;
+  background-color: #6446af;
   border: none;
   border-radius: 4px;
   color: white;
+}
+
+.like_button:hover {
+  cursor: pointer;
+  background-color: var(--fifth-color);
+}
+
+.like_button > img {
+  width: 100%;
 }
 
 .added_button {
