@@ -1,6 +1,7 @@
 import SocialNetwork from "../components/SocialNetwork";
 import gamer from "../assets/images/gamer.png";
 import CardTeam from "../components/CardTeam";
+import team from "../data/teamData";
 
 export default function About() {
   return (
@@ -25,7 +26,11 @@ export default function About() {
         combined their skills to design and implement an exceptional user
         experience. Together, they are redefining video game discovery!
       </p>
-      <CardTeam />
+      <section className="avatar">
+        {team.map((user) => (
+          <CardTeam key={user} user={user} />
+        ))}
+      </section>
       <h2 id="about2">Follow us</h2>
       <SocialNetwork />
       <p className="copyright">
