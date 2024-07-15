@@ -5,6 +5,8 @@ import menuburger from "../assets/images/menuburger.svg";
 import paniericon from "../assets/images/paniericon.svg";
 import searchicon from "../assets/images/searchicon.svg";
 
+<p>A Supprimer, c'est juste pour rajouter contenu pour push</p>;
+
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
