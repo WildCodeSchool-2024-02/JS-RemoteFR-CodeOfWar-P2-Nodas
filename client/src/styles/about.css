@@ -12,14 +12,18 @@ body {
 
 #about1 {
   color: rgb(64, 116, 214);
-  font-size: 3rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 
 #about2 {
   color: rgb(64, 116, 214);
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-left: 2rem;
+}
+
+#about3 {
+  font-size: 1.4rem;
 }
 
 .descriptionName {
@@ -33,6 +37,30 @@ body {
 
 p {
   margin: 0 2rem;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.userDetails {
+  display: flex;
+  align-items: baseline;
+  margin-top: 2.5rem;
+  gap: 20px;
+}
+
+.listUser {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .iconsSocials img {
@@ -54,13 +82,18 @@ p {
   color: rgb(207, 130, 223);
 }
 
-.avatar {
+.avatar > div {
   display: flex;
-  flex-direction: column;
 }
 
-.avatar > img {
-  width: 10.4rem;
-  height: 12rem;
-  margin: 1rem 1rem 0 1rem;
+.avatar > div > img {
+  margin: 2rem 2rem 1rem 2rem;
+}
+
+.avatar > div > div > #about3 {
+  color: aqua;
+}
+
+.avatar > div > div > p {
+  color: pink;
 }

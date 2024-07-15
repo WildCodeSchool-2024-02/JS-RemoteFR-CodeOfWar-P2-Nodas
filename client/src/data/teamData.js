@@ -3,9 +3,10 @@ const team = [
     id: 1,
     name: "Rosa",
     age: 18,
-    description: "blabla",
-    avatar: "../src/assets/images/rosa.jpg",
-    favoriteGame: "jeu pref",
+    description: "J'aime voler les voitures ",
+    avatar: "../src/assets/images/rosa.png",
+    favoriteGame: "GTA - Grand Theft Auto",
+    pageUrl: "http://localhost:3000/gamepage/3498",
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ const team = [
     age: 18,
     description: "blabla",
     avatar: "../src/assets/images/ewan.jpg",
-    favoriteGame: "jeu pref",
+    favoriteGame: "  Halo",
+    pageUrl: "http://localhost:3000/gamepage/3498",
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ const team = [
     age: 18,
     description: "blabla",
     avatar: "../src/assets/images/daniel.jpg",
-    favoriteGame: "jeu pref",
+    favoriteGame: "",
+    pageUrl: "http://localhost:3000/gamepage/3498",
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ const team = [
     age: 18,
     description: "Je suis chaud !",
     avatar: "../src/assets/images/geoffrey.jpg",
-    favoriteGame: "jeu pref",
+    favoriteGame: "jeu pref :",
+    pageUrl: "http://localhost:3000/gamepage/3498",
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ const team = [
     age: 1033,
     description: "blabla",
     avatar: "../src/assets/images/christian.jpg",
-    favoriteGame: "jeu pref",
+    favoriteGame: "jeu pref :",
+    pageUrl: "http://localhost:3000/gamepage/3498",
   },
 ];
 

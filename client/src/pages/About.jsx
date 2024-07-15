@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SocialNetwork from "../components/SocialNetwork";
 import gamer from "../assets/images/gamer.png";
 import team from "../data/teamData";
@@ -26,15 +27,24 @@ export default function About() {
         <img src={gamer} alt="img" className="gif" />
       </div>
       <h2 id="about2">Our story</h2>
-      <p>Equipe de DEV monstueuse ! </p>
+      <p>Equipe de DEV monstrueuse ! </p>
       <section className="avatar">
         {team.map((user) => (
           <div key={user.id}>
             <img src={user.avatar} alt={`Avatar ${user.name}`} />
-            <h3 id="about3">{user.name}</h3>
-            <p>{user.age}</p>
-            <p>{user.description}</p>
-            <p>{user.favoriteGame}</p>
+            <div className="userDetails">
+              <h3 id="about3">{user.name}</h3>
+              <ul className="listUser">
+                <li>Age : {user.age} years old</li>
+                <li>Description : {user.description}</li>
+                <li>
+                  jeu préféré :{" "}
+                  <Link to={user.pageUrl} target="_blank" rel="noreferrer">
+                    {user.favoriteGame}
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         ))}
       </section>
