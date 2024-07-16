@@ -48,10 +48,8 @@ export default function Catalogue() {
       <section>
         <h2>jeu à afficher</h2>
         {filtersData[3].map((gameCard) => (
-          <CatalogueCard key={gameCard.id} gameCard={gameCard} />
-
+          <CatalogueCard key={gameCard} gameCard={gameCard} />
         ))}
-        
       </section>
     </div>
   );

@@ -28,7 +28,7 @@ export function fetchCategories() {
 export function fetchSelectedGenre(genres) {
   const genreReader = (genre) => {
     const genreName = {
-      "RPG": "role-playing-games-rpg",
+      RPG: "role-playing-games-rpg",
       "Massively Multiplayer": "massively-multiplayer",
       "Board Games": "board-games",
     };
@@ -63,10 +63,8 @@ export function fetchSearchFilters() {
   );
   const promise4 = axios.get(
     `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}`
-
-  )
+  );
   return Promise.all([promise1, promise2, promise3, promise4])
     .then((response) => response.map((respons) => respons.data.results))
     .catch((error) => console.error(error));
 }
-
