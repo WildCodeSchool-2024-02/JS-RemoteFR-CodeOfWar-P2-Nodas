@@ -67,9 +67,14 @@ nav {
 .description_game {
   padding: 0rem 1rem;
   width: 100%;
+  position: relative;
+}
+
+.shortDescription {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 5;
+  line-clamp: 5;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
@@ -77,6 +82,20 @@ nav {
 .description_game > p {
   font-size: 12px;
   color: #ababab;
+}
+
+.longDescription {
+  max-height: none;
+  white-space: normal;
+}
+
+.readMore {
+  display: block;
+  margin-top: 1em;
+  background-color: var(--sixth-color);
+  color: white;
+  padding: 0.5em 1em;
+  cursor: pointer;
 }
 
 .title_gamepage {

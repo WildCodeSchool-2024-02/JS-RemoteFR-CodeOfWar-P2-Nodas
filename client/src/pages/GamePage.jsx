@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteContext from "../contexts/FavoriteContext";
 
@@ -6,9 +6,26 @@ export default function GamePage() {
   const gameInfo = useLoaderData();
   const gameGenres = gameInfo.genres;
   const gamePlatforms = gameInfo.platforms;
+  const gamePublishers = gameInfo.publishers;
   const gameDevelopers = gameInfo.developers;
 
   const { favoris, setFavoris } = useContext(FavoriteContext);
+  const [longDescription, setLOngDescription] = useState(false);
+  let displayShortDescription;
+
+  if (gameInfo.description_raw) {
+    displayShortDescription = !longDescription ? (
+      <p className="shortDescription">{gameInfo.description_raw}</p>
+    ) : (
+      <p className="longDescription">{gameInfo.description_raw}</p>
+    );
+  } else {
+    displayShortDescription = "Description unavailable";
+  }
+
+  const handleDescription = () => {
+    setLOngDescription(!longDescription);
+  };
 
   const addFavorite = () => {
     setFavoris((prevFavorites) => {
@@ -48,12 +65,14 @@ export default function GamePage() {
           <li>Divers</li>
         )}
       </ul>
-
       <section className="description_game complet">
         <h3 className="title_gamepage">
           Description<span>:</span>
         </h3>
-        <p>{gameInfo.description_raw}</p>
+        {displayShortDescription}
+        <button type="button" className="readMore" onClick={handleDescription}>
+          {longDescription ? "Read Less" : "Read More"}
+        </button>
       </section>
       <section className="platform_game">
         <h3 className="title_gamepage">
@@ -91,7 +110,17 @@ export default function GamePage() {
           <h3 className="title_gamepage">
             Publishers<span>:</span>
           </h3>
-          <p>CD PROJECT RED</p>
+          <ul>
+            {gamePublishers.length > 0 ? (
+              gamePublishers.map((publisher) => (
+                <li key={publisher.id} className="publisher">
+                  {publisher.name}
+                </li>
+              ))
+            ) : (
+              <li>Unknown Publisher</li>
+            )}
+          </ul>
         </div>
         <div className="publishers">
           <h3 className="title_gamepage">
@@ -105,7 +134,7 @@ export default function GamePage() {
                 </li>
               ))
             ) : (
-              <li>Inconnu</li>
+              <li>Unknown Developer</li>
             )}
           </ul>
         </div>
