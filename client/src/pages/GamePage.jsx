@@ -42,6 +42,18 @@ export default function GamePage() {
     });
   };
 
+  const getMetacriticClass = (score) => {
+    if (score >= 75) {
+      return "green";
+    }
+    if (score >= 50) {
+      return "orange";
+    }
+    return "red";
+  };
+
+  const metacriticClass = getMetacriticClass(gameInfo.metacritic);
+
   return (
     <div className="game-details">
       <img
@@ -52,9 +64,10 @@ export default function GamePage() {
       <section className="title_metascore">
         <div className="title_game">
           <h2>{gameInfo.name}</h2>
-          <hr />
+          <hr className={metacriticClass} />
         </div>
-        <div className="metacritique">
+        {/* Application de la classe CSS dynamique */}
+        <div className={`metacritique ${metacriticClass}`}>
           <p>{gameInfo.metacritic}</p>
         </div>
       </section>
