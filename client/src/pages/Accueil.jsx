@@ -11,8 +11,6 @@ export default function Accueil() {
   const featuredGames = getPopularGames(gamesDetails, numberOfPopularGames);
   const salesGames = getRandomGames(gamesDetails, numberOfGetRandomGames);
 
-  console.info(featuredGames);
-
   const featuredImages = featuredGames.map((game) => ({
     id: game.id,
     name: game.name,
