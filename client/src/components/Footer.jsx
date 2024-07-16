@@ -9,7 +9,7 @@ export default function Footer() {
     navigate(-1);
   };
   return (
-    <footer className="Footer">
+    <footer>
       <button onClick={historyBack} type="button">
         <img src={previous} alt="Previous" />
       </button>
