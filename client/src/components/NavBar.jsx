@@ -77,6 +77,9 @@ export default function NavBar() {
           <Link to="/about" onClick={toggleMenu}>
             About
           </Link>
+          <Link to="/reco" onClick={toggleMenu}>
+            A quoi jouer ?
+          </Link>
         </div>
       )}
     </>

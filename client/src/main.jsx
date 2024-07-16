@@ -27,6 +27,7 @@ import "./styles/categorieitem.css";
 import "./styles/categories.css";
 import "./styles/favoris.css";
 import "./styles/about.css";
+import GameAdvisor from "./pages/GameAdvisor";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         path: "/gamepage/:id",
         element: <GamePage />,
         loader: ({ params }) => fetchGameById(params.id).then((data) => data),
+      },
+      {
+        path: "/reco",
+        element: <GameAdvisor />,
       },
     ],
   },
