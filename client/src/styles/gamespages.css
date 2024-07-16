@@ -23,7 +23,6 @@
 }
 
 .title_game > hr {
-  background-color: green;
   height: 4px;
   border: none;
   max-width: 8rem;
@@ -32,13 +31,32 @@
 .metacritique {
   border: none;
   border-radius: 50%;
-  background-color: green;
   padding: 1rem;
   width: 2rem;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.null {
+  color: white;
 }
 
 .types_of_game {
@@ -83,10 +101,17 @@
 .readMore {
   display: block;
   margin-top: 1em;
-  background-color: var(--sixth-color);
+  margin-left: 13rem;
+  background-color: var(--primary-color);
   color: white;
   padding: 0.5em 1em;
   cursor: pointer;
+  border: none;
+  opacity: 0.8;
+}
+
+.readMore:hover {
+  color: var(--sixth-color);
 }
 
 .title_gamepage {
