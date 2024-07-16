@@ -1,22 +1,30 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-export default function CategorieItem({ gamesImage, gamesName }) {
+export default function CategorieItem({ game }) {
+  const navigate = useNavigate();
+
   return (
-    gamesName && (
-      <div className="CategorieItem">
-        <img src={gamesImage} alt={gamesName} />
-        <ul className="gamename_prix">
-          <li>
-            <b>{gamesName}</b>
-          </li>
-          <li className="Prix">59,99€</li>
-        </ul>
-      </div>
-    )
+    <div
+      className="CategorieItem"
+      onClick={() => {
+        navigate(`/gamepage/${game.id}`);
+      }}
+      aria-hidden="true"
+    >
+      <img src={game.background_image} alt={game.name} />
+      <ul className="gamename_prix">
+        <li>
+          <b>{game.name}</b>
+        </li>
+        <li className="Prix">59,99€</li>
+      </ul>
+    </div>
   );
 }
 
 CategorieItem.propTypes = {
-  gamesImage: PropTypes.string.isRequired,
-  gamesName: PropTypes.string.isRequired,
+  game: PropTypes.string.isRequired,
+  background_image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

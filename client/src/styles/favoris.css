@@ -13,7 +13,7 @@ body {
   --primary-font-color: #dadada;
 }
 
-.favoris_title {
+.wishlist > h2 {
   margin: 1rem;
 }
 
@@ -35,4 +35,20 @@ body {
   width: 100%;
   height: 30vh;
   object-fit: scale-down;
+}
+
+.no-fav-msg {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.wishlist {
+  padding-bottom: 1rem;
+}
+
+.wishlist > a {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  color: var(--primary-font-color);
+  text-decoration: underline;
 }

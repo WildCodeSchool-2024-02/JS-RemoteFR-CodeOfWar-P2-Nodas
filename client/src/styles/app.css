@@ -4,3 +4,7 @@
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+main {
+  min-height: 100dvh;
+}

@@ -12,7 +12,7 @@ export function fetchGameInfo() {
 export function fetchData() {
   return axios
     .get(
-      `https://api.rawg.io/api/games?dates=2020-01-01,2024-12-01&key=${import.meta.env.VITE_API_KEY}`
+      `https://api.rawg.io/api/games?dates=2018-01-01,2024-12-01&key=${import.meta.env.VITE_API_KEY}`
     )
     .then((response) => response.data.results)
     .catch((error) => console.error(error));
@@ -67,4 +67,10 @@ export function fetchSearchFilters() {
   return Promise.all([promise1, promise2, promise3, promise4])
     .then((response) => response.map((respons) => respons.data.results))
     .catch((error) => console.error(error));
+}
+export function fetchPlatforms (){
+  return axios
+  .get (`https://api.rawg.io/api/platforms?key=${import.meta.env.VITE_API_KEY}`)
+  .then((response) => response.data.results)
+  .catch((error) => console.error(error));
 }
