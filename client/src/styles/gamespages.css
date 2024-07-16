@@ -83,10 +83,17 @@
 .readMore {
   display: block;
   margin-top: 1em;
-  background-color: var(--sixth-color);
+  margin-left: 13rem;
+  background-color: var(--primary-color);
   color: white;
   padding: 0.5em 1em;
   cursor: pointer;
+  border: none;
+  opacity: 0.8;
+}
+
+.readMore:hover {
+  color: var(--sixth-color);
 }
 
 .title_gamepage {
