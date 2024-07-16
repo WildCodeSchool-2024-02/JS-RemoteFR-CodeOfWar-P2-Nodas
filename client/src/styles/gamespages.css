@@ -51,6 +51,10 @@
   background-color: red;
 }
 
+.grey {
+  background-color: grey;
+}
+
 .null {
   color: white;
 }

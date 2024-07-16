@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteContext from "../contexts/FavoriteContext";
+import { getRandomPrice, getMetacriticClass } from "../services/utils";
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
@@ -42,19 +43,9 @@ export default function GamePage() {
     });
   };
 
-  const getMetacriticClass = (initialScore) => {
-    const score = initialScore;
-
-    if (score >= 75) {
-      return "green";
-    }
-    if (score >= 50) {
-      return "orange";
-    }
-    return "red";
-  };
-
   const metacriticClass = getMetacriticClass(gameInfo.metacritic);
+
+  const price = getRandomPrice();
 
   return (
     <div className="game-details">
@@ -171,6 +162,7 @@ export default function GamePage() {
         <button className="added_button" type="button">
           <img src="../src/assets/images/loggoCaddie.png" alt="caddie" />
           <p>Ajouter au panier</p>
+          <span>{price}€</span>
         </button>
       </section>
     </div>
