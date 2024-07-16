@@ -1,3 +1,8 @@
+body {
+  background-color: black;
+  color: var(--primary-font-color);
+}
+
 :root {
   --primary-color: #232736;
   --secondary-color: #352e4d;
@@ -8,9 +13,24 @@
   --primary-font-color: #dadada;
 }
 
+.basket > h2 {
+  margin: 1rem;
+}
+
+.basket-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
 .basket-item > img {
   border-radius: 8px;
   width: 100%;
   height: 30vh;
   object-fit: scale-down;
+}
+
+.like_button > img {
+  width: 2rem;
 }
