@@ -2,6 +2,7 @@ import SocialNetwork from "../components/SocialNetwork";
 import gamer from "../assets/images/gamer.png";
 import CardTeam from "../components/CardTeam";
 import team from "../data/teamData";
+import networkLink from "../data/dataNetwork";
 
 export default function About() {
   return (
@@ -32,7 +33,11 @@ export default function About() {
         ))}
       </section>
       <h2 id="about2">Follow us</h2>
-      <SocialNetwork />
+      <article className="network_link">
+        {networkLink.map((network) => (
+          <SocialNetwork key={network} network={network} />
+        ))}
+      </article>
       <p className="copyright">
         Noda Gaming © 2024 -{" "}
         <a
