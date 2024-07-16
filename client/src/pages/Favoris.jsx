@@ -8,7 +8,7 @@ function Favoris() {
   return (
 
       <section>
-        <h2>Favoris</h2>
+        <h2 className="favoris_title">Favoris</h2>
         {favoris.map((id, index) => (
           <FavorisItem
             key={[index]}

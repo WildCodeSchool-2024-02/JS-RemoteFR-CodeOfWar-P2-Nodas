@@ -5,7 +5,7 @@ export default function CatalogueCard({ gameCard }) {
     <article className="catalogue_card">
       <img src={gameCard.background_image} alt={gameCard.name} />
       <div>
-        <h2>{gameCard.name}</h2>
+        <h2 className="title_catalogue_card">{gameCard.name}</h2>
         <p>gratuit</p>
       </div>
       <div>
