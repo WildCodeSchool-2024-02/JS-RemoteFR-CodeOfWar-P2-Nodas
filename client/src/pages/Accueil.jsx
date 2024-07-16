@@ -1,17 +1,17 @@
 import { useLoaderData, Link } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
-import getPopularGames from "../services/utils";
-import getRandomGames from "../services/utils2";
+import { getShortPopularGames, getShortRandomGames } from "../services/utils";
 
 export default function Accueil() {
   const gamesDetails = useLoaderData();
   const numberOfPopularGames = 5;
-  const numberOfGetRandomGames = 5;
+  const numberOfRandomGames = 5;
 
-  const featuredGames = getPopularGames(gamesDetails, numberOfPopularGames);
-  const salesGames = getRandomGames(gamesDetails, numberOfGetRandomGames);
-
-  console.info(featuredGames);
+  const featuredGames = getShortPopularGames(
+    gamesDetails,
+    numberOfPopularGames
+  );
+  const salesGames = getShortRandomGames(gamesDetails, numberOfRandomGames);
 
   const featuredImages = featuredGames.map((game) => ({
     id: game.id,
@@ -27,6 +27,7 @@ export default function Accueil() {
   return (
     <div className="landing-page">
       <h1 className="landing-page-title">Welcome to Noda Games</h1>
+
       <section className="featured-games">
         <h2>Featured games</h2>
         <div className="decobar" />
