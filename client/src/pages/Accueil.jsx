@@ -1,12 +1,17 @@
 import { useLoaderData, Link } from "react-router-dom";
 import CarrouselStd from "../components/CarrouselStd";
-import getRandomGames from "../services/utils";
+import getPopularGames from "../services/utils";
+import getRandomGames from "../services/utils2";
 
 export default function Accueil() {
   const gamesDetails = useLoaderData();
-  const numberOfRandomGames = 5;
-  const featuredGames = getRandomGames(gamesDetails, numberOfRandomGames);
-  const salesGames = getRandomGames(gamesDetails, numberOfRandomGames);
+  const numberOfPopularGames = 5;
+  const numberOfGetRandomGames = 5;
+
+  const featuredGames = getPopularGames(gamesDetails, numberOfPopularGames);
+  const salesGames = getRandomGames(gamesDetails, numberOfGetRandomGames);
+
+  console.info(featuredGames);
 
   const featuredImages = featuredGames.map((game) => ({
     id: game.id,
