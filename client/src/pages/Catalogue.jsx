@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import CatalogueCard from "../components/CatalogueCard";
 
 export default function Catalogue() {
   const filtersData = useLoaderData();
@@ -46,6 +47,11 @@ export default function Catalogue() {
       </section>
       <section>
         <h2>jeu à afficher</h2>
+        {filtersData[3].map((gameCard) => (
+          <CatalogueCard key={gameCard.id} gameCard={gameCard} />
+
+        ))}
+        
       </section>
     </div>
   );

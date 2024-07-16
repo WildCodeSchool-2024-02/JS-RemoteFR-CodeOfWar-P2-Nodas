@@ -61,7 +61,12 @@ export function fetchSearchFilters() {
   const promise3 = axios.get(
     `https://api.rawg.io/api/stores?key=${import.meta.env.VITE_API_KEY}`
   );
-  return Promise.all([promise1, promise2, promise3])
+  const promise4 = axios.get(
+    `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}`
+
+  )
+  return Promise.all([promise1, promise2, promise3, promise4])
     .then((response) => response.map((respons) => respons.data.results))
     .catch((error) => console.error(error));
 }
+
