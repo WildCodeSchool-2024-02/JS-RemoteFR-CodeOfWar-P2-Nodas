@@ -72,7 +72,7 @@ export default function NavBar() {
             Categories
           </Link>
           <Link to="/favoris" onClick={toggleMenu}>
-            Favoris
+            Liste de souhaits
           </Link>
           <Link to="/about" onClick={toggleMenu}>
             About
