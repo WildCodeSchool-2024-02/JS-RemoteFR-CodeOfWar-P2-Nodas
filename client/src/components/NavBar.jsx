@@ -43,7 +43,7 @@ export default function NavBar() {
           <Link to="/catalog">
             <img src={searchicon} alt="Logo recherche" />
           </Link>
-          <Link to="/cart">
+          <Link to="/basket">
             <img src={paniericon} alt="Logo panier" />
           </Link>
           <button
@@ -62,7 +62,7 @@ export default function NavBar() {
           <Link to="/" onClick={toggleMenu}>
             Accueil
           </Link>
-          <Link to="/panier" onClick={toggleMenu}>
+          <Link to="/basket" onClick={toggleMenu}>
             Panier
           </Link>
           <Link to="/catalog" onClick={toggleMenu}>
