@@ -28,6 +28,7 @@ import "./styles/categorieitem.css";
 import "./styles/categories.css";
 import "./styles/favoris.css";
 import "./styles/catalogue.css";
+import "./styles/cataloguecard.css";
 
 const router = createBrowserRouter([
   {

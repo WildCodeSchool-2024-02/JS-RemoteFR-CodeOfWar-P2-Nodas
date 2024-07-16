@@ -1,0 +1,8 @@
+.catalogue_card {
+  display: flex;
+}
+
+.catalogue_card > img {
+  width: 8rem;
+  object-fit: cover;
+}
