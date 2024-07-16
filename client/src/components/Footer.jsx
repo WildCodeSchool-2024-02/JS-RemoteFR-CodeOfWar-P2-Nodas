@@ -10,20 +10,15 @@ export default function Footer() {
   };
   return (
     <footer className="Footer">
-      <section className="iconsFoot">
-        <div>
-          <button onClick={historyBack} type="button">
-            <img src={previous} alt="Previous" />
-          </button>
-        </div>
-        <Link className="iconHome" to="/">
-          <img src={home} alt="Home" />
-        </Link>
-
-        <Link className="iconFavorite" to="/favoris">
-          <img src={favorite} alt="Favorite" />
-        </Link>
-      </section>
+      <button onClick={historyBack} type="button">
+        <img src={previous} alt="Previous" />
+      </button>
+      <Link className="iconHome" to="/">
+        <img src={home} alt="Home" />
+      </Link>
+      <Link className="iconFavorite" to="/favoris">
+        <img src={favorite} alt="Favorite" />
+      </Link>
     </footer>
   );
 }

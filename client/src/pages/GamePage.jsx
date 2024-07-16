@@ -26,7 +26,7 @@ export default function GamePage() {
   };
 
   return (
-    <div>
+    <div className="game-details">
       <img
         className="image_game"
         src={gameInfo.background_image}
