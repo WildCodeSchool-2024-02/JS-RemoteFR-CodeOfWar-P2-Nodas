@@ -41,8 +41,8 @@ const team = [
     age: 1033,
     description: "blabla",
     avatar: "../src/assets/images/christian.jpg",
-    favoriteGame: "It Takes Two",
-    pageUrl: "http://localhost:3000/gamepage/455597",
+    favoriteGame: "Final Fantasy VIII",
+    pageUrl: "http://localhost:3000/gamepage/5115",
   },
 ];
 

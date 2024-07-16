@@ -21,7 +21,7 @@ export default function About() {
         <img src={gamer} alt="img" className="gif" />
       </div>
       <h2 id="about2">Our story</h2>
-      <p>
+      <p className="textAbout">
         A team of gamers enthusiasts has created a games site. Together, they
         combined their skills to design and implement an exceptional user
         experience. Together, they are redefining video game discovery!
