@@ -51,6 +51,10 @@
   background-color: red;
 }
 
+.null {
+  color: white;
+}
+
 .types_of_game {
   display: flex;
   gap: 1rem;
