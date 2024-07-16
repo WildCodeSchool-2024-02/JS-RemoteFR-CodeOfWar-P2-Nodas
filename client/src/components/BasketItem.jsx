@@ -34,7 +34,7 @@ export default function BasketItem({ id }) {
   return (
     <div className="basket-item">
       <img src={gameInfo.background_image} alt={gameInfo.name} />
-      <div className="under-image-fav">
+      <div className="under-image-basket">
         <h3>{gameInfo.name}</h3>
         <button className="like_button" type="button" onClick={addBasket}>
           <img
