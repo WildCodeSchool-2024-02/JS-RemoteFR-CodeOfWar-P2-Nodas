@@ -122,3 +122,7 @@ p {
 .avatar > div > div > p {
   color: pink;
 }
+
+.network_link {
+  display: flex;
+}
