@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logong from "../assets/images/logoNG.svg";
 import menuburger from "../assets/images/menuburger.svg";
@@ -11,6 +11,27 @@ export default function NavBar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const handleClickOutside = (event) => {
+    if (
+      !event.target.closest(".menu-dropdown") &&
+      !event.target.closest(".menu-burger")
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <>
