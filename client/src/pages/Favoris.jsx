@@ -18,7 +18,7 @@ function Favoris() {
         ))}
         {favoris.length > 0 ? "": <p className="no-fav-msg">Vous n'avez aucun jeu dans votre liste de souhaits.</p>}
         <Link to="/catalog">
-        Continuer vers le catalogue
+        Continuer vers le catalogue...
         </Link>
       </section>
   );

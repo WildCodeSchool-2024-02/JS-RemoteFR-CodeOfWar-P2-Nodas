@@ -13,7 +13,7 @@ body {
   --primary-font-color: #dadada;
 }
 
-h2 {
+.wishlist > h2 {
   margin: 1rem;
 }
 
@@ -39,10 +39,16 @@ h2 {
 
 .no-fav-msg {
   padding: 1rem;
+  margin: 1rem 0;
+}
+
+.wishlist {
+  padding-bottom: 1rem;
 }
 
 .wishlist > a {
-  text-decoration: none;
+  margin: 0 0 1rem 0;
   padding: 1rem;
   color: var(--primary-font-color);
+  text-decoration: underline;
 }
