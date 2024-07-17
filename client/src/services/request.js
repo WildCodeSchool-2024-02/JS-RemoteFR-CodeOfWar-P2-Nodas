@@ -50,3 +50,10 @@ export function fetchGameById(id) {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 }
+
+export function fetchPlatforms (){
+  return axios
+  .get (`https://api.rawg.io/api/platforms?key=${import.meta.env.VITE_API_KEY}`)
+  .then((response) => response.data.results)
+  .catch((error) => console.error(error));
+}

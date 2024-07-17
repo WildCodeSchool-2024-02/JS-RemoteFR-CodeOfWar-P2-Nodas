@@ -2,6 +2,7 @@ import SocialNetwork from "../components/SocialNetwork";
 import gamer from "../assets/images/gamer.png";
 import CardTeam from "../components/CardTeam";
 import team from "../data/teamData";
+import networkLink from "../data/dataNetwork";
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
         <img src={gamer} alt="img" className="gif" />
       </div>
       <h2 id="about2">Our story</h2>
-      <p>
+      <p className="textAbout">
         A team of gamers enthusiasts has created a games site. Together, they
         combined their skills to design and implement an exceptional user
         experience. Together, they are redefining video game discovery!
@@ -31,8 +32,14 @@ export default function About() {
           <CardTeam key={user} user={user} />
         ))}
       </section>
-      <h2 id="about2">Follow us</h2>
-      <SocialNetwork />
+
+      <h2 id="about4">Follow us</h2>
+      <article className="network_link">
+        {networkLink.map((network) => (
+          <SocialNetwork key={network} network={network} />
+        ))}
+      </article>
+
       <p className="copyright">
         Noda Gaming © 2024 -{" "}
         <a

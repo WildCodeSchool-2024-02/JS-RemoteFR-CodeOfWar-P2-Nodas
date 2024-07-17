@@ -4,3 +4,15 @@
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+main {
+  min-height: 82.4dvh;
+  /* min-height: 100vh;
+  display: flex;
+  flex-direction: column; */
+}
+
+/* footer {
+  display: flex;
+  margin-top: auto;
+} */
