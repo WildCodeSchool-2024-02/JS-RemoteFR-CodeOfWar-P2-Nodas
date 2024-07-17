@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteContext from "../contexts/FavoriteContext";
 import ShopContext from "../contexts/ShopContext";
+import { getRandomPrice, getMetacriticClass } from "../services/utils";
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
@@ -60,6 +61,10 @@ export default function GamePage() {
     });
   };
 
+const metacriticClass = getMetacriticClass(gameInfo.metacritic);
+
+  const price = getRandomPrice();
+
   return (
     <div className="game-details">
       <img
@@ -70,10 +75,14 @@ export default function GamePage() {
       <section className="title_metascore">
         <div className="title_game">
           <h2>{gameInfo.name}</h2>
-          <hr />
+          <hr className={metacriticClass} />
         </div>
-        <div className="metacritique">
-          <p>{gameInfo.metacritic}</p>
+        <div className={`metacritique ${metacriticClass}`}>
+          {gameInfo.metacritic === null ? (
+            <p>NA</p>
+          ) : (
+            <p>{gameInfo.metacritic}</p>
+          )}
         </div>
       </section>
       <ul className="types_of_game">
@@ -179,6 +188,7 @@ export default function GamePage() {
             alt="caddie"
           />
           <p>Ajouter au panier</p>
+          <span>{price}€</span>
         </button>
       </section>
     </div>
