@@ -10,10 +10,10 @@ export default function FilterItem ({ title, filters, onChange }) {
             type="checkbox"
             id={filterItem.id}
             name={filterItem.name}
-            value={filterItem.slug || filterItem.id}
+            value={filterItem.id}
             onChange={onChange}
           />
-          <label htmlFor={filterItem.slug || filterItem.id}>{filterItem.name}</label>
+          <label htmlFor={filterItem.id}>{filterItem.name}</label>
         </div>
       ))}
     </div>

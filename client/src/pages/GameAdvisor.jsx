@@ -2,14 +2,17 @@ import { useState, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import GameList from "../components/GameList";
 import tagsData from "../data/tagsData";
+import FilterItem from "../components/FilterItem";
 
 export default function GameAdvisor() {
   const filters = useLoaderData();
   const morefilters = {
-    playernumber: tagsData.filter(tag => tag.tagType === 'playernumber'),
-    gameplayfeature: tagsData.filter(tag => tag.tagType === 'gameplayfeature'),
-    gamingview: tagsData.filter(tag => tag.tagType === 'gamingview'),
-    theme: tagsData.filter(tag => tag.tagType === 'theme'),
+    playernumber: tagsData.filter((tag) => tag.tagType === "playernumber"),
+    gameplayfeature: tagsData.filter(
+      (tag) => tag.tagType === "gameplayfeature"
+    ),
+    gamingview: tagsData.filter((tag) => tag.tagType === "gamingview"),
+    theme: tagsData.filter((tag) => tag.tagType === "theme"),
   };
   // morefilters is an example only, it can be used to add more filters in the future, or fetch them from external sources (tags from api, list of publishers, etc...)
 
@@ -58,9 +61,7 @@ export default function GameAdvisor() {
     const storeParams = storeFilter.length
       ? `&stores=${storeFilter.join(",")}`
       : "";
-    const tagsParams = tagsFilter.length 
-      ? `&tags=${tagsFilter.join(",")}` 
-      : "";
+    const tagsParams = tagsFilter.length ? `&tags=${tagsFilter.join(",")}` : "";
 
     return `${baseUrl}?key=${import.meta.env.VITE_API_KEY}${platformParams}${genreParams}${storeParams}${tagsParams}`;
   };
@@ -75,129 +76,58 @@ export default function GameAdvisor() {
     };
 
     fetchGames();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filtersState]);
 
   return (
     <>
-    <h1>Game Advisor</h1>
-    <p className="advisor-intro">
-      Bonjour, voici quelques questions pour vous aider à trouver votre
-      prochain jeu.
-    </p>
-    <div className="advisor-page">
-    <div className="filters-container">
-
-      <div className="platform-filters">
-      <p>Sur quelle plateforme avez-vous l'habitude de jouer ?</p>
-      {filters[0].map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.id}
+      <h1>Game Advisor</h1>
+      <p className="advisor-intro">
+        Bonjour, voici quelques questions pour vous aider à trouver votre
+        prochain jeu.
+      </p>
+      <div className="advisor-page">
+        <div className="filters-container">
+          <FilterItem
+            title="Sur quelle plateforme avez-vous l'habitude de jouer ?"
+            filters={filters[0]}
             onChange={(e) => handleFilterChange(e, "platformFilter")}
           />
-          <label htmlFor={filterItem.id}>{filterItem.name}</label>
-        </div>
-      ))}
-      </div>
-      <div className="genre-filters">
-      <p>Quels sont vos genres de jeux préférés ?</p>
-      {filters[1].map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.slug}
+          <FilterItem
+            title="Quels sont vos genres de jeux préférés ?"
+            filters={filters[1]}
             onChange={(e) => handleFilterChange(e, "genreFilter")}
           />
-          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
-        </div>
-      ))}
-      </div>
-      <div className="store-filters">
-      <p>Avez-vous une préférence pour un shop en ligne ?</p>
-      {filters[2].map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.id}
+          <FilterItem
+            title="Avez-vous une préférence pour un shop en ligne ?"
+            filters={filters[2]}
             onChange={(e) => handleFilterChange(e, "storeFilter")}
           />
-          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
-        </div>
-      ))}
-      </div>
-      <div className="solo-filters">
-      <p>Vous avez envie d'une partie en solo ou à plusieurs ?</p>
-      {morefilters.playernumber.map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.slug}
+          <FilterItem
+            title="Vous avez envie d'une partie en solo ou à plusieurs ?"
+            filters={morefilters.playernumber}
             onChange={(e) => handleFilterChange(e, "tagsFilter")}
           />
-          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
-        </div>
-      ))}
-      </div>
-      <div className="feature-filters">
-      <p>Quelles particularités de gameplay vous tentent aujourd'hui ?</p>
-      {morefilters.gameplayfeature.map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.slug}
+          <FilterItem
+            title="Quelles particularités de gameplay vous tentent aujourd'hui ?"
+            filters={morefilters.gameplayfeature}
             onChange={(e) => handleFilterChange(e, "tagsFilter")}
           />
-          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
-        </div>
-      ))}
-      </div>
-      <div className="view-filters">
-      <p>La caméra c'est important ! Quel type de vue vous faut-il ?</p>
-      {morefilters.gamingview.map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.slug}
+          <FilterItem
+            title="La caméra c'est important ! Quel type de vue vous faut-il ?"
+            filters={morefilters.gamingview}
             onChange={(e) => handleFilterChange(e, "tagsFilter")}
           />
-          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
-        </div>
-      ))}
-      </div>
-      <div className="theme-filters">
-      <p>Quel thème voulez-vous explorer cette fois ?</p>
-      {morefilters.theme.map((filterItem) => (
-        <div key={filterItem.id} className="checkbox-list">
-          <input
-            type="checkbox"
-            id={filterItem.id}
-            name={filterItem.name}
-            value={filterItem.slug}
+          <FilterItem
+            title="Quel thème voulez-vous explorer cette fois ?"
+            filters={morefilters.theme}
             onChange={(e) => handleFilterChange(e, "tagsFilter")}
           />
-          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
-      ))}
+        <div className="filter-results-container">
+          <GameList games={games} />
+        </div>
       </div>
-      </div>
-      <div className="filter-results-container">
-      <GameList games={games} />
-      </div>
-    </div>
     </>
   );
 }
