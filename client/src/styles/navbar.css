@@ -88,3 +88,14 @@
   color: var(--primary-color);
   text-decoration: none;
 }
+
+.basket-item-count {
+  background-color: rgb(208, 255, 213);
+  border-radius: 100%;
+  width: 20px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 2rem 6.3rem;
+  position: absolute;
+}

@@ -34,17 +34,17 @@ export default function FavorisItem({ id }) {
     <div className="FavorisItem">
       <img src={gameInfo.background_image} alt={gameInfo.name} />
       <div className="under-image-fav">
-      <h3>{gameInfo.name}</h3>
-      <button className="like_button" type="button" onClick={addFavorite}>
-        <img
-          src={
-            favoris.includes(gameInfo.id)
-              ? "../src/assets/images/like-filled.svg"
-              : "../src/assets/images/like.svg"
-          }
-          alt="like"
-        />
-      </button>
+        <h3>{gameInfo.name}</h3>
+        <button className="like_button" type="button" onClick={addFavorite}>
+          <img
+            src={
+              favoris.includes(gameInfo.id)
+                ? "../src/assets/images/like-filled.svg"
+                : "../src/assets/images/like.svg"
+            }
+            alt="like"
+          />
+        </button>
       </div>
     </div>
   );

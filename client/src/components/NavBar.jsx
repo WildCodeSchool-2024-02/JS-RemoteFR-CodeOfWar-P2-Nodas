@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchDialog from "./SearchDialog";
+import ShopContext from "../contexts/ShopContext";
 import logong from "../assets/images/logoNG.svg";
 import menuburger from "../assets/images/menuburger.svg";
 import paniericon from "../assets/images/paniericon.svg";
@@ -8,6 +9,7 @@ import searchicon from "../assets/images/searchicon.svg";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   const modalRef = useRef(null);
 
   const openModal = () => {
@@ -17,6 +19,9 @@ export default function NavBar() {
   const closeModal = () => {
     modalRef.current.close();
   };
+
+  const { basket } = useContext(ShopContext);
+  const itemCount = basket.length;
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -54,9 +59,15 @@ export default function NavBar() {
           <button type="button" onClick={openModal} className="search-button">
             <img src={searchicon} alt="Logo recherche" />
           </button>
-          <Link to="/cart">
+          <Link to="/basket">
             <img src={paniericon} alt="Logo panier" />
           </Link>
+          {itemCount > 0 ? (
+            <span className="basket-item-count">{itemCount}</span>
+          ) : (
+            ""
+          )}
+
           <button
             type="button"
             onClick={toggleMenu}
@@ -73,7 +84,7 @@ export default function NavBar() {
           <Link to="/" onClick={toggleMenu}>
             Accueil
           </Link>
-          <Link to="/panier" onClick={toggleMenu}>
+          <Link to="/basket" onClick={toggleMenu}>
             Panier
           </Link>
           <Link to="/categories" onClick={toggleMenu}>

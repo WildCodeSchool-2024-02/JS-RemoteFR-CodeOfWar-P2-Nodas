@@ -11,6 +11,7 @@ import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
 import { FavoriteProvider } from "./contexts/FavoriteContext";
+import { ShopProvider } from "./contexts/ShopContext";
 
 import {
   fetchData,
@@ -30,6 +31,7 @@ import "./styles/catalogue.css";
 import "./styles/favoris.css";
 import "./styles/about.css";
 import "./styles/searchdialog.css";
+import "./styles/basket.css";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +65,7 @@ const router = createBrowserRouter([
       {
         path: "/basket",
         element: <Basket />,
+        loader: () => fetchData().then((data) => data),
       },
       {
         path: "/about",
@@ -81,8 +84,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <FavoriteProvider>
-      <RouterProvider router={router} />
-    </FavoriteProvider>
+    <ShopProvider>
+      <FavoriteProvider>
+        <RouterProvider router={router} />
+      </FavoriteProvider>
+    </ShopProvider>
   </React.StrictMode>
 );

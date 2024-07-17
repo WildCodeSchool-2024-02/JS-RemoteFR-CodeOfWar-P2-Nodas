@@ -9,7 +9,7 @@ const networkLink = [
     id: 2,
     networkUrl: "https://www.tiktok.com/",
     networkName: "tiktok",
-    networkImg: "../src/assets/images/facebook.png",
+    networkImg: "../src/assets/images/tiktok.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const networkLink = [
     id: 4,
     networkUrl: "https://www.facebook.com/",
     networkName: "facebook",
-    networkImg: "../src/assets/images/tiktok.png",
+    networkImg: "../src/assets/images/facebook.png",
   },
   {
     id: 5,
