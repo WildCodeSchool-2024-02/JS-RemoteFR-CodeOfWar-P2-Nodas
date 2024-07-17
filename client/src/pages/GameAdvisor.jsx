@@ -1,63 +1,136 @@
+import { useState, useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
+import GameList from "../components/GameList";
+import tagsData from "../data/tagsData";
+
 export default function GameAdvisor() {
-  const filters = {
-    genres : "action",
-    platforms : "4",
-    tags : "single-player",
+  const filters = useLoaderData();
+  const morefilters = tagsData
+  // Example only, can be used to add more filters in the future, or fetch them from external sources (tags from api, list of publishers, etc...)
+ 
+
+  const [filtersState, setFiltersState] = useState({
+    platformFilter: [],
+    genreFilter: [],
+    storeFilter: [],
+    soloFilter: [],
+  });
+
+  const [games, setGames] = useState([]);
+
+  const handleFilterChange = (event, filterType) => {
+    const { value, type, checked } = event.target;
+    setFiltersState((prevState) => {
+      let updatedFilter;
+      if (type === "checkbox") {
+        if (checked) {
+          updatedFilter = [...prevState[filterType], value];
+        } else {
+          updatedFilter = prevState[filterType].filter(
+            (item) => item !== value
+          );
+        }
+      } else {
+        updatedFilter = value;
+      }
+      return {
+        ...prevState,
+        [filterType]: updatedFilter,
+      };
+    });
   };
 
-  const buildQuery = (merguez) => {
-    let queryString = ""
-    // eslint-disable-next-line guard-for-in, no-restricted-syntax
-    for (const filter in filters) {
-        queryString += `&${filter}=${merguez[filter]}`;
-    }
-    return queryString  
-  }
+  const buildApiRequest = () => {
+    const baseUrl = "https://api.rawg.io/api/games";
+    const { platformFilter, genreFilter, storeFilter, soloFilter } =
+      filtersState;
 
-  const fetchGames = async () => {
-    const queryString = buildQuery(filters);
-    const response = await fetch(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}${queryString}`);
-    const data = await response.json();
-    console.info(data.results);
-  }
-  fetchGames()
-    return (
+    const platformParams = platformFilter.length
+      ? `&parent_platforms=${platformFilter.join(",")}`
+      : "";
+    const genreParams = genreFilter.length
+      ? `&genres=${genreFilter.join(",")}`
+      : "";
+    const storeParams = storeFilter.length
+      ? `&stores=${storeFilter.join(",")}`
+      : "";
+    const soloParams = soloFilter.length ? `&tags=${soloFilter.join(",")}` : "";
+
+    return `${baseUrl}?key=${import.meta.env.VITE_API_KEY}${platformParams}${genreParams}${storeParams}${soloParams}`;
+  };
+
+  useEffect(() => {
+    const fetchGames = async () => {
+      const apiUrl = buildApiRequest();
+      console.info('API URL:', apiUrl);
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      setGames(data.results);
+    };
+
+    fetchGames();
+  }, [filtersState]);
+
+  return (
     <>
       <h1>J'aime la vie</h1>
       <p>
         Bonjour, voici quelques questions pour vous aider à trouver votre
         prochain jeu.
       </p>
-      <p>Sur quelle plateforme souhaitez-vous jouer ?</p>
-      <input type="button" value="PC" />
-      <input type="button" value="Xbox" />
-      <input type="button" value="PlayStation" />
-      <input type="button" value="Nintendo" />
-      <input type="button" value="Autres" />
-      <p>Quel est votre mood du moment ? Plutôt chill ou plutôt on fire ?</p>
-      <input type="button" value="Chill" />
-      <input type="button" value="On Fire" />
-      <p>Parmi ces genres, quels sont vos favoris ?</p>
-      <input type="button" value="Chill" />
-      <input type="button" value="On Fire" />
-      <p>Plutôt jeu indé ou gros studio ? ou peu importe ?</p>
-      <input type="button" value="Indé" />
-      <input type="button" value="AAA" />
-      <input type="button" value="Oui." />
-      <p>Solo ou multi ?</p>
-      <input type="button" value="solo" />
-      <input type="button" value="multi" />
-      <p>Quel thème vous parle en ce moment ?</p>
-      <input type="button" value="horror" />
-      <input type="button" value="sci-fi" />
-      <input type="button" value="cartoon" />
-      <p>Quelle difficulté recherchez vous ?</p>
-      <input type="button" value="On chill" />
-      <input type="button" value="Un peu de challenge" />
-      <input type="button" value="Git gud" />
-      <p>Jeux récents ou jeux classiques ?</p>
-      <input type="button" value="Récent" />
-      <input type="button" value="Pas récent" />
+      <p>Sur quelle plateforme avez-vous l'habitude de jouer ?</p>
+      {filters[0].map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.id}
+            onChange={(e) => handleFilterChange(e, "platformFilter")}
+          />
+          <label htmlFor={filterItem.id}>{filterItem.name}</label>
+        </div>
+      ))}
+      <p>Quels sont vos genres de jeux préférés ?</p>
+      {filters[1].map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.slug}
+            onChange={(e) => handleFilterChange(e, "genreFilter")}
+          />
+          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
+        </div>
+      ))}
+      <p>Avez-vous une préférence pour un shop en ligne ?</p>
+      {filters[2].map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.id}
+            onChange={(e) => handleFilterChange(e, "storeFilter")}
+          />
+          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
+        </div>
+      ))}
+      <p>Des tags spécifiques qui vous intéressent ?</p>
+      {morefilters.map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.slug}
+            onChange={(e) => handleFilterChange(e, "soloFilter")}
+          />
+          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
+        </div>
+      ))}
+      <GameList games={games} />
     </>
   );
 }

@@ -17,6 +17,7 @@ import {
   fetchGameById,
   fetchSelectedGenre,
   fetchCategories,
+  fetchSearchFilters
 } from "./services/request";
 import "./styles/app.css";
 import "./styles/gamespages.css";
@@ -73,6 +74,7 @@ const router = createBrowserRouter([
       {
         path: "/reco",
         element: <GameAdvisor />,
+        loader: fetchSearchFilters,
       },
     ],
   },
