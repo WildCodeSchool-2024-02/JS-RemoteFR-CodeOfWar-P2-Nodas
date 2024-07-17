@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import FavorisItem from "../components/FavorisItem";
 import FavoriteContext from "../contexts/FavoriteContext";
