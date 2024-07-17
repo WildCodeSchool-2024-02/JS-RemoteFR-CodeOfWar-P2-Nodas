@@ -1,29 +1,43 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 
 export default function SearchDialog({ tools }) {
   const [searchString, setSearchString] = useState("");
-  const [gameInfo, setGameInfo] = useState(null);
-  console.info(gameInfo);
+  const [gameInfo, setGameInfo] = useState("");
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     setSearchString(event.target.value);
   };
 
   const clearSearch = () => {
     setSearchString("");
-    setGameInfo(null);
+    setGameInfo("");
   };
 
-  const fetchGameInfo = () => {
-    const searchStringSlug = searchString.toLowerCase().replace(/ /g, "-");
-    axios
-      .get(
-        `https://api.rawg.io/api/games/${searchStringSlug}?key=${import.meta.env.VITE_API_KEY}`
-      )
-      .then((response) => setGameInfo(response.data))
-      .catch((error) => console.error(error));
+  const fetchGameInfo = async () => {
+    try {
+      console.info(searchString);
+      const response = await axios.get(
+        `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&search=${searchString}`
+      );
+      setGameInfo(response.data);
+      if (response.data.results && response.data.results.length > 0) {
+        navigate(`/catalog/${response.data.results[0].name}`);
+      } else {
+        console.error("No game found");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleSearchClick = async (event) => {
+    event.preventDefault();
+    await fetchGameInfo();
+    tools.closeModal();
   };
 
   return (
@@ -39,7 +53,10 @@ export default function SearchDialog({ tools }) {
               className="input-search"
             />
             <div className="search-buttons">
-              <Link to="/catalog" onClick={fetchGameInfo}>
+              <Link
+                to={`/catalog/${gameInfo.name}`}
+                onClick={handleSearchClick}
+              >
                 Search
               </Link>
               <button type="button" onClick={clearSearch}>
@@ -47,10 +64,6 @@ export default function SearchDialog({ tools }) {
               </button>
             </div>
           </div>
-          {/* <div className="results">
-            {gameInfo ? <Catalogue gameInfo={gameInfo} tools={tools} /> : ""}
-          </div> */}
-
           <button
             className="close_dialog"
             type="button"

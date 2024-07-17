@@ -1,29 +1,25 @@
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { Link, useLoaderData } from "react-router-dom";
 
-export default function Catalogue({ gameInfo, tools }) {
+export default function Catalogue() {
+  const gameInfo = useLoaderData();
+  console.info(gameInfo);
   return (
     <div className="search-result">
       <h3 className="search-game-title">{gameInfo.name}</h3>
-      <img
-        src={gameInfo.background_image}
-        alt={gameInfo.name}
-        style={{ width: "100%" }}
-      />
-      <Link to={`/gamepage/${gameInfo.id}`} onClick={tools.closeModal}>
-        Aller à la page du jeu
-      </Link>
+      {gameInfo.length > 0
+        ? gameInfo.map((iconeGame) => (
+            <Link
+              key={iconeGame.id}
+              style={{
+                backgroundImage: `url(${iconeGame.background_image})`,
+                width: "100%",
+              }}
+              to={`/gamepage/${gameInfo.id}`}
+            >
+              {iconeGame.name}
+            </Link>
+          ))
+        : "aucun jeu à afficher"}
     </div>
   );
 }
-
-Catalogue.propTypes = {
-  gameInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    background_image: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-  }).isRequired,
-  tools: PropTypes.shape({
-    closeModal: PropTypes.func.isRequired,
-  }).isRequired,
-};
