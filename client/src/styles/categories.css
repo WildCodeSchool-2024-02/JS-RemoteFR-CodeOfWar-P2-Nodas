@@ -16,12 +16,8 @@
   flex-wrap: wrap;
 }
 
-.background_link_image {
-  width: 8rem;
-}
-
 .genres_list > a {
-  color: white;
+  color: var(--primary-font-color);
   background-position: center;
   background-size: cover;
   border: 2px solid #352e4d;

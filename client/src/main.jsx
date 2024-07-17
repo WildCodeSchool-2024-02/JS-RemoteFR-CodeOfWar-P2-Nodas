@@ -26,6 +26,7 @@ import "./styles/footer.css";
 import "./styles/accueil.css";
 import "./styles/categorieitem.css";
 import "./styles/categories.css";
+import "./styles/catalogue.css";
 import "./styles/favoris.css";
 import "./styles/about.css";
 import "./styles/searchdialog.css";
