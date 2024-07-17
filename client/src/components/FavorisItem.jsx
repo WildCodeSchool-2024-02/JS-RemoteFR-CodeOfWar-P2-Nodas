@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import FavoriteContext from "../contexts/FavoriteContext";
+import { getRandomPrice } from "../services/utils";
 
 export default function FavorisItem({ id }) {
   const [gameInfo, setGameInfo] = useState("");
   const { favoris, setFavoris } = useContext(FavoriteContext);
+  const price = getRandomPrice();
 
   useEffect(() => {
     axios
@@ -32,19 +35,24 @@ export default function FavorisItem({ id }) {
 
   return (
     <div className="FavorisItem">
-      <img src={gameInfo.background_image} alt={gameInfo.name} />
+      <Link to={`/gamepage/${gameInfo.id}`}>
+        <img src={gameInfo.background_image} alt={gameInfo.name} />
+      </Link>
       <div className="under-image-fav">
         <h3>{gameInfo.name}</h3>
-        <button className="like_button" type="button" onClick={addFavorite}>
-          <img
-            src={
-              favoris.includes(gameInfo.id)
-                ? "../src/assets/images/like-filled.svg"
-                : "../src/assets/images/like.svg"
-            }
-            alt="like"
-          />
-        </button>
+        <div className="priceFavori">
+          <p>{price} €</p>
+          <button className="like_button" type="button" onClick={addFavorite}>
+            <img
+              src={
+                favoris.includes(gameInfo.id)
+                  ? "../src/assets/images/like-filled.svg"
+                  : "../src/assets/images/like.svg"
+              }
+              alt="like"
+            />
+          </button>
+        </div>
       </div>
     </div>
   );
