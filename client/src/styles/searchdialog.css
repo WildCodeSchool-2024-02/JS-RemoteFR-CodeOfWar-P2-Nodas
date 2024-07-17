@@ -1,8 +1,36 @@
 #modal {
   width: 100%;
-  height: 80%;
-  margin: auto auto;
-  background-color: rgba(0, 0, 0, 0.913);
+  margin: auto;
+  background-color: var(--third-color);
+  border-radius: 8px;
+  animation: slide-down 0.5s forwards;
+  animation-timing-function: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+  position: relative;
+  top: -100vh;
+}
+
+#modal[open] {
+  animation: slide-down 0.5s forwards;
+}
+
+#modal:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes slide-down {
+  from {
+    top: -100vh;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 97%;
+  }
+}
+
+#modal::backdrop {
+  backdrop-filter: blur(0.25rem);
 }
 
 .search-dialog-title {
@@ -21,7 +49,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 90%;
 }
 
 .input_search_container > div {
@@ -37,38 +64,48 @@
   gap: 1rem;
 }
 
-.search-buttons > button {
+.search-buttons > button,
+.search-buttons > a {
+  border: none;
   width: 100%;
   height: 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+}
+
+.search-buttons > a:hover {
+  cursor: pointer;
+  background-color: var(--fifth-color);
 }
 
 .search-buttons > button:hover {
+  cursor: pointer;
   background-color: var(--sixth-color);
 }
 
 .close_dialog {
   height: 2rem;
-  margin: 0 1rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
 }
 
 .close_dialog:hover {
   cursor: pointer;
-}
-
-.results {
-  margin: 1rem;
-}
-
-.search-result > img {
-  border-radius: 4px;
-}
-
-.search-result > a {
-  display: flex;
-  background-color: red;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
+  background-color: rgb(224, 224, 224);
 }
 
 .search-game-title {

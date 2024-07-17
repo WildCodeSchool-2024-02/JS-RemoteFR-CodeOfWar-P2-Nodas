@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
-import Catalogue from "../pages/Catalogue";
 
 export default function SearchDialog({ tools }) {
   const [searchString, setSearchString] = useState("");
   const [gameInfo, setGameInfo] = useState(null);
-
+  console.info(gameInfo);
   const handleChange = (event) => {
     setSearchString(event.target.value);
   };
@@ -29,7 +29,7 @@ export default function SearchDialog({ tools }) {
   return (
     <div className="merguez">
       <dialog id="modal" ref={tools.modalRef}>
-        <h2 className="search-dialog-title">J'aime le gras</h2>
+        <h2 className="search-dialog-title">Recherche</h2>
         <div className="input_search_container">
           <div>
             <input
@@ -39,17 +39,17 @@ export default function SearchDialog({ tools }) {
               className="input-search"
             />
             <div className="search-buttons">
-              <button type="button" onClick={fetchGameInfo}>
+              <Link to="/catalog" onClick={fetchGameInfo}>
                 Search
-              </button>
+              </Link>
               <button type="button" onClick={clearSearch}>
                 Clear
               </button>
             </div>
           </div>
-          <div className="results">
+          {/* <div className="results">
             {gameInfo ? <Catalogue gameInfo={gameInfo} tools={tools} /> : ""}
-          </div>
+          </div> */}
 
           <button
             className="close_dialog"

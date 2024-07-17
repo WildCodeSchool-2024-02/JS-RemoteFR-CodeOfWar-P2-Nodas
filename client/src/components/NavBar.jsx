@@ -8,6 +8,15 @@ import searchicon from "../assets/images/searchicon.svg";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  const openModal = () => {
+    modalRef.current.showModal();
+  };
+
+  const closeModal = () => {
+    modalRef.current.close();
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,16 +43,6 @@ export default function NavBar() {
     };
   }, [menuOpen]);
 
-  const modalRef = useRef(null);
-
-  const openModal = () => {
-    modalRef.current.showModal();
-  };
-
-  const closeModal = () => {
-    modalRef.current.close();
-  };
-
   return (
     <>
       <nav className="Navbar">
@@ -51,6 +50,7 @@ export default function NavBar() {
           <img src={logong} alt="Logo" />
         </Link>
         <div className="iconsGroup">
+          <SearchDialog tools={{ closeModal, modalRef }} />
           <button type="button" onClick={openModal} className="search-button">
             <img src={searchicon} alt="Logo recherche" />
           </button>
@@ -67,9 +67,6 @@ export default function NavBar() {
           </button>
         </div>
       </nav>
-      <div className="searching">
-        <SearchDialog tools={{ closeModal, modalRef }} />
-      </div>
       <div className="animated-border" />
       {menuOpen && (
         <div className="menu-dropdown">
