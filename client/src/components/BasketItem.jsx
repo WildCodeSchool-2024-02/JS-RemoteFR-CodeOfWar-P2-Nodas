@@ -40,8 +40,8 @@ export default function BasketItem({ id }) {
           <img
             src={
               basket.includes(gameInfo.id)
-                ? "../src/assets/images/loggoCaddie.png"
-                : "../src/assets/images/loggoCaddie.png"
+                ? "../src/assets/images/trash.svg"
+                : "../src/assets/images/trash.svg"
             }
             alt="like"
           />
