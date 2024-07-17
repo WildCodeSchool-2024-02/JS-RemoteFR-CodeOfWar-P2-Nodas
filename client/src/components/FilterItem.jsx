@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 
-export default function FilterItem ({ title, filters, onChange }) {
+export default function FilterItem ({ filters, onChange }) {
   return (
     <div className="filter-section">
-      <p>{title}</p>
       {filters.map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
           <input
@@ -21,7 +20,6 @@ export default function FilterItem ({ title, filters, onChange }) {
 };
 
 FilterItem.propTypes = {
-  title: PropTypes.string.isRequired,
   filters: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

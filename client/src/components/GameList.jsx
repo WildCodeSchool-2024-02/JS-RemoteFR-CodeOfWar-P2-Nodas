@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 export default function GameList ({ games }) {
   return (
     <div>
-      <h2>Jeux trouvés</h2>
-      <ul>
+      <h2 className="result-side-title">Jeux trouvés</h2>
+      <ul className="result-side-games-list">
         {games.map(game => (
-          <li key={game.id}>
+          <li key={game.id} className="game-item">
+            <img src={game.background_image} alt={game.name}/>
             <h3>{game.name}</h3>
-            <p>{game.released}</p>
-            <img src={game.background_image} alt={game.name} width="200" />
           </li>
         ))}
       </ul>

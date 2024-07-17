@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import GameList from "../components/GameList";
 import tagsData from "../data/tagsData";
 import FilterItem from "../components/FilterItem";
+import Collapsable from "../components/Collapsable";
 
 export default function GameAdvisor() {
   const filters = useLoaderData();
@@ -80,54 +81,66 @@ export default function GameAdvisor() {
   }, [filtersState]);
 
   return (
-    <>
-      <h1>Game Advisor</h1>
-      <p className="advisor-intro">
-        Bonjour, voici quelques questions pour vous aider à trouver votre
-        prochain jeu.
-      </p>
-      <div className="advisor-page">
-        <div className="filters-container">
-          <FilterItem
-            title="Sur quelle plateforme avez-vous l'habitude de jouer ?"
-            filters={filters[0]}
-            onChange={(e) => handleFilterChange(e, "platformFilter")}
-          />
-          <FilterItem
-            title="Quels sont vos genres de jeux préférés ?"
-            filters={filters[1]}
-            onChange={(e) => handleFilterChange(e, "genreFilter")}
-          />
-          <FilterItem
-            title="Avez-vous une préférence pour un shop en ligne ?"
-            filters={filters[2]}
-            onChange={(e) => handleFilterChange(e, "storeFilter")}
-          />
-          <FilterItem
-            title="Vous avez envie d'une partie en solo ou à plusieurs ?"
-            filters={morefilters.playernumber}
-            onChange={(e) => handleFilterChange(e, "tagsFilter")}
-          />
-          <FilterItem
-            title="Quelles particularités de gameplay vous tentent aujourd'hui ?"
-            filters={morefilters.gameplayfeature}
-            onChange={(e) => handleFilterChange(e, "tagsFilter")}
-          />
-          <FilterItem
-            title="La caméra c'est important ! Quel type de vue vous faut-il ?"
-            filters={morefilters.gamingview}
-            onChange={(e) => handleFilterChange(e, "tagsFilter")}
-          />
-          <FilterItem
-            title="Quel thème voulez-vous explorer cette fois ?"
-            filters={morefilters.theme}
-            onChange={(e) => handleFilterChange(e, "tagsFilter")}
-          />
+    <div className="advisor-page">
+      <div className="filters-side">
+        <div className="advisor-intro">
+          <h1>Game Advisor</h1>
+          <p>
+            Bonjour, voici quelques questions pour vous aider à trouver votre
+            prochain jeu. Amusez vous bien !
+          </p>
         </div>
-        <div className="filter-results-container">
-          <GameList games={games} />
+        <div className="separation" />
+        <div className="filters-container">
+          <Collapsable title="Sur quelle(s) plateforme(s) avez-vous l'habitude de jouer ?">
+            <FilterItem
+              filters={filters[0]}
+              onChange={(e) => handleFilterChange(e, "platformFilter")}
+            />
+          </Collapsable>
+          <Collapsable title="Quels sont vos genres de jeux préférés ?">
+            <FilterItem
+              filters={filters[1]}
+              onChange={(e) => handleFilterChange(e, "genreFilter")}
+            />
+          </Collapsable>
+
+          <Collapsable title="Quel thème voulez-vous explorer cette fois ?">
+            <FilterItem
+              filters={morefilters.theme}
+              onChange={(e) => handleFilterChange(e, "tagsFilter")}
+            />
+          </Collapsable>
+
+          <Collapsable title="Quelles particularités de gameplay vous tentent aujourd'hui ?">
+            <FilterItem
+              filters={morefilters.gameplayfeature}
+              onChange={(e) => handleFilterChange(e, "tagsFilter")}
+            />
+          </Collapsable>
+          <Collapsable title="La caméra c'est important ! Quel type de vue vous faut-il ?">
+            <FilterItem
+              filters={morefilters.gamingview}
+              onChange={(e) => handleFilterChange(e, "tagsFilter")}
+            />
+          </Collapsable>
+          <Collapsable title="Vous avez envie d'une partie en solo ou à plusieurs ?">
+            <FilterItem
+              filters={morefilters.playernumber}
+              onChange={(e) => handleFilterChange(e, "tagsFilter")}
+            />
+          </Collapsable>
+          <Collapsable title="Avez-vous une préférence pour un shop en ligne ?">
+            <FilterItem
+              filters={filters[2]}
+              onChange={(e) => handleFilterChange(e, "storeFilter")}
+            />
+          </Collapsable>
         </div>
       </div>
-    </>
+      <div className="results-side">
+        <GameList games={games} />
+      </div>
+    </div>
   );
 }
