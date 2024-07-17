@@ -1,13 +1,78 @@
 #modal {
   width: 100%;
-  height: 100%;
+  height: 80%;
   margin: auto auto;
-  background-color: rgba(0, 0, 0, 0.94);
+  background-color: rgba(0, 0, 0, 0.913);
 }
 
-.input_search {
+.search-dialog-title {
+  color: var(--primary-font-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.input-search {
+  margin: 1rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.input_search_container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  min-height: 90%;
+}
+
+.input_search_container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.search-buttons > button {
+  width: 100%;
+  height: 2rem;
+}
+
+.search-buttons > button:hover {
+  background-color: var(--sixth-color);
+}
+
+.close_dialog {
+  height: 2rem;
+  margin: 0 1rem;
+}
+
+.close_dialog:hover {
+  cursor: pointer;
+}
+
+.results {
+  margin: 1rem;
+}
+
+.search-result > img {
+  border-radius: 4px;
+}
+
+.search-result > a {
+  display: flex;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+}
+
+.search-game-title {
+  color: var(--primary-font-color);
+  padding-bottom: 0.5rem;
+  text-align: center;
 }

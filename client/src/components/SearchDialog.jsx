@@ -29,21 +29,34 @@ export default function SearchDialog({ tools }) {
   return (
     <div className="merguez">
       <dialog id="modal" ref={tools.modalRef}>
-        <div className="input_search">
+        <h2 className="search-dialog-title">J'aime le gras</h2>
+        <div className="input_search_container">
           <div>
-            <input type="text" value={searchString} onChange={handleChange} />
-            <button type="button" onClick={fetchGameInfo}>
-              Search
-            </button>
-            <button type="button" onClick={clearSearch}>
-              Clear
-            </button>
+            <input
+              type="text"
+              value={searchString}
+              onChange={handleChange}
+              className="input-search"
+            />
+            <div className="search-buttons">
+              <button type="button" onClick={fetchGameInfo}>
+                Search
+              </button>
+              <button type="button" onClick={clearSearch}>
+                Clear
+              </button>
+            </div>
           </div>
           <div className="results">
             {gameInfo ? <Catalogue gameInfo={gameInfo} tools={tools} /> : ""}
           </div>
-          <button type="button" onClick={tools.closeModal}>
-            close dialog
+
+          <button
+            className="close_dialog"
+            type="button"
+            onClick={tools.closeModal}
+          >
+            Fermer la fenêtre
           </button>
         </div>
       </dialog>

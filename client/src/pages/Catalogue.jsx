@@ -10,7 +10,7 @@ export default function Catalogue({ gameInfo, tools }) {
         alt={gameInfo.name}
         style={{ width: "100%" }}
       />
-      <Link to={`/gamepage/${gameInfo.name}`} onClick={tools.closeModal}>
+      <Link to={`/gamepage/${gameInfo.id}`} onClick={tools.closeModal}>
         Aller à la page du jeu
       </Link>
     </div>
