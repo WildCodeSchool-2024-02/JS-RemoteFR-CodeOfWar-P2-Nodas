@@ -25,6 +25,7 @@ export default function GameAdvisor() {
   });
 
   const [games, setGames] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
 
   const handleFilterChange = (event, filterType) => {
     const { value, type, checked } = event.target;
@@ -70,7 +71,6 @@ export default function GameAdvisor() {
   useEffect(() => {
     const fetchGames = async () => {
       const apiUrl = buildApiRequest();
-      console.info("API URL:", apiUrl);
       const response = await fetch(apiUrl);
       const data = await response.json();
       setGames(data.results);
@@ -91,6 +91,8 @@ export default function GameAdvisor() {
           </p>
         </div>
         <div className="separation" />
+        <button type="button" className="collapsable-button" onClick={() => setShowFilters(!showFilters)}>{showFilters ? "Masquer les filtres" : "Afficher les filtres"}</button>
+        {showFilters && (
         <div className="filters-container">
           <Collapsable title="Sur quelle(s) plateforme(s) avez-vous l'habitude de jouer ?">
             <FilterItem
@@ -137,6 +139,7 @@ export default function GameAdvisor() {
             />
           </Collapsable>
         </div>
+         )}
       </div>
       <div className="results-side">
         <GameList games={games} />

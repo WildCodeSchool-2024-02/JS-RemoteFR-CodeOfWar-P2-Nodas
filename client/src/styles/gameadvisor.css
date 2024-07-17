@@ -4,7 +4,7 @@
 
 .advisor-intro > p {
   padding: 1rem 1rem 0 0;
-  max-width: 50ch;
+  max-width: 65ch;
 }
 
 .advisor-page {
@@ -16,7 +16,9 @@
 
 .filters-side {
   background-color: var(--primary-color);
-  width: 40%;
+  flex: 0 0 30%;
+  max-width: 30%;
+  border-radius: 8px;
 }
 .results-side {
   margin: 0 auto;
@@ -38,6 +40,27 @@
   padding: 1rem;
 }
 
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.checkbox-list {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1 1 45%;
+}
+
+.checkbox-list > input {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
 .separation {
   background-color: white;
   height: 1px;
@@ -46,8 +69,33 @@
 }
 
 .collapsable-title {
-  padding: 1rem 0;
+  padding: 0.5rem;
   font-size: 14px;
+  background-color: rgb(98, 98, 98);
+  border-radius: 8px;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.collapsable-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: var(--primary-font-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collapsable-button:hover {
+  background-color: var(--third-color);
+}
+
+.collapsable-button:active {
+  background-color: var(--fourth-color);
 }
 
 .result-side-title {
@@ -56,10 +104,14 @@
 }
 .game-item {
   width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .game-item h3 {
-  padding: 0.25rem 0 1rem 0;
+  padding: 1rem;
 }
 
 .game-item p {
@@ -67,9 +119,68 @@
 }
 
 .game-item img {
-  max-width: 100%;
   border-radius: 8px;
-  background-size: cover;
-  height: 60%;
+  object-fit: cover;
+  height: 100%;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .advisor-page {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .filters-side {
+    flex: 0 0 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .results-side {
+    margin: 0;
+    width: 100%;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .checkbox-list {
+    flex: 1 1 auto;
+    gap: 0.25rem;
+  }
+
+  .game-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .game-item img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advisor-intro {
+    padding: 0.5rem;
+  }
+
+  .advisor-page {
+    padding: 2rem;
+  }
+
+  .filters-side {
+    padding: 0.5rem;
+  }
+
+  .results-side {
+    padding: 0.5rem;
+  }
+
+  .collapsable-button {
+    padding: 0.25rem;
+  }
 }
