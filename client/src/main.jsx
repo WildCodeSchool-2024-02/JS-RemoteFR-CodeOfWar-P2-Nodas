@@ -10,6 +10,7 @@ import Favoris from "./pages/Favoris";
 import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
+import GameAdvisor from "./pages/GameAdvisor";
 import { FavoriteProvider } from "./contexts/FavoriteContext";
 
 import {
@@ -28,7 +29,7 @@ import "./styles/categorieitem.css";
 import "./styles/categories.css";
 import "./styles/favoris.css";
 import "./styles/about.css";
-import GameAdvisor from "./pages/GameAdvisor";
+import "./styles/gameadvisor.css"
 
 const router = createBrowserRouter([
   {

@@ -80,11 +80,15 @@ export default function GameAdvisor() {
 
   return (
     <>
-      <h1>J'aime la vie</h1>
-      <p>
-        Bonjour, voici quelques questions pour vous aider à trouver votre
-        prochain jeu.
-      </p>
+    <h1>Game Advisor</h1>
+    <p className="advisor-intro">
+      Bonjour, voici quelques questions pour vous aider à trouver votre
+      prochain jeu.
+    </p>
+    <div className="advisor-page">
+    <div className="filters-container">
+
+      <div className="platform-filters">
       <p>Sur quelle plateforme avez-vous l'habitude de jouer ?</p>
       {filters[0].map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -98,6 +102,8 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.id}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      <div className="genre-filters">
       <p>Quels sont vos genres de jeux préférés ?</p>
       {filters[1].map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -111,6 +117,8 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      <div className="store-filters">
       <p>Avez-vous une préférence pour un shop en ligne ?</p>
       {filters[2].map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -124,6 +132,8 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      <div className="solo-filters">
       <p>Vous avez envie d'une partie en solo ou à plusieurs ?</p>
       {morefilters.playernumber.map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -137,6 +147,8 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      <div className="feature-filters">
       <p>Quelles particularités de gameplay vous tentent aujourd'hui ?</p>
       {morefilters.gameplayfeature.map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -150,6 +162,8 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      <div className="view-filters">
       <p>La caméra c'est important ! Quel type de vue vous faut-il ?</p>
       {morefilters.gamingview.map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -163,6 +177,8 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      <div className="theme-filters">
       <p>Quel thème voulez-vous explorer cette fois ?</p>
       {morefilters.theme.map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
@@ -176,7 +192,12 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
+      </div>
+      </div>
+      <div className="filter-results-container">
       <GameList games={games} />
+      </div>
+    </div>
     </>
   );
 }

@@ -6,10 +6,6 @@
   list-style: none;
 }
 
-body {
-  display: flex;
-}
-
 #about1 {
   color: rgb(64, 116, 214);
   font-size: 1.8rem;
@@ -33,10 +29,6 @@ body {
 .bgImage {
   display: flex;
   justify-content: center;
-}
-
-p {
-  margin: 0 2rem;
 }
 
 .cardContainer {
