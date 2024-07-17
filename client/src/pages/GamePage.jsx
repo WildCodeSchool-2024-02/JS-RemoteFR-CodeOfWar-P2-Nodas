@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteContext from "../contexts/FavoriteContext";
+import ShopContext from "../contexts/ShopContext";
 import { getRandomPrice, getMetacriticClass } from "../services/utils";
 
 export default function GamePage() {
@@ -11,6 +12,8 @@ export default function GamePage() {
   const gameDevelopers = gameInfo.developers;
 
   const { favoris, setFavoris } = useContext(FavoriteContext);
+  const { basket, setBasket } = useContext(ShopContext);
+
   const [longDescription, setLOngDescription] = useState(false);
   let displayShortDescription;
 
@@ -43,7 +46,22 @@ export default function GamePage() {
     });
   };
 
-  const metacriticClass = getMetacriticClass(gameInfo.metacritic);
+  const addBasket = () => {
+    setBasket((prevBaskets) => {
+      const newBaskets = [...prevBaskets];
+      if (newBaskets.includes(gameInfo.id)) {
+        const index = newBaskets.indexOf(gameInfo.id);
+        if (index > -1) {
+          newBaskets.splice(index, 1);
+        }
+      } else {
+        newBaskets.push(gameInfo.id);
+      }
+      return newBaskets;
+    });
+  };
+
+const metacriticClass = getMetacriticClass(gameInfo.metacritic);
 
   const price = getRandomPrice();
 
@@ -159,8 +177,16 @@ export default function GamePage() {
             alt="like"
           />
         </button>
-        <button className="added_button" type="button">
-          <img src="../src/assets/images/loggoCaddie.png" alt="caddie" />
+
+        <button className="added_button" type="button" onClick={addBasket}>
+          <img
+            src={
+              basket.includes(gameInfo.id)
+                ? "../src/assets/images/loggoCaddie.png"
+                : "../src/assets/images/loggoCaddie.png"
+            }
+            alt="caddie"
+          />
           <p>Ajouter au panier</p>
           <span>{price}€</span>
         </button>
