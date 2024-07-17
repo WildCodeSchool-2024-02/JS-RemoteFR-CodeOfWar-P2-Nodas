@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import SearchDialog from "./SearchDialog";
 import logong from "../assets/images/logoNG.svg";
 import menuburger from "../assets/images/menuburger.svg";
 import paniericon from "../assets/images/paniericon.svg";
@@ -33,6 +34,16 @@ export default function NavBar() {
     };
   }, [menuOpen]);
 
+  const modalRef = useRef(null);
+
+  const openModal = () => {
+    modalRef.current.showModal();
+  };
+
+  const closeModal = () => {
+    modalRef.current.close();
+  };
+
   return (
     <>
       <nav className="Navbar">
@@ -40,9 +51,9 @@ export default function NavBar() {
           <img src={logong} alt="Logo" />
         </Link>
         <div className="iconsGroup">
-          <Link to="/catalog">
+          <button type="button" onClick={openModal} className="search-button">
             <img src={searchicon} alt="Logo recherche" />
-          </Link>
+          </button>
           <Link to="/cart">
             <img src={paniericon} alt="Logo panier" />
           </Link>
@@ -56,6 +67,9 @@ export default function NavBar() {
           </button>
         </div>
       </nav>
+      <div className="searching">
+        <SearchDialog tools={{ closeModal, modalRef }} />
+      </div>
       <div className="animated-border" />
       {menuOpen && (
         <div className="menu-dropdown">

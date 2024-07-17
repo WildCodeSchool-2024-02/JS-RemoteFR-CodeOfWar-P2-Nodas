@@ -58,6 +58,11 @@
   padding: 0 1.5rem 0 0;
 }
 
+.iconsGroup > .search-button {
+  background: none;
+  border: none;
+}
+
 .menu-burger {
   background: none;
   border: none;

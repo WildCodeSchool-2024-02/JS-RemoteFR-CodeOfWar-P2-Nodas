@@ -17,6 +17,7 @@ import {
   fetchGameById,
   fetchSelectedGenre,
   fetchCategories,
+  fetchGameInfo,
 } from "./services/request";
 import "./styles/app.css";
 import "./styles/gamespages.css";
@@ -27,6 +28,7 @@ import "./styles/categorieitem.css";
 import "./styles/categories.css";
 import "./styles/favoris.css";
 import "./styles/about.css";
+import "./styles/searchdialog.css";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,11 @@ const router = createBrowserRouter([
       {
         path: "/catalog",
         element: <Catalogue />,
+      },
+      {
+        path: "/catalog/:games",
+        element: <Catalogue />,
+        loader: ({ params }) => fetchGameInfo(params.games),
       },
       {
         path: "/categories",

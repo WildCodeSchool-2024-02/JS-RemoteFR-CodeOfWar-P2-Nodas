@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export function fetchGameInfo() {
+export function fetchGameInfo(games) {
   return axios
     .get(
-      `https://api.rawg.io/api/games/2050?key=${import.meta.env.VITE_API_KEY}`
+      `https://api.rawg.io/api/games/${games}?key=${import.meta.env.VITE_API_KEY}`
     )
     .then((response) => response.data.results)
     .catch((error) => console.error(error));
