@@ -26,9 +26,17 @@ export function fetchCategories() {
 }
 
 export function fetchSelectedGenre(genres) {
+  const genreReader = (genre) => {
+    const genreName = {
+      "RPG": "role-playing-games-rpg",
+      "Massively Multiplayer": "massively-multiplayer",
+      "Board Games": "board-games",
+    };
+    return genreName[genre] || genre.toLowerCase();
+  };
   return axios
     .get(
-      `https://api.rawg.io/api/games?genres=${genres !== "RPG" ? genres.toLowerCase() : "role-playing-games-rpg"}&key=${import.meta.env.VITE_API_KEY}`
+      `https://api.rawg.io/api/games?genres=${genreReader(genres)}&key=${import.meta.env.VITE_API_KEY}`
     )
     .then((response) => response.data.results)
     .catch((error) => console.error(error));
@@ -41,4 +49,11 @@ export function fetchGameById(id) {
     )
     .then((response) => response.data)
     .catch((error) => console.error(error));
+}
+
+export function fetchPlatforms (){
+  return axios
+  .get (`https://api.rawg.io/api/platforms?key=${import.meta.env.VITE_API_KEY}`)
+  .then((response) => response.data.results)
+  .catch((error) => console.error(error));
 }

@@ -3,19 +3,15 @@ import FavorisItem from "../components/FavorisItem";
 import FavoriteContext from "../contexts/FavoriteContext";
 
 function Favoris() {
-  const {favoris} = useContext(FavoriteContext)
-  
-  return (
+  const { favoris } = useContext(FavoriteContext);
 
-      <section>
-        <h2>Favoris</h2>
-        {favoris.map((id, index) => (
-          <FavorisItem
-            key={[index]}
-            id={id}
-          />
-        ))}
-      </section>
+  return (
+    <section>
+      <h2>Favoris</h2>
+      {favoris.map((id) => (
+        <FavorisItem key={id} id={id} />
+      ))}
+    </section>
   );
 }
 

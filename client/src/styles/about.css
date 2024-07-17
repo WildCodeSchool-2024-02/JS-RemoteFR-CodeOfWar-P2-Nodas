@@ -111,6 +111,10 @@
   color: pink;
 }
 
+.network_link {
+  display: flex;
+}
+
 @media (min-width: 992px) {
   #about1 {
     text-align: center;
@@ -167,8 +171,6 @@
     position: absolute;
     margin-top: -36rem;
     margin-left: 90rem;
-
-    /* margin: -32rem 99rem 2rem 60rem; */
   }
 
   .iconsSocials > a > img {

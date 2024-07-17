@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import ShopContext from "../contexts/ShopContext";
 import logong from "../assets/images/logoNG.svg";
 import menuburger from "../assets/images/menuburger.svg";
 import paniericon from "../assets/images/paniericon.svg";
@@ -7,22 +8,53 @@ import searchicon from "../assets/images/searchicon.svg";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { basket } = useContext(ShopContext);
+  const itemCount = basket.length;
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleClickOutside = (event) => {
+    if (
+      !event.target.closest(".menu-dropdown") &&
+      !event.target.closest(".menu-burger")
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
+
   return (
     <>
       <nav className="Navbar">
-        <img src={logong} alt="Logo" />
+        <Link to="/">
+          <img src={logong} alt="Logo" />
+        </Link>
         <div className="iconsGroup">
-          <a href="/search">
+          <Link to="/catalog">
             <img src={searchicon} alt="Logo recherche" />
-          </a>
-          <a href="/cart">
+          </Link>
+          <Link to="/basket">
             <img src={paniericon} alt="Logo panier" />
-          </a>
+          </Link>
+          {itemCount > 0 ? (
+            <span className="basket-item-count">{itemCount}</span>
+          ) : (
+            ""
+          )}
+
           <button
             type="button"
             onClick={toggleMenu}
@@ -39,17 +71,17 @@ export default function NavBar() {
           <Link to="/" onClick={toggleMenu}>
             Accueil
           </Link>
-          <Link to="/panier" onClick={toggleMenu}>
+          <Link to="/basket" onClick={toggleMenu}>
             Panier
           </Link>
-          <Link to="/catalogue" onClick={toggleMenu}>
+          <Link to="/catalog" onClick={toggleMenu}>
             Catalogue
           </Link>
           <Link to="/categories" onClick={toggleMenu}>
             Categories
           </Link>
           <Link to="/favoris" onClick={toggleMenu}>
-            Favoris
+            Liste de souhaits
           </Link>
           <Link to="/about" onClick={toggleMenu}>
             About

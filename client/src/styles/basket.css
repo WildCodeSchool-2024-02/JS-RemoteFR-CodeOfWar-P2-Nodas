@@ -1,0 +1,67 @@
+body {
+  background-color: black;
+  color: var(--primary-font-color);
+}
+
+:root {
+  --primary-color: #232736;
+  --secondary-color: #352e4d;
+  --third-color: #6446af;
+  --fourth-color: #d44dd7;
+  --fifth-color: #f392fc;
+  --sixth-color: #01d4e0;
+  --primary-font-color: #dadada;
+}
+
+.basket > h2 {
+  margin: 1rem;
+}
+
+.basket-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.basket-item > img {
+  border-radius: 8px;
+  width: 100%;
+  height: 30vh;
+  object-fit: scale-down;
+}
+
+.under-image-basket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like_button > img {
+  width: 2rem;
+}
+
+@media (min-width: 992px) {
+  .basket > h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .basket-item {
+    background-color: #232736;
+    display: flex;
+    width: 56%;
+    border-radius: 1rem;
+    margin: 1rem 1rem 1.4rem 10rem;
+  }
+
+  .basket-item > img {
+    margin: 0 0 -3.6rem 0.6rem;
+    width: 29rem;
+  }
+
+  .under-image-basket > h3 {
+    margin: -29rem 0 0 31rem;
+    font-size: 1.3rem;
+  }
+}
