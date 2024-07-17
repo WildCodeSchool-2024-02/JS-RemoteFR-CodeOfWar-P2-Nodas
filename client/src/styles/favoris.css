@@ -52,3 +52,24 @@ body {
   color: var(--primary-font-color);
   text-decoration: underline;
 }
+
+@media (min-width: 992px) {
+  .wishlist {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wishlist > h2 {
+    margin-bottom: 2rem;
+    margin-left: 53rem;
+    margin-right: 20rem;
+  }
+
+  .FavorisItem {
+    background-color: #232736;
+    display: flex;
+    width: 27%;
+    border-radius: 1rem;
+    margin: 0 1rem 1.6rem 5rem;
+  }
+}
