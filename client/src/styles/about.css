@@ -1,15 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-}
-
-body {
-  display: flex;
-}
-
 #about1 {
   color: rgb(64, 116, 214);
   font-size: 1.8rem;
@@ -121,4 +109,69 @@ body {
 
 .avatar > div > div > p {
   color: pink;
+}
+
+@media (min-width: 992px) {
+  #about1 {
+    text-align: center;
+    margin: 2rem;
+  }
+
+  .descriptionName > ul > li {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+
+  .avatar {
+    width: 60%;
+  }
+
+  #about2 {
+    color: rgb(64, 116, 214);
+    margin-left: 75%;
+    position: absolute;
+    margin-top: 0.4rem;
+  }
+
+  #about4 {
+    color: rgb(64, 116, 214);
+    margin-left: 75.4%;
+    position: absolute;
+    margin-top: -40rem;
+  }
+
+  .textAbout {
+    margin-left: 60%;
+    position: absolute;
+    margin-top: 4.2rem;
+  }
+
+  .gif {
+    margin-bottom: 4rem;
+  }
+
+  .iconsSocials {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .iconsSocials {
+    width: 6rem;
+    position: absolute;
+    margin-top: -36rem;
+    margin-left: 90rem;
+
+    /* margin: -32rem 99rem 2rem 60rem; */
+  }
+
+  .iconsSocials > a > img {
+    width: 4rem;
+  }
 }

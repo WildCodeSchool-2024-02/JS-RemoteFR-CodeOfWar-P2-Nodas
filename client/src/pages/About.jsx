@@ -31,7 +31,7 @@ export default function About() {
           <CardTeam key={user} user={user} />
         ))}
       </section>
-      <h2 id="about2">Follow us</h2>
+      <h2 id="about4">Follow us</h2>
       <SocialNetwork />
       <p className="copyright">
         Noda Gaming © 2024 -{" "}
