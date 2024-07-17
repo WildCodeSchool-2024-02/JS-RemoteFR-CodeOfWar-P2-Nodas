@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import axios from "axios";
 
 export default function SearchDialog({ tools }) {
   const [searchString, setSearchString] = useState("");
-  const [gameInfo, setGameInfo] = useState("");
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -14,32 +13,13 @@ export default function SearchDialog({ tools }) {
 
   const clearSearch = () => {
     setSearchString("");
-    setGameInfo("");
   };
 
-  const fetchGameInfo = async () => {
-    try {
-      console.info(searchString);
-      const response = await axios.get(
-        `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&search=${searchString}`
-      );
-      setGameInfo(response.data);
-      if (response.data.results && response.data.results.length > 0) {
-        navigate(`/catalog/${response.data.results[0].name}`);
-      } else {
-        console.error("No game found");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleSearchClick = async (event) => {
-    event.preventDefault();
-    await fetchGameInfo();
+  const handleSearchClick = () => {
     tools.closeModal();
+    navigate(`/catalog/${searchString}`);
   };
-
+  console.info(searchString);
   return (
     <div className="merguez">
       <dialog id="modal" ref={tools.modalRef}>
@@ -53,12 +33,9 @@ export default function SearchDialog({ tools }) {
               className="input-search"
             />
             <div className="search-buttons">
-              <Link
-                to={`/catalog/${gameInfo.name}`}
-                onClick={handleSearchClick}
-              >
+              <button type="button" onClick={handleSearchClick}>
                 Search
-              </Link>
+              </button>
               <button type="button" onClick={clearSearch}>
                 Clear
               </button>

@@ -1,12 +1,13 @@
 #modal {
   width: 100%;
   margin: auto;
-  background-color: var(--third-color);
+  background-color: rgb(48, 48, 48);
   border-radius: 8px;
   animation: slide-down 0.5s forwards;
   animation-timing-function: cubic-bezier(0.5, -0.5, 0.1, 1.5);
   position: relative;
   top: -100vh;
+  height: 50%;
 }
 
 #modal[open] {
@@ -106,4 +107,9 @@
 .close_dialog:hover {
   cursor: pointer;
   background-color: rgb(224, 224, 224);
+}
+
+.search-history {
+  color: var(--primary-font-color);
+  padding: 1rem;
 }

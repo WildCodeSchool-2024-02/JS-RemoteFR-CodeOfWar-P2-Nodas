@@ -41,10 +41,6 @@ const router = createBrowserRouter([
         loader: fetchData,
       },
       {
-        path: "/catalog",
-        element: <Catalogue />,
-      },
-      {
         path: "/catalog/:game",
         element: <Catalogue />,
         loader: ({ params }) => fetchGameInfo(params.game),

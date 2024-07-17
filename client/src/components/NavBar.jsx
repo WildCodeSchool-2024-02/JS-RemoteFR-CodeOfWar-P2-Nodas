@@ -76,9 +76,6 @@ export default function NavBar() {
           <Link to="/panier" onClick={toggleMenu}>
             Panier
           </Link>
-          <Link to="/catalog" onClick={toggleMenu}>
-            Catalogue
-          </Link>
           <Link to="/categories" onClick={toggleMenu}>
             Categories
           </Link>
