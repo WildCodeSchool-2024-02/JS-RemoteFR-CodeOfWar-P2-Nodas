@@ -5,15 +5,19 @@ import tagsData from "../data/tagsData";
 
 export default function GameAdvisor() {
   const filters = useLoaderData();
-  const morefilters = tagsData
-  // Example only, can be used to add more filters in the future, or fetch them from external sources (tags from api, list of publishers, etc...)
- 
+  const morefilters = {
+    playernumber: tagsData.filter(tag => tag.tagType === 'playernumber'),
+    gameplayfeature: tagsData.filter(tag => tag.tagType === 'gameplayfeature'),
+    gamingview: tagsData.filter(tag => tag.tagType === 'gamingview'),
+    theme: tagsData.filter(tag => tag.tagType === 'theme'),
+  };
+  // morefilters is an example only, it can be used to add more filters in the future, or fetch them from external sources (tags from api, list of publishers, etc...)
 
   const [filtersState, setFiltersState] = useState({
     platformFilter: [],
     genreFilter: [],
     storeFilter: [],
-    soloFilter: [],
+    tagsFilter: [],
   });
 
   const [games, setGames] = useState([]);
@@ -42,7 +46,7 @@ export default function GameAdvisor() {
 
   const buildApiRequest = () => {
     const baseUrl = "https://api.rawg.io/api/games";
-    const { platformFilter, genreFilter, storeFilter, soloFilter } =
+    const { platformFilter, genreFilter, storeFilter, tagsFilter } =
       filtersState;
 
     const platformParams = platformFilter.length
@@ -54,21 +58,24 @@ export default function GameAdvisor() {
     const storeParams = storeFilter.length
       ? `&stores=${storeFilter.join(",")}`
       : "";
-    const soloParams = soloFilter.length ? `&tags=${soloFilter.join(",")}` : "";
+    const tagsParams = tagsFilter.length 
+      ? `&tags=${tagsFilter.join(",")}` 
+      : "";
 
-    return `${baseUrl}?key=${import.meta.env.VITE_API_KEY}${platformParams}${genreParams}${storeParams}${soloParams}`;
+    return `${baseUrl}?key=${import.meta.env.VITE_API_KEY}${platformParams}${genreParams}${storeParams}${tagsParams}`;
   };
 
   useEffect(() => {
     const fetchGames = async () => {
       const apiUrl = buildApiRequest();
-      console.info('API URL:', apiUrl);
+      console.info("API URL:", apiUrl);
       const response = await fetch(apiUrl);
       const data = await response.json();
       setGames(data.results);
     };
 
     fetchGames();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filtersState]);
 
   return (
@@ -117,15 +124,54 @@ export default function GameAdvisor() {
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
       ))}
-      <p>Des tags spécifiques qui vous intéressent ?</p>
-      {morefilters.map((filterItem) => (
+      <p>Vous avez envie d'une partie en solo ou à plusieurs ?</p>
+      {morefilters.playernumber.map((filterItem) => (
         <div key={filterItem.id} className="checkbox-list">
           <input
             type="checkbox"
             id={filterItem.id}
             name={filterItem.name}
             value={filterItem.slug}
-            onChange={(e) => handleFilterChange(e, "soloFilter")}
+            onChange={(e) => handleFilterChange(e, "tagsFilter")}
+          />
+          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
+        </div>
+      ))}
+      <p>Quelles particularités de gameplay vous tentent aujourd'hui ?</p>
+      {morefilters.gameplayfeature.map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.slug}
+            onChange={(e) => handleFilterChange(e, "tagsFilter")}
+          />
+          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
+        </div>
+      ))}
+      <p>La caméra c'est important ! Quel type de vue vous faut-il ?</p>
+      {morefilters.gamingview.map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.slug}
+            onChange={(e) => handleFilterChange(e, "tagsFilter")}
+          />
+          <label htmlFor={filterItem.slug}>{filterItem.name}</label>
+        </div>
+      ))}
+      <p>Quel thème voulez-vous explorer cette fois ?</p>
+      {morefilters.theme.map((filterItem) => (
+        <div key={filterItem.id} className="checkbox-list">
+          <input
+            type="checkbox"
+            id={filterItem.id}
+            name={filterItem.name}
+            value={filterItem.slug}
+            onChange={(e) => handleFilterChange(e, "tagsFilter")}
           />
           <label htmlFor={filterItem.slug}>{filterItem.name}</label>
         </div>
