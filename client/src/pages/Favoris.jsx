@@ -10,7 +10,7 @@ function Favoris() {
     <section className="wishlist">
       <h2>Liste de souhaits</h2>
       {favoris.map((id, index) => (
-        <FavorisItem key={[index]} id={id} />      
+        <FavorisItem key={[index]} id={id} />
       ))}
       {favoris.length > 0 ? (
         ""

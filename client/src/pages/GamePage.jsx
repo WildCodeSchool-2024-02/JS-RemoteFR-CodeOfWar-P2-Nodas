@@ -188,7 +188,7 @@ const metacriticClass = getMetacriticClass(gameInfo.metacritic);
             alt="caddie"
           />
           <p>Ajouter au panier</p>
-          <span>{price}€</span>
+          <span>{price} €</span>
         </button>
       </section>
     </div>
