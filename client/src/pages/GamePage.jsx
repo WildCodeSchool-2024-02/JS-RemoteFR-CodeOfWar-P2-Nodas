@@ -61,7 +61,7 @@ export default function GamePage() {
     });
   };
 
-const metacriticClass = getMetacriticClass(gameInfo.metacritic);
+  const metacriticClass = getMetacriticClass(gameInfo.metacritic);
 
   const price = getRandomPrice();
 
