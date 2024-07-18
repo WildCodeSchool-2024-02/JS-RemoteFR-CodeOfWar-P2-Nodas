@@ -1,19 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-color: #232736;
-  --secondary-color: #352e4d;
-  --third-color: #6446af;
-  --fourth-color: #d44dd7;
-  --fifth-color: #f392fc;
-  --sixth-color: #01d4e0;
-  --primary-font-color: #dadada;
-}
-
 .Navbar {
   background-color: var(--primary-color);
   height: 60px;
