@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
+import SearchDialog from "./SearchDialog";
+import ShopContext from "../contexts/ShopContext";
 import logong from "../assets/images/logoNG.svg";
 import menuburger from "../assets/images/menuburger.svg";
 import paniericon from "../assets/images/paniericon.svg";
@@ -7,6 +9,19 @@ import searchicon from "../assets/images/searchicon.svg";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const modalRef = useRef(null);
+
+  const openModal = () => {
+    modalRef.current.showModal();
+  };
+
+  const closeModal = () => {
+    modalRef.current.close();
+  };
+
+  const { basket } = useContext(ShopContext);
+  const itemCount = basket.length;
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -40,12 +55,19 @@ export default function NavBar() {
           <img src={logong} alt="Logo" />
         </Link>
         <div className="iconsGroup">
-          <Link to="/catalog">
+          <SearchDialog tools={{ closeModal, modalRef }} />
+          <button type="button" onClick={openModal} className="search-button">
             <img src={searchicon} alt="Logo recherche" />
-          </Link>
-          <Link to="/cart">
+          </button>
+          <Link to="/basket">
             <img src={paniericon} alt="Logo panier" />
           </Link>
+          {itemCount > 0 ? (
+            <span className="basket-item-count">{itemCount}</span>
+          ) : (
+            ""
+          )}
+
           <button
             type="button"
             onClick={toggleMenu}
@@ -62,11 +84,8 @@ export default function NavBar() {
           <Link to="/" onClick={toggleMenu}>
             Accueil
           </Link>
-          <Link to="/panier" onClick={toggleMenu}>
+          <Link to="/basket" onClick={toggleMenu}>
             Panier
-          </Link>
-          <Link to="/catalog" onClick={toggleMenu}>
-            Catalogue
           </Link>
           <Link to="/categories" onClick={toggleMenu}>
             Categories
