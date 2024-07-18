@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export function fetchGameInfo() {
+export function fetchGameInfo(games) {
   return axios
     .get(
-      `https://api.rawg.io/api/games/2050?key=${import.meta.env.VITE_API_KEY}`
+      `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&search=${games}`
     )
     .then((response) => response.data.results)
     .catch((error) => console.error(error));
@@ -28,7 +28,7 @@ export function fetchCategories() {
 export function fetchSelectedGenre(genres) {
   const genreReader = (genre) => {
     const genreName = {
-      "RPG": "role-playing-games-rpg",
+      RPG: "role-playing-games-rpg",
       "Massively Multiplayer": "massively-multiplayer",
       "Board Games": "board-games",
     };
@@ -51,9 +51,11 @@ export function fetchGameById(id) {
     .catch((error) => console.error(error));
 }
 
-export function fetchPlatforms (){
+export function fetchPlatforms() {
   return axios
-  .get (`https://api.rawg.io/api/platforms?key=${import.meta.env.VITE_API_KEY}`)
-  .then((response) => response.data.results)
-  .catch((error) => console.error(error));
+    .get(
+      `https://api.rawg.io/api/platforms?key=${import.meta.env.VITE_API_KEY}`
+    )
+    .then((response) => response.data.results)
+    .catch((error) => console.error(error));
 }
