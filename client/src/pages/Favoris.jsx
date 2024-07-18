@@ -7,20 +7,22 @@ function Favoris() {
   const { favoris } = useContext(FavoriteContext);
 
   return (
-    <section className="wishlist">
-      <h2>Liste de souhaits</h2>
-      {favoris.map((id, index) => (
-        <FavorisItem key={[index]} id={id} />
-      ))}
-      {favoris.length > 0 ? (
-        ""
-      ) : (
-        <p className="no-fav-msg">
-          Vous n'avez aucun jeu dans votre liste de souhaits.
-        </p>
-      )}
+    <div className="wishpage">
+      <h2 className="wishlist-title second_title">Liste de souhaits</h2>
+      <section className="wishlist">
+        {favoris.map((id, index) => (
+          <FavorisItem key={[index]} id={id} />
+        ))}
+        {favoris.length > 0 ? (
+          ""
+        ) : (
+          <p className="no-fav-msg">
+            Vous n'avez aucun jeu dans votre liste de souhaits.
+          </p>
+        )}
+      </section>
       <Link to="/categories">Continuer vers les categories...</Link>
-    </section>
+    </div>
   );
 }
 
