@@ -1,5 +1,5 @@
 .aboutus {
-  margin: 1rem 4rem;
+  margin: 1rem 6rem;
 }
 
 .crew_name {
@@ -94,11 +94,6 @@ b {
   color: var(--sixth-color);
 }
 
-#about-logo {
-  width: 45%;
-  padding: 0 auto auto 0;
-}
-
 .copyright {
   text-align: center;
 }
@@ -121,4 +116,36 @@ b {
 
 .network_link:hover {
   cursor: pointer;
+}
+
+@media screen and (width < 992px) {
+  .aboutus {
+    margin: 1rem;
+  }
+
+  .nodas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story-network {
+    margin: 0;
+  }
+
+  .iconsSocials img {
+    width: 3rem;
+    opacity: 0.8;
+  }
+
+  .textAbout {
+    padding: 1rem 0;
+  }
+
+  .network_link {
+    margin: 0;
+  }
+  .cardContainer {
+    padding: 0.5rem;
+  }
 }

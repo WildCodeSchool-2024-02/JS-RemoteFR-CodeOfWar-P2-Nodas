@@ -31,13 +31,13 @@ export default function About() {
           <h2 className="follow-us second_title">Follow us</h2>
           <article className="network_link">
             {networkLink.map((network) => (
-              <SocialNetwork key={network} network={network} />
+              <SocialNetwork key={network.id} network={network} />
             ))}
           </article>
         </section>
         <section className="avatar">
           {team.map((user) => (
-            <CardTeam key={user} user={user} />
+            <CardTeam key={user.id} user={user} />
           ))}
         </section>
       </div>

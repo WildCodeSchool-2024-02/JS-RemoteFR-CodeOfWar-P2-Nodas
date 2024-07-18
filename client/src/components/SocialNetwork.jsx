@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function SocialNetwork({ network }) {
   return (
-    <div className="iconsSocials" key={network.id} >
+    <div className="iconsSocials">
       <Link to={network.networkUrl} target="_blank" rel="noreferrer">
         <img src={network.networkImg} alt={network.networkName} />{" "}
       </Link>
@@ -12,5 +12,10 @@ export default function SocialNetwork({ network }) {
 }
 
 SocialNetwork.propTypes = {
-  network: PropTypes.string.isRequired,
+  network: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    networkUrl: PropTypes.string.isRequired,
+    networkImg: PropTypes.string.isRequired,
+    networkName: PropTypes.string.isRequired,
+  }).isRequired,
 };

@@ -23,5 +23,13 @@ export default function CardTeam({ user }) {
 }
 
 CardTeam.propTypes = {
-  user: PropTypes.string.isRequired,
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    pageUrl: PropTypes.string.isRequired,
+    favoriteGame: PropTypes.string.isRequired,
+  }).isRequired,
 };
