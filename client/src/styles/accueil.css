@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #232736;
+  --secondary-color: #352e4d;
+  --third-color: #6446af;
+  --fourth-color: #d44dd7;
+  --fifth-color: #f392fc;
+  --sixth-color: #01d4e0;
+  --primary-font-color: #dadada;
+}
+
 .landing-page {
   background-color: var(--primary-color);
   color: var(--primary-font-color);
@@ -79,6 +95,11 @@ header {
     margin-bottom: 1rem;
   }
 
+  .images-Carrousel {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .featured-games h2,
   p {
     max-width: 960px;
@@ -87,8 +108,8 @@ header {
   }
 
   .decobar {
-    max-width: 960px;
-    margin: 0 auto;
+    width: 50vw;
+    max-width: 600px;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -97,19 +118,21 @@ header {
   p {
     max-width: 960px;
     margin: 0 auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 
   .search-engine {
     max-width: 960px;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
   }
 
   .hungry {
     max-width: 960px;
-    margin: 0 auto;
-    margin-top: 1rem;
+  }
+  .hungry-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
   }
 }

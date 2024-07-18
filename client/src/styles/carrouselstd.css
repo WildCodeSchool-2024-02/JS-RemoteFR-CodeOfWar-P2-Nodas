@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #232736;
+  --secondary-color: #352e4d;
+  --third-color: #6446af;
+  --fourth-color: #d44dd7;
+  --fifth-color: #f392fc;
+  --sixth-color: #01d4e0;
+  --primary-font-color: #dadada;
+}
+
 .carousel {
   position: relative;
   width: 100%;
@@ -73,7 +83,7 @@
 
 @media (min-width: 992px) {
   .carousel {
-    max-width: 960px;
+    max-width: 600px;
     max-height: 50vh;
     margin: 0 auto;
   }
