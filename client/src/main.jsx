@@ -10,6 +10,7 @@ import Favoris from "./pages/Favoris";
 import Basket from "./pages/Basket";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
+import GameAdvisor from "./pages/GameAdvisor";
 import { FavoriteProvider } from "./contexts/FavoriteContext";
 import { ShopProvider } from "./contexts/ShopContext";
 
@@ -18,6 +19,8 @@ import {
   fetchGameById,
   fetchSelectedGenre,
   fetchCategories,
+  fetchSearchFilters,
+  fetchGameInfo,
 } from "./services/request";
 import "./styles/app.css";
 import "./styles/gamespages.css";
@@ -26,8 +29,11 @@ import "./styles/footer.css";
 import "./styles/accueil.css";
 import "./styles/categorieitem.css";
 import "./styles/categories.css";
+import "./styles/catalogue.css";
 import "./styles/favoris.css";
 import "./styles/about.css";
+import "./styles/gameadvisor.css"
+import "./styles/searchdialog.css";
 import "./styles/basket.css";
 
 const router = createBrowserRouter([
@@ -40,8 +46,9 @@ const router = createBrowserRouter([
         loader: fetchData,
       },
       {
-        path: "/catalog",
+        path: "/catalog/:game",
         element: <Catalogue />,
+        loader: ({ params }) => fetchGameInfo(params.game),
       },
       {
         path: "/categories",
@@ -71,6 +78,11 @@ const router = createBrowserRouter([
         path: "/gamepage/:id",
         element: <GamePage />,
         loader: ({ params }) => fetchGameById(params.id).then((data) => data),
+      },
+      {
+        path: "/reco",
+        element: <GameAdvisor />,
+        loader: fetchSearchFilters,
       },
     ],
   },
