@@ -71,3 +71,45 @@ header {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+@media (min-width: 992px) {
+  .landing-page-title {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .featured-games h2,
+  p {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .decobar {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .featured-sales h2,
+  p {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-engine {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  .hungry {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+}
