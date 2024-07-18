@@ -4,9 +4,9 @@ import axios from "axios";
 import ShopContext from "../contexts/ShopContext";
 
 export default function BasketItem({ id }) {
+  const price = 59.99;
   const [gameInfo, setGameInfo] = useState("");
   const { basket, setBasket } = useContext(ShopContext);
-
   useEffect(() => {
     axios
       .get(
@@ -36,6 +36,7 @@ export default function BasketItem({ id }) {
       <img src={gameInfo.background_image} alt={gameInfo.name} />
       <div className="under-image-basket">
         <h3>{gameInfo.name}</h3>
+        <p>Price : {price} €</p>
         <button className="like_button" type="button" onClick={addBasket}>
           <img
             src={
