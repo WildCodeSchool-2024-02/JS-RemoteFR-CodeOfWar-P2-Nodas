@@ -80,3 +80,11 @@
 .carousel-button.next {
   right: 10px;
 }
+
+@media (min-width: 992px) {
+  .carousel {
+    max-width: 960px;
+    max-height: 50vh;
+    margin: 0 auto;
+  }
+}
