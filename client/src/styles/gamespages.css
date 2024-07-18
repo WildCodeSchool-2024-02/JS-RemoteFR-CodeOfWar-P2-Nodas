@@ -78,6 +78,8 @@
   line-clamp: 5;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  font-family: var(--primary-font);
+  font-weight: 500;
 }
 
 .description_game > p {

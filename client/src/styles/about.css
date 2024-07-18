@@ -1,44 +1,57 @@
-#about1 {
-  color: rgb(64, 116, 214);
-  font-size: 1.8rem;
+.aboutus {
+  margin: 1rem 4rem;
+}
+
+.crew_name {
+  color: var(--seven-color);
+  font-size: var(--title-size-principal);
   text-align: center;
 }
 
-#about2 {
-  color: rgb(64, 116, 214);
-  font-size: 1.8rem;
-  margin-left: 2rem;
-}
-
-#about3 {
-  font-size: 1.4rem;
-}
-
-#about4 {
-  color: rgb(64, 116, 214);
-  font-size: 1.8rem;
-  margin: 0 0 1rem 2rem;
-}
-
 .descriptionName {
-  margin: 2rem 0 2rem 2rem;
+  text-align: center;
 }
 
-.bgImage {
+.team-names {
+  color: var(--seven-color);
+  font-size: var(--title-size-third);
+}
+
+.gif {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.nodas {
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  margin-top: 1rem;
+}
+
+.story-network {
+  width: 100%;
+  margin: 0 1rem 1rem 1rem;
+}
+
+.avatar {
+  width: 100%;
 }
 
 .textAbout {
-  margin: 0 2rem;
+  font-size: var(--text-size);
+  padding: 1rem 0 3rem 0;
 }
 
 .cardContainer {
   background-color: var(--secondary-color);
-  margin: 10px auto;
+  padding: 1rem;
+  margin-bottom: 1rem;
   display: flex;
-  width: 90%;
-  border-radius: 1rem;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px var(--primary-color);
 }
 
 .cardContainer img {
@@ -46,54 +59,51 @@
   height: 7.5rem;
   border-radius: 50%;
   display: flex;
-}
-
-.avatar > .cardContainer > div > img {
-  margin: 0.625rem 1rem;
-}
-
-.avatar > .cardContainer > div {
-  margin: 1rem 1rem;
+  box-shadow: 1px 1px 1px 1px var(--sixth-color);
 }
 
 .userDetails {
   display: flex;
   flex-direction: column;
-  margin: 0.625rem 1rem;
-  gap: 20px;
 }
 
 .listUser {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
 }
 
-.listUser a {
-  color: white;
-}
-
-.listUser a:hover {
+.listUser > li > a {
   color: var(--primary-font-color);
 }
 
+.listUser > li > a:hover {
+  color: var(--fourth-color);
+}
+
 .iconsSocials img {
-  width: 2.4rem;
-  margin: 0 0 1rem 2rem;
+  width: 4rem;
   opacity: 0.8;
 }
 
 .iconsSocials img:hover {
   opacity: 0.9;
-  width: 2.6rem;
+  scale: 1.5;
+}
+
+b {
+  color: var(--sixth-color);
+}
+
+#about-logo {
+  width: 45%;
+  padding: 0 auto auto 0;
 }
 
 .copyright {
-  margin-bottom: 0.6rem;
+  text-align: center;
 }
 
 .copyright > a {
-  color: white;
   font-size: 1.25rem;
 }
 
@@ -101,88 +111,14 @@
   color: var(--primary-font-color);
 }
 
-.avatar > div {
-  display: flex;
-}
-
-.avatar > div > img {
-  margin: 2rem 2rem 1rem 2rem;
-}
-
-.avatar > div > div > #about3 {
-  color: rgb(64, 116, 214);
-}
-
-.avatar > div > div > p {
-  color: pink;
-}
-
 .network_link {
+  margin-top: 1rem;
+  padding-top: 1rem;
   display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
 }
 
-@media (min-width: 992px) {
-  #about1 {
-    text-align: center;
-    margin: 2rem;
-  }
-
-  .descriptionName > ul > li {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.6rem;
-  }
-
-  .avatar {
-    width: 60%;
-  }
-
-  #about2 {
-    color: rgb(64, 116, 214);
-    margin-left: 75%;
-    position: absolute;
-    margin-top: 0.4rem;
-  }
-
-  #about4 {
-    color: rgb(64, 116, 214);
-    margin-left: 75.4%;
-    position: absolute;
-    margin-top: -40rem;
-  }
-
-  .textAbout {
-    margin-left: 60%;
-    position: absolute;
-    margin-top: 4.2rem;
-  }
-
-  .gif {
-    margin-bottom: 4rem;
-  }
-
-  .network_link {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-top: -36rem;
-    margin-left: 91.2rem;
-  }
-
-  .copyright {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-  }
-
-  .iconsSocials img {
-    width: 4rem;
-    margin: 0 0 1rem 1.6rem;
-    opacity: 0.8;
-  }
-
-  .iconsSocials img:hover {
-    opacity: 0.9;
-    width: 6rem;
-  }
+.network_link:hover {
+  cursor: pointer;
 }

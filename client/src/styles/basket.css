@@ -3,14 +3,8 @@ body {
   color: var(--primary-font-color);
 }
 
-:root {
-  --primary-color: #232736;
-  --secondary-color: #352e4d;
-  --third-color: #6446af;
-  --fourth-color: #d44dd7;
-  --fifth-color: #f392fc;
-  --sixth-color: #01d4e0;
-  --primary-font-color: #dadada;
+.basket {
+  height: 90vh;
 }
 
 .basket > h2 {
