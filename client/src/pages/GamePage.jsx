@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import FavoriteContext from "../contexts/FavoriteContext";
 import ShopContext from "../contexts/ShopContext";
-import { getRandomPrice, getMetacriticClass } from "../services/utils";
+import { getMetacriticClass } from "../services/utils";
 
 export default function GamePage() {
   const gameInfo = useLoaderData();
@@ -10,6 +10,7 @@ export default function GamePage() {
   const gamePlatforms = gameInfo.platforms;
   const gamePublishers = gameInfo.publishers;
   const gameDevelopers = gameInfo.developers;
+  const price = 59.99;
 
   const { favoris, setFavoris } = useContext(FavoriteContext);
   const { basket, setBasket } = useContext(ShopContext);
@@ -56,14 +57,13 @@ export default function GamePage() {
         }
       } else {
         newBaskets.push(gameInfo.id);
+        localStorage.setItem(`${gameInfo.id}`, JSON.stringify(price));
       }
       return newBaskets;
     });
   };
 
   const metacriticClass = getMetacriticClass(gameInfo.metacritic);
-
-  const price = getRandomPrice();
 
   return (
     <div className="game-details">
