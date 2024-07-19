@@ -10,7 +10,7 @@
 .advisor-page {
   display: flex;
   flex-direction: row;
-  padding: 2rem;
+  padding: 2rem 0 4rem 0;
   gap: 1rem;
 }
 
@@ -26,7 +26,7 @@
 
 .result-side-games-list {
   list-style-type: none;
-  padding: 0;
+  padding: 0 0 4rem 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

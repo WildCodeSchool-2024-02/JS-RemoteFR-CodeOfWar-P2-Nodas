@@ -26,12 +26,15 @@ export default function CarrouselStd({ images }) {
       <div className="carousel-slides">
         {images.map((image, index) => (
           <div key={image.id} className="carousel-slide">
-            <Link 
-            className={index === currentIndex ? "active" : "inactive"}
-            style={{
-              zIndex: 1,
-            }}
-            to={`/gamepage/${image.id}`}>{image.name}</Link>
+            <Link
+              className={index === currentIndex ? "active" : "inactive"}
+              style={{
+                zIndex: 1,
+              }}
+              to={`/gamepage/${image.id}`}
+            >
+              {image.name}
+            </Link>
             <img
               src={image.url}
               alt={`Slide ${image.id}`}

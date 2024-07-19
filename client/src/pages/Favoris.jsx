@@ -16,12 +16,10 @@ function Favoris() {
         {favoris.length > 0 ? (
           ""
         ) : (
-          <p className="no-fav-msg">
-            Vous n'avez aucun jeu dans votre liste de souhaits.
-          </p>
+          <p className="no-fav-msg">You have no game in your wishlist.</p>
         )}
       </section>
-      <Link to="/categories">Continuer vers les categories...</Link>
+      <Link to="/categories">Continue to categories...</Link>
     </div>
   );
 }

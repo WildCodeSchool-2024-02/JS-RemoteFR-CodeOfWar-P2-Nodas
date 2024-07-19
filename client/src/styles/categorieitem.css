@@ -15,3 +15,7 @@
   margin-right: 1.2rem;
   margin-bottom: 2rem;
 }
+
+.gamename_prix > li > h3 {
+  max-width: 15ch;
+}

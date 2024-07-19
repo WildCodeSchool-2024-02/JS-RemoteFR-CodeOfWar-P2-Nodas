@@ -9,16 +9,19 @@ export default function Footer() {
     navigate(-1);
   };
   return (
-    <footer>
-      <button onClick={historyBack} type="button">
-        <img src={previous} alt="Previous" />
-      </button>
-      <Link className="iconHome" to="/">
-        <img src={home} alt="Home" />
-      </Link>
-      <Link className="iconFavorite" to="/favoris">
-        <img src={favorite} alt="Favorite" />
-      </Link>
-    </footer>
+    <>
+      <div className="footer-gap" />
+      <footer>
+        <button onClick={historyBack} type="button">
+          <img src={previous} alt="Previous" />
+        </button>
+        <Link className="iconHome" to="/">
+          <img src={home} alt="Home" />
+        </Link>
+        <Link className="iconFavorite" to="/favoris">
+          <img src={favorite} alt="Favorite" />
+        </Link>
+      </footer>
+    </>
   );
 }

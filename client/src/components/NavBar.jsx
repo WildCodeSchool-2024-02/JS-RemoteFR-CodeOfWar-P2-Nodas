@@ -82,22 +82,22 @@ export default function NavBar() {
       {menuOpen && (
         <div className="menu-dropdown">
           <Link to="/" onClick={toggleMenu}>
-            Accueil
+            Home
           </Link>
           <Link to="/basket" onClick={toggleMenu}>
-            Panier
+            Basket
           </Link>
           <Link to="/categories" onClick={toggleMenu}>
             Categories
           </Link>
           <Link to="/favoris" onClick={toggleMenu}>
-            Liste de souhaits
+            Wishlist
           </Link>
           <Link to="/about" onClick={toggleMenu}>
             About
           </Link>
           <Link to="/reco" onClick={toggleMenu}>
-            A quoi jouer ?
+            Game Advisor
           </Link>
         </div>
       )}

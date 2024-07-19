@@ -17,11 +17,13 @@ export default function Basket() {
 
   return (
     <section className="basket">
-      <h2>Panier</h2>
-      {basket.map((id) => (
-        <BasketItem key={id} id={id} />
-      ))}
-      <p>Total price : {totalPrice} €</p>
+      <h2>Basket</h2>
+      <p className="total-price">Total : {totalPrice} €</p>
+      <div className="basket-list">
+        {basket.map((id) => (
+          <BasketItem key={id} id={id} />
+        ))}
+      </div>
     </section>
   );
 }

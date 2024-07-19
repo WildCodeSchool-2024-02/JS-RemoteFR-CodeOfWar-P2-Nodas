@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -53,6 +52,7 @@ header {
   align-items: center;
   gap: 1rem;
   border-radius: 8px;
+  padding-bottom: 4rem;
 }
 
 .search-engine h2 {
@@ -128,6 +128,7 @@ header {
 
   .hungry {
     max-width: 960px;
+    margin-top: 1rem;
   }
   .hungry-container {
     display: flex;

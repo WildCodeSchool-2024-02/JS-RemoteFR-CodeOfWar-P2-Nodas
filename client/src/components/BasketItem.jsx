@@ -36,7 +36,7 @@ export default function BasketItem({ id }) {
       <img src={gameInfo.background_image} alt={gameInfo.name} />
       <div className="under-image-basket">
         <h3>{gameInfo.name}</h3>
-        <p>Price : {price} €</p>
+        <p>{price} €</p>
         <button className="like_button" type="button" onClick={addBasket}>
           <img
             src={
