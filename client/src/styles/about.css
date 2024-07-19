@@ -1,0 +1,188 @@
+#about1 {
+  color: rgb(64, 116, 214);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#about2 {
+  color: rgb(64, 116, 214);
+  font-size: 1.8rem;
+  margin-left: 2rem;
+}
+
+#about3 {
+  font-size: 1.4rem;
+}
+
+#about4 {
+  color: rgb(64, 116, 214);
+  font-size: 1.8rem;
+  margin: 0 0 1rem 2rem;
+}
+
+.descriptionName {
+  margin: 2rem 0 2rem 2rem;
+}
+
+.bgImage {
+  display: flex;
+  justify-content: center;
+}
+
+.textAbout {
+  margin: 0 2rem;
+}
+
+.cardContainer {
+  background-color: var(--secondary-color);
+  margin: 10px auto;
+  display: flex;
+  width: 90%;
+  border-radius: 1rem;
+}
+
+.cardContainer img {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  display: flex;
+}
+
+.avatar > .cardContainer > div > img {
+  margin: 0.625rem 1rem;
+}
+
+.avatar > .cardContainer > div {
+  margin: 1rem 1rem;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  margin: 0.625rem 1rem;
+  gap: 20px;
+}
+
+.listUser {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.listUser a {
+  color: white;
+}
+
+.listUser a:hover {
+  color: var(--primary-font-color);
+}
+
+.iconsSocials img {
+  width: 2.4rem;
+  margin: 0 0 1rem 2rem;
+  opacity: 0.8;
+}
+
+.iconsSocials img:hover {
+  opacity: 0.9;
+  width: 2.6rem;
+}
+
+.copyright {
+  margin-bottom: 0.6rem;
+}
+
+.copyright > a {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.copyright > a:hover {
+  color: var(--primary-font-color);
+}
+
+.avatar > div {
+  display: flex;
+}
+
+.avatar > div > img {
+  margin: 2rem 2rem 1rem 2rem;
+}
+
+.avatar > div > div > #about3 {
+  color: rgb(64, 116, 214);
+}
+
+.avatar > div > div > p {
+  color: pink;
+}
+
+.network_link {
+  display: flex;
+}
+
+@media (min-width: 992px) {
+  #about1 {
+    text-align: center;
+    margin: 2rem;
+  }
+
+  .descriptionName > ul > li {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+
+  .avatar {
+    width: 60%;
+  }
+
+  #about2 {
+    color: rgb(64, 116, 214);
+    margin-left: 75%;
+    position: absolute;
+    margin-top: 0.4rem;
+  }
+
+  #about4 {
+    color: rgb(64, 116, 214);
+    margin-left: 75.4%;
+    position: absolute;
+    margin-top: -40rem;
+  }
+
+  .textAbout {
+    margin-left: 60%;
+    position: absolute;
+    margin-top: 4.2rem;
+  }
+
+  .gif {
+    margin-bottom: 4rem;
+  }
+
+  .network_link {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: -36rem;
+    margin-left: 91.2rem;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .iconsSocials img {
+    width: 4rem;
+    margin: 0 0 1rem 1.6rem;
+    opacity: 0.8;
+  }
+
+  .iconsSocials img:hover {
+    opacity: 0.9;
+    width: 6rem;
+  }
+}

@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  list-style-type: none;
+}
+
+:root {
+  --primary-color: #232736;
+  --secondary-color: #352e4d;
+  --third-color: #6446af;
+  --fourth-color: #d44dd7;
+  --fifth-color: #f392fc;
+  --sixth-color: #01d4e0;
+  --primary-font-color: #dadada;
+}
+
+main {
+  min-height: 82.4dvh;
+  /* min-height: 100vh;
+  display: flex;
+  flex-direction: column; */
+}
+
+/* footer {
+  display: flex;
+  margin-top: auto;
+} */
