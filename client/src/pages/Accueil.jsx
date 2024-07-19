@@ -49,7 +49,7 @@ export default function Accueil() {
           genres. Take a look and choose your next adventure !
         </p>
         <button type="button" id="catalog-button">
-          <Link to="/catalog">See all games</Link>
+          <Link to="/reco">See all games</Link>
         </button>
       </section>
     </div>

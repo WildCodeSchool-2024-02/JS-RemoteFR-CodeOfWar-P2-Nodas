@@ -32,7 +32,7 @@
 }
 
 .green {
-  background-color: green;
+  background-color: var(--height-color);
 }
 
 .orange {

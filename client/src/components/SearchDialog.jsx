@@ -21,7 +21,7 @@ export default function SearchDialog({ tools }) {
   };
   console.info(searchString);
   return (
-    <div className="merguez">
+    <div>
       <dialog id="modal" ref={tools.modalRef}>
         <h2 className="search-dialog-title">Recherche</h2>
         <div className="input_search_container">

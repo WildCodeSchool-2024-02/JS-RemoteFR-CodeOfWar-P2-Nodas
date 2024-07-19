@@ -11,10 +11,7 @@ export default function CardTeam({ user }) {
           <li>Age : {user.age} years old</li>
           <li>Description : {user.description}</li>
           <li>
-            jeu préféré :{" "}
-            <Link to={user.pageUrl} target="_blank" rel="noreferrer">
-              {user.favoriteGame}
-            </Link>
+            jeu préféré : <Link to={user.pageUrl}>{user.favoriteGame}</Link>
           </li>
         </ul>
       </div>
