@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
-  margin: 4rem 1rem;
+  margin: 1rem;
 }
 
 .genres_list {
@@ -63,4 +63,14 @@
     font-weight: bolder;
     font-size: larger;
   }
+}
+
+.title_category {
+  text-align: center;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.title_secondary {
+  padding: 1rem;
 }

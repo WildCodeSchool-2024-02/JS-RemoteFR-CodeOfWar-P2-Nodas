@@ -8,8 +8,8 @@ function Categories() {
   return (
     <>
       <section>
-        <h1>{genres}</h1>
-        <h2>Nouvelles sorties</h2>
+        <h1 className="title_category">{genres}</h1>
+        <h2 className="title_secondary">Nouvelles sorties</h2>
 
         {games.slice(0, 3).map((game) => (
           <CategorieItem key={game.id} game={game} />
@@ -17,13 +17,13 @@ function Categories() {
       </section>
 
       <section>
-        <h2>Les plus populaires</h2>
+        <h2 className="title_secondary">Les plus populaires</h2>
         {games.slice(0, 3).map((game) => (
           <CategorieItem key={game.id} game={game} />
         ))}
       </section>
       <section>
-        <h2>Tous les jeux {genres}</h2>
+        <h2 className="title_secondary">Tous les jeux {genres}</h2>
         {games.map((game) => (
           <CategorieItem key={game.id} game={game} />
         ))}

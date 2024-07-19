@@ -1,5 +1,5 @@
 .landing-page {
-  background-color: var(--primary-color);
+  background-color: var(--background-color-body);
   color: var(--primary-font-color);
   padding: 1rem;
 }

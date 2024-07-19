@@ -15,7 +15,7 @@ export default function CategorieItem({ game }) {
       <img src={game.background_image} alt={game.name} />
       <ul className="gamename_prix">
         <li>
-          <b>{game.name}</b>
+          <h3>{game.name}</h3>
         </li>
         <li className="Prix">59,99€</li>
       </ul>
